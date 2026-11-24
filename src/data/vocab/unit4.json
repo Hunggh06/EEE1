@@ -1,0 +1,418 @@
+[
+  {
+    "id": "u4_01",
+    "unit": 4,
+    "topic": "Components & Supplies",
+    "word": "blower",
+    "pos": "n",
+    "ipa": "/ˈbləʊə(r)/",
+    "meaning": "quạt thông gió, quạt thổi",
+    "wordFamily": [
+      "blow (v)"
+    ],
+    "example": "The indoor blower pushes cooled air across the evaporator coil and into the room.",
+    "clozeSentence": "The indoor b_____ pushes cooled air across the evaporator coil and into the room."
+  },
+  {
+    "id": "u4_02",
+    "unit": 4,
+    "topic": "Components & Supplies",
+    "word": "breaker",
+    "pos": "n",
+    "ipa": "/ˈbreɪkə(r)/",
+    "meaning": "bộ ngắt điện, aptomat",
+    "example": "If the outdoor unit has no power, check whether the main circuit breaker has tripped.",
+    "clozeSentence": "If the outdoor unit has no power, check whether the main circuit b______ has tripped."
+  },
+  {
+    "id": "u4_03",
+    "unit": 4,
+    "topic": "Components & Supplies",
+    "word": "coil",
+    "pos": "n",
+    "ipa": "/kɔɪl/",
+    "meaning": "cuộn dây, dàn ống xoắn",
+    "example": "Dust buildup on the copper condenser coil prevents the air conditioner from releasing heat efficiently.",
+    "clozeSentence": "Dust buildup on the copper condenser c___ prevents the air conditioner from releasing heat efficiently."
+  },
+  {
+    "id": "u4_04",
+    "unit": 4,
+    "topic": "Components & Supplies",
+    "word": "compressor",
+    "pos": "n",
+    "ipa": "/kəmˈpresə(r)/",
+    "meaning": "máy nén",
+    "example": "The compressor pumps refrigerant vapor from the indoor evaporator to the outdoor unit.",
+    "clozeSentence": "The c_________ pumps refrigerant vapor from the indoor evaporator to the outdoor unit."
+  },
+  {
+    "id": "u4_05",
+    "unit": 4,
+    "topic": "Components & Supplies",
+    "word": "condensate",
+    "pos": "n",
+    "ipa": "/ˌkɒndenˈseɪt/",
+    "meaning": "nước ngưng, phần ngưng tụ",
+    "wordFamily": [
+      "condense (v)",
+      "condenser (n)"
+    ],
+    "example": "A clogged drain pan causes cold condensate water to overflow from the indoor AC unit.",
+    "clozeSentence": "A clogged drain pan causes cold c_________ water to overflow from the indoor AC unit."
+  },
+  {
+    "id": "u4_06",
+    "unit": 4,
+    "topic": "Components & Supplies",
+    "word": "coolant",
+    "pos": "n",
+    "ipa": "/ˈkuːlənt/",
+    "meaning": "môi chất làm lạnh, dung dịch làm mát",
+    "example": "Inspect pipe fittings regularly to ensure no coolant is leaking from the cooling circuit.",
+    "clozeSentence": "Inspect pipe fittings regularly to ensure no c______ is leaking from the cooling circuit."
+  },
+  {
+    "id": "u4_07",
+    "unit": 4,
+    "topic": "Components & Supplies",
+    "word": "cycle",
+    "pos": "n",
+    "ipa": "/ˈsaɪkl/",
+    "meaning": "chu kỳ làm việc, chu trình làm việc",
+    "example": "A standard washing machine spin cycle removes excess water from clothes before drying.",
+    "clozeSentence": "A standard washing machine spin c____ removes excess water from clothes before drying."
+  },
+  {
+    "id": "u4_08",
+    "unit": 4,
+    "topic": "Components & Supplies",
+    "word": "detergent",
+    "pos": "n",
+    "ipa": "/dɪˈtɜːdʒənt/",
+    "meaning": "xà phòng, chất tẩy rửa",
+    "example": "Use a mild liquid detergent when washing plastic air filter meshes in warm water.",
+    "clozeSentence": "Use a mild liquid d________ when washing plastic air filter meshes in warm water."
+  },
+  {
+    "id": "u4_09",
+    "unit": 4,
+    "topic": "Components & Supplies",
+    "word": "duct",
+    "pos": "n",
+    "ipa": "/dʌkt/",
+    "meaning": "đường dây, đường ống cáp, ống dẫn khí",
+    "example": "Seal any air leaks along the ventilation duct to stop conditioned air from escaping.",
+    "clozeSentence": "Seal any air leaks along the ventilation d___ to stop conditioned air from escaping."
+  },
+  {
+    "id": "u4_10",
+    "unit": 4,
+    "topic": "Components & Supplies",
+    "word": "evaporator",
+    "pos": "n",
+    "ipa": "/ɪˈvæpəreɪtə(r)/",
+    "meaning": "dàn bay hơi, dàn lạnh",
+    "example": "Low refrigerant pressure can cause ice to form on the indoor evaporator surface.",
+    "clozeSentence": "Low refrigerant pressure can cause ice to form on the indoor e_________ surface."
+  },
+  {
+    "id": "u4_11",
+    "unit": 4,
+    "topic": "Components & Supplies",
+    "word": "filter",
+    "pos": "n",
+    "ipa": "/ˈfɪltə(r)/",
+    "meaning": "bộ lọc",
+    "example": "Clean the reusable mesh air filter every two weeks to maintain steady airflow.",
+    "clozeSentence": "Clean the reusable mesh air f_____ every two weeks to maintain steady airflow."
+  },
+  {
+    "id": "u4_12",
+    "unit": 4,
+    "topic": "Components & Supplies",
+    "word": "fin",
+    "pos": "n",
+    "ipa": "/fɪn/",
+    "meaning": "cánh tản nhiệt",
+    "example": "Use a soft brush to straighten any bent aluminum cooling fin on the outdoor unit.",
+    "clozeSentence": "Use a soft brush to straighten any bent aluminum cooling f__ on the outdoor unit."
+  },
+  {
+    "id": "u4_13",
+    "unit": 4,
+    "topic": "Components & Supplies",
+    "word": "hose",
+    "pos": "n",
+    "ipa": "/həʊz/",
+    "meaning": "ống dẫn, ống nước",
+    "example": "Check the rubber water inlet hose behind the washing machine for cracks or bulges.",
+    "clozeSentence": "Check the rubber water inlet h___ behind the washing machine for cracks or bulges."
+  },
+  {
+    "id": "u4_14",
+    "unit": 4,
+    "topic": "Components & Supplies",
+    "word": "laundry load",
+    "pos": "n.p",
+    "ipa": "/ˈlɔːndri ləʊd/",
+    "meaning": "mẻ giặt",
+    "example": "Balancing each laundry load inside the drum stops the washer from shaking violently.",
+    "clozeSentence": "Balancing each l______ l___ inside the drum stops the washer from shaking violently."
+  },
+  {
+    "id": "u4_15",
+    "unit": 4,
+    "topic": "Components & Supplies",
+    "word": "maintenance",
+    "pos": "n",
+    "ipa": "/ˈmeɪntənəns/",
+    "meaning": "sự bảo trì, bảo dưỡng",
+    "wordFamily": [
+      "maintain (v)"
+    ],
+    "example": "Scheduled preventive maintenance extends the service life of HVAC motors and compressors.",
+    "clozeSentence": "Scheduled preventive m__________ extends the service life of HVAC motors and compressors."
+  },
+  {
+    "id": "u4_16",
+    "unit": 4,
+    "topic": "Components & Supplies",
+    "word": "radiator",
+    "pos": "n",
+    "ipa": "/ˈreɪdieɪtə(r)/",
+    "meaning": "bộ tản nhiệt",
+    "example": "Clearing leaves away from the outdoor radiator improves heat transfer during hot summer days.",
+    "clozeSentence": "Clearing leaves away from the outdoor r_______ improves heat transfer during hot summer days."
+  },
+  {
+    "id": "u4_17",
+    "unit": 4,
+    "topic": "Components & Supplies",
+    "word": "refrigerant",
+    "pos": "n",
+    "ipa": "/rɪˈfrɪdʒərənt/",
+    "meaning": "môi chất làm lạnh, ga lạnh",
+    "example": "A certified HVAC technician must recharge the refrigerant after repairing a pinhole leak.",
+    "clozeSentence": "A certified HVAC technician must recharge the r__________ after repairing a pinhole leak."
+  },
+  {
+    "id": "u4_18",
+    "unit": 4,
+    "topic": "Components & Supplies",
+    "word": "sealant",
+    "pos": "n",
+    "ipa": "/ˈsiːlənt/",
+    "meaning": "chất bít, chất trám",
+    "example": "Apply waterproof silicone sealant around the wall sleeve where the AC pipes exit.",
+    "clozeSentence": "Apply waterproof silicone s______ around the wall sleeve where the AC pipes exit."
+  },
+  {
+    "id": "u4_19",
+    "unit": 4,
+    "topic": "Components & Supplies",
+    "word": "stain",
+    "pos": "n",
+    "ipa": "/steɪn/",
+    "meaning": "vết bẩn, vết gỉ",
+    "example": "A rust stain beneath the pump housing often points to a slow gasket leak.",
+    "clozeSentence": "A rust s____ beneath the pump housing often points to a slow gasket leak."
+  },
+  {
+    "id": "u4_20",
+    "unit": 4,
+    "topic": "Components & Supplies",
+    "word": "thermostat",
+    "pos": "n",
+    "ipa": "/ˈθɜːməstæt/",
+    "meaning": "bộ điều nhiệt",
+    "example": "The programmable thermostat automatically switches off the compressor once the room reaches 24 degrees.",
+    "clozeSentence": "The programmable t_________ automatically switches off the compressor once the room reaches 24 degrees."
+  },
+  {
+    "id": "u4_21",
+    "unit": 4,
+    "topic": "Components & Supplies",
+    "word": "vent",
+    "pos": "n",
+    "ipa": "/vent/",
+    "meaning": "cửa thông gió",
+    "example": "Never block the supply air vent with heavy furniture, or indoor cooling will become uneven.",
+    "clozeSentence": "Never block the supply air v___ with heavy furniture, or indoor cooling will become uneven."
+  },
+  {
+    "id": "u4_22",
+    "unit": 4,
+    "topic": "Components & Supplies",
+    "word": "water tap",
+    "pos": "n.p",
+    "ipa": "/ˈwɔːtə(r) tæp/",
+    "meaning": "vòi nước",
+    "example": "Make sure the cold water tap supplying the washing machine is turned all the way open.",
+    "clozeSentence": "Make sure the cold w____ t__ supplying the washing machine is turned all the way open."
+  },
+  {
+    "id": "u4_23",
+    "unit": 4,
+    "topic": "Maintenance Actions",
+    "word": "absorb",
+    "pos": "v",
+    "ipa": "/əbˈzɔːb/",
+    "meaning": "hấp thụ",
+    "example": "Inside the indoor unit, cold refrigerant coils absorb heat from the warm room air.",
+    "clozeSentence": "Inside the indoor unit, cold refrigerant coils a_____ heat from the warm room air."
+  },
+  {
+    "id": "u4_24",
+    "unit": 4,
+    "topic": "Maintenance Actions",
+    "word": "blow",
+    "pos": "v",
+    "ipa": "/bləʊ/",
+    "meaning": "nổ, cháy (cầu chì), thổi gió",
+    "wordFamily": [
+      "blower (n)"
+    ],
+    "example": "An electrical surge can blow the main control fuse or damage the fan relay.",
+    "clozeSentence": "An electrical surge can b___ the main control fuse or damage the fan relay."
+  },
+  {
+    "id": "u4_25",
+    "unit": 4,
+    "topic": "Maintenance Actions",
+    "word": "circulate",
+    "pos": "v",
+    "ipa": "/ˈsɜːkjəleɪt/",
+    "meaning": "lưu thông, tuần hoàn",
+    "example": "Lubricating the fan bearings helps cool air circulate smoothly throughout the workspace.",
+    "clozeSentence": "Lubricating the fan bearings helps cool air c________ smoothly throughout the workspace."
+  },
+  {
+    "id": "u4_26",
+    "unit": 4,
+    "topic": "Maintenance Actions",
+    "word": "clog",
+    "pos": "v",
+    "ipa": "/klɒɡ/",
+    "meaning": "kẹt, tắc, lấp kín",
+    "example": "Lint and detergent residue can quickly clog the washing machine drain pump filter.",
+    "clozeSentence": "Lint and detergent residue can quickly c___ the washing machine drain pump filter."
+  },
+  {
+    "id": "u4_27",
+    "unit": 4,
+    "topic": "Maintenance Actions",
+    "word": "condense",
+    "pos": "v",
+    "ipa": "/kənˈdens/",
+    "meaning": "ngưng tụ",
+    "wordFamily": [
+      "condensate (n)",
+      "condenser (n)"
+    ],
+    "example": "Humid indoor air will condense into water droplets when it touches the cold metal coils.",
+    "clozeSentence": "Humid indoor air will c_______ into water droplets when it touches the cold metal coils."
+  },
+  {
+    "id": "u4_28",
+    "unit": 4,
+    "topic": "Maintenance Actions",
+    "word": "dismantle",
+    "pos": "v",
+    "ipa": "/dɪsˈmæntl/",
+    "meaning": "tháo rời, tháo ra",
+    "example": "Unplug the appliance completely before you dismantle the outer casing to inspect the motor.",
+    "clozeSentence": "Unplug the appliance completely before you d________ the outer casing to inspect the motor."
+  },
+  {
+    "id": "u4_29",
+    "unit": 4,
+    "topic": "Maintenance Actions",
+    "word": "drain",
+    "pos": "v",
+    "ipa": "/dreɪn/",
+    "meaning": "xả nước, thoát nước",
+    "example": "Flush the outlet pipe with clean water so trapped condensation can drain freely.",
+    "clozeSentence": "Flush the outlet pipe with clean water so trapped condensation can d____ freely."
+  },
+  {
+    "id": "u4_30",
+    "unit": 4,
+    "topic": "Maintenance Actions",
+    "word": "kink",
+    "pos": "v",
+    "ipa": "/kɪŋk/",
+    "meaning": "thắt, uốn gập, vặn",
+    "example": "Do not push the washer too close to the wall, or the inlet hose may kink and block water flow.",
+    "clozeSentence": "Do not push the washer too close to the wall, or the inlet hose may k___ and block water flow."
+  },
+  {
+    "id": "u4_31",
+    "unit": 4,
+    "topic": "Maintenance Actions",
+    "word": "lubricate",
+    "pos": "v",
+    "ipa": "/ˈluːbrɪkeɪt/",
+    "meaning": "tra dầu, bôi trơn",
+    "example": "Technicians lubricate the motor shaft bearings during annual servicing to minimize friction noise.",
+    "clozeSentence": "Technicians l________ the motor shaft bearings during annual servicing to minimize friction noise."
+  },
+  {
+    "id": "u4_32",
+    "unit": 4,
+    "topic": "Maintenance Actions",
+    "word": "maintain",
+    "pos": "v",
+    "ipa": "/meɪnˈteɪn/",
+    "meaning": "bảo trì, bảo dưỡng",
+    "wordFamily": [
+      "maintenance (n)"
+    ],
+    "example": "Homeowners should maintain their air conditioners every six months for peak energy efficiency.",
+    "clozeSentence": "Homeowners should m_______ their air conditioners every six months for peak energy efficiency."
+  },
+  {
+    "id": "u4_33",
+    "unit": 4,
+    "topic": "Maintenance Actions",
+    "word": "overhaul",
+    "pos": "v",
+    "ipa": "/ˈəʊvəhɔːl/",
+    "meaning": "đại tu",
+    "example": "After ten years of continuous operation, the plant team decided to overhaul the industrial chiller.",
+    "clozeSentence": "After ten years of continuous operation, the plant team decided to o_______ the industrial chiller."
+  },
+  {
+    "id": "u4_34",
+    "unit": 4,
+    "topic": "Maintenance Actions",
+    "word": "rinse",
+    "pos": "v",
+    "ipa": "/rɪns/",
+    "meaning": "súc, rửa, xả",
+    "example": "Use a low-pressure garden hose to rinse dirt off the outdoor aluminum fins gently.",
+    "clozeSentence": "Use a low-pressure garden hose to r____ dirt off the outdoor aluminum fins gently."
+  },
+  {
+    "id": "u4_35",
+    "unit": 4,
+    "topic": "Maintenance Actions",
+    "word": "tear",
+    "pos": "v",
+    "ipa": "/teə(r)/",
+    "meaning": "rách, đứt",
+    "example": "Excessive vibration or sharp housing edges can tear the rubber door seal over time.",
+    "clozeSentence": "Excessive vibration or sharp housing edges can t___ the rubber door seal over time."
+  },
+  {
+    "id": "u4_36",
+    "unit": 4,
+    "topic": "Maintenance Actions",
+    "word": "wear out",
+    "pos": "v.p",
+    "ipa": "/weə(r) aʊt/",
+    "meaning": "mòn, hao mòn",
+    "example": "Carbon motor brushes gradually wear out after thousands of hours of heavy operation.",
+    "clozeSentence": "Carbon motor brushes gradually w___ o__ after thousands of hours of heavy operation."
+  }
+]

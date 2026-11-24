@@ -1,0 +1,332 @@
+[
+  {
+    "id": "u8_01",
+    "unit": 8,
+    "topic": "Meeting Procedures",
+    "word": "action point",
+    "pos": "n.p",
+    "ipa": "/ˈækʃn pɔɪnt/",
+    "meaning": "đầu việc cần thực hiện, phương hướng hành động",
+    "example": "At the end of the review, the chairperson summarized each action point and assigned deadlines.",
+    "clozeSentence": "At the end of the review, the chairperson summarized each a_____ p____ and assigned deadlines."
+  },
+  {
+    "id": "u8_02",
+    "unit": 8,
+    "topic": "Meeting Procedures",
+    "word": "agenda",
+    "pos": "n",
+    "ipa": "/əˈdʒendə/",
+    "meaning": "chương trình nghị sự",
+    "example": "The next item on the agenda is upgrading the factory's main power distribution switchgear.",
+    "clozeSentence": "The next item on the a_____ is upgrading the factory's main power distribution switchgear."
+  },
+  {
+    "id": "u8_03",
+    "unit": 8,
+    "topic": "Meeting Procedures",
+    "word": "call a meeting",
+    "pos": "v.p",
+    "ipa": "/kɔːl ə ˈmiːtɪŋ/",
+    "meaning": "triệu tập cuộc họp",
+    "example": "The engineering manager decided to call a meeting to resolve recurring overheating faults on line three.",
+    "clozeSentence": "The engineering manager decided to c___ a m______ to resolve recurring overheating faults on line three."
+  },
+  {
+    "id": "u8_04",
+    "unit": 8,
+    "topic": "Meeting Procedures",
+    "word": "chairperson",
+    "pos": "n",
+    "ipa": "/ˈtʃeəpɜːsn/",
+    "meaning": "chủ tịch, chủ tọa (cuộc họp)",
+    "synonyms": [
+      "chairman",
+      "chairwoman"
+    ],
+    "example": "A good chairperson keeps the technical discussion focused and ensures every attendee can share ideas.",
+    "clozeSentence": "A good c__________ keeps the technical discussion focused and ensures every attendee can share ideas."
+  },
+  {
+    "id": "u8_05",
+    "unit": 8,
+    "topic": "Meeting Procedures",
+    "word": "initial",
+    "pos": "n",
+    "ipa": "/ɪˈnɪʃl/",
+    "meaning": "chữ cái đầu (tên viết tắt); ban đầu",
+    "example": "Instead of printing the full company name, we can put each initial inside the new circuit-style logo.",
+    "clozeSentence": "Instead of printing the full company name, we can put each i______ inside the new circuit-style logo."
+  },
+  {
+    "id": "u8_06",
+    "unit": 8,
+    "topic": "Meeting Procedures",
+    "word": "interrupt",
+    "pos": "v",
+    "ipa": "/ˌɪntəˈrʌpt/",
+    "meaning": "ngắt lời, chen ngang",
+    "wordFamily": [
+      "interruption (n)"
+    ],
+    "example": "Sorry to interrupt you, but we must cut power to the outdoor unit before rinsing the coils.",
+    "clozeSentence": "Sorry to i________ you, but we must cut power to the outdoor unit before rinsing the coils."
+  },
+  {
+    "id": "u8_07",
+    "unit": 8,
+    "topic": "Meeting Procedures",
+    "word": "interruption",
+    "pos": "n",
+    "ipa": "/ˌɪntəˈrʌpʃn/",
+    "meaning": "sự ngắt lời",
+    "wordFamily": [
+      "interrupt (v)"
+    ],
+    "example": "Please pardon the brief interruption while I verify the grounding specification for the capacitor bank.",
+    "clozeSentence": "Please pardon the brief i___________ while I verify the grounding specification for the capacitor bank."
+  },
+  {
+    "id": "u8_08",
+    "unit": 8,
+    "topic": "Meeting Procedures",
+    "word": "irrelevant",
+    "pos": "adj",
+    "ipa": "/ɪˈreləvənt/",
+    "meaning": "không liên quan, không thích hợp",
+    "wordFamily": [
+      "relevant (adj)"
+    ],
+    "example": "To keep the meeting on schedule, please avoid irrelevant topics that do not affect the HVAC upgrade.",
+    "clozeSentence": "To keep the meeting on schedule, please avoid i_________ topics that do not affect the HVAC upgrade."
+  },
+  {
+    "id": "u8_09",
+    "unit": 8,
+    "topic": "Meeting Procedures",
+    "word": "issue",
+    "pos": "n",
+    "ipa": "/ˈɪʃuː/",
+    "meaning": "vấn đề (cần thảo luận, đang tranh cãi)",
+    "synonyms": [
+      "problem",
+      "matter"
+    ],
+    "example": "Battery overheating became a critical issue that required an urgent recall and engineering review.",
+    "clozeSentence": "Battery overheating became a critical i____ that required an urgent recall and engineering review."
+  },
+  {
+    "id": "u8_10",
+    "unit": 8,
+    "topic": "Meeting Procedures",
+    "word": "minutes",
+    "pos": "n",
+    "ipa": "/ˈmɪnɪts/",
+    "meaning": "biên bản cuộc họp",
+    "example": "Could you take the minutes during today's maintenance review so everyone receives the decisions afterward?",
+    "clozeSentence": "Could you take the m______ during today's maintenance review so everyone receives the decisions afterward?"
+  },
+  {
+    "id": "u8_11",
+    "unit": 8,
+    "topic": "Meeting Procedures",
+    "word": "participant",
+    "pos": "n",
+    "ipa": "/pɑːˈtɪsɪpənt/",
+    "meaning": "thành viên, người tham gia (cuộc họp)",
+    "synonyms": [
+      "attendee"
+    ],
+    "wordFamily": [
+      "participate (v)",
+      "participation (n)"
+    ],
+    "example": "Each participant received the electrical inspection report two days before the design review.",
+    "clozeSentence": "Each p__________ received the electrical inspection report two days before the design review."
+  },
+  {
+    "id": "u8_12",
+    "unit": 8,
+    "topic": "Meeting Procedures",
+    "word": "reach a decision",
+    "pos": "v.p",
+    "ipa": "/riːtʃ ə dɪˈsɪʒn/",
+    "meaning": "đi đến kết luận, đi đến quyết định",
+    "synonyms": [
+      "make a decision",
+      "decide"
+    ],
+    "example": "After comparing three PLC vendors, the committee was finally able to reach a decision on the supplier.",
+    "clozeSentence": "After comparing three PLC vendors, the committee was finally able to r____ a d_______ on the supplier."
+  },
+  {
+    "id": "u8_13",
+    "unit": 8,
+    "topic": "Technical Discussion",
+    "word": "changeover",
+    "pos": "n",
+    "ipa": "/ˈtʃeɪndʒəʊvə(r)/",
+    "meaning": "sự điều chỉnh, sự thay đổi (thiết bị, hệ thống)",
+    "example": "The changeover to the new automated air-conditioning system required retraining all building technicians.",
+    "clozeSentence": "The c_________ to the new automated air-conditioning system required retraining all building technicians."
+  },
+  {
+    "id": "u8_14",
+    "unit": 8,
+    "topic": "Technical Discussion",
+    "word": "clog",
+    "pos": "v",
+    "ipa": "/klɒɡ/",
+    "meaning": "làm tắc, nghẽn",
+    "wordFamily": [
+      "clogged (adj)"
+    ],
+    "example": "Dust and algae can easily clog the air-conditioner drain pipe if routine cleaning is skipped.",
+    "clozeSentence": "Dust and algae can easily c___ the air-conditioner drain pipe if routine cleaning is skipped."
+  },
+  {
+    "id": "u8_15",
+    "unit": 8,
+    "topic": "Technical Discussion",
+    "word": "coil",
+    "pos": "n",
+    "ipa": "/kɔɪl/",
+    "meaning": "cuộn dây, dàn ống xoắn",
+    "example": "Rinsing the outdoor condenser coil regularly improves heat exchange and lowers compressor load.",
+    "clozeSentence": "Rinsing the outdoor condenser c___ regularly improves heat exchange and lowers compressor load."
+  },
+  {
+    "id": "u8_16",
+    "unit": 8,
+    "topic": "Technical Discussion",
+    "word": "condenser",
+    "pos": "n",
+    "ipa": "/kənˈdensə(r)/",
+    "meaning": "thiết bị ngưng tụ, dàn ngưng",
+    "wordFamily": [
+      "condense (v)",
+      "condensate (n)"
+    ],
+    "example": "During the inspection, we checked the rooftop condenser for bent fins and restricted airflow.",
+    "clozeSentence": "During the inspection, we checked the rooftop c________ for bent fins and restricted airflow."
+  },
+  {
+    "id": "u8_17",
+    "unit": 8,
+    "topic": "Technical Discussion",
+    "word": "contract out",
+    "pos": "v.p",
+    "ipa": "/ˈkɒntrækt aʊt/",
+    "meaning": "thuê ngoài, giao khoán (SGK: rút lui, rút khỏi hợp đồng)",
+    "synonyms": [
+      "outsource"
+    ],
+    "example": "Should our internal team install the new server cabling, or should we contract out the work to specialists?",
+    "clozeSentence": "Should our internal team install the new server cabling, or should we c_______ o__ the work to specialists?"
+  },
+  {
+    "id": "u8_18",
+    "unit": 8,
+    "topic": "Technical Discussion",
+    "word": "drain line",
+    "pos": "n.p",
+    "ipa": "/ˈdreɪn laɪn/",
+    "meaning": "ống thoát nước",
+    "example": "Pouring clean water down the drain line helps verify that condensate flows smoothly from the indoor unit.",
+    "clozeSentence": "Pouring clean water down the d____ l___ helps verify that condensate flows smoothly from the indoor unit."
+  },
+  {
+    "id": "u8_19",
+    "unit": 8,
+    "topic": "Technical Discussion",
+    "word": "expand",
+    "pos": "v",
+    "ipa": "/ɪkˈspænd/",
+    "meaning": "mở rộng, khai triển",
+    "wordFamily": [
+      "expansion (n)"
+    ],
+    "example": "The plant plans to expand its solar power capacity by adding two new inverter arrays next year.",
+    "clozeSentence": "The plant plans to e_____ its solar power capacity by adding two new inverter arrays next year."
+  },
+  {
+    "id": "u8_20",
+    "unit": 8,
+    "topic": "Technical Discussion",
+    "word": "flexible",
+    "pos": "adj",
+    "ipa": "/ˈfleksəbl/",
+    "meaning": "linh động, linh hoạt",
+    "wordFamily": [
+      "flexibility (n)"
+    ],
+    "example": "The maintenance team proposed a more flexible service schedule to minimize factory production downtime.",
+    "clozeSentence": "The maintenance team proposed a more f_______ service schedule to minimize factory production downtime."
+  },
+  {
+    "id": "u8_21",
+    "unit": 8,
+    "topic": "Technical Discussion",
+    "word": "humidifier",
+    "pos": "n",
+    "ipa": "/hjuːˈmɪdɪfaɪə(r)/",
+    "meaning": "bộ làm ẩm, máy tạo ẩm",
+    "wordFamily": [
+      "humid (adj)",
+      "humidity (n)"
+    ],
+    "example": "Remember to switch off the humidifier and inspect the water reservoir before cleaning the indoor unit.",
+    "clozeSentence": "Remember to switch off the h_________ and inspect the water reservoir before cleaning the indoor unit."
+  },
+  {
+    "id": "u8_22",
+    "unit": 8,
+    "topic": "Technical Discussion",
+    "word": "implementation",
+    "pos": "n",
+    "ipa": "/ˌɪmplɪmenˈteɪʃn/",
+    "meaning": "sự thực hiện, sự thi công, triển khai",
+    "wordFamily": [
+      "implement (v)"
+    ],
+    "example": "Next on the agenda is the phased implementation of smart energy meters across all workshops.",
+    "clozeSentence": "Next on the agenda is the phased i_____________ of smart energy meters across all workshops."
+  },
+  {
+    "id": "u8_23",
+    "unit": 8,
+    "topic": "Technical Discussion",
+    "word": "polish",
+    "pos": "v",
+    "ipa": "/ˈpɒlɪʃ/",
+    "meaning": "lau, đánh bóng",
+    "example": "After wiping the washing machine filter, use a soft cloth to polish the outer stainless-steel casing.",
+    "clozeSentence": "After wiping the washing machine filter, use a soft cloth to p_____ the outer stainless-steel casing."
+  },
+  {
+    "id": "u8_24",
+    "unit": 8,
+    "topic": "Technical Discussion",
+    "word": "scheme",
+    "pos": "n",
+    "ipa": "/skiːm/",
+    "meaning": "kế hoạch, phương án, sơ đồ",
+    "synonyms": [
+      "plan",
+      "program"
+    ],
+    "example": "The proposed preventive maintenance scheme looks simple to follow and cuts annual repair costs by 20%.",
+    "clozeSentence": "The proposed preventive maintenance s_____ looks simple to follow and cuts annual repair costs by 20%."
+  },
+  {
+    "id": "u8_25",
+    "unit": 8,
+    "topic": "Technical Discussion",
+    "word": "thermostat",
+    "pos": "n",
+    "ipa": "/ˈθɜːməstæt/",
+    "meaning": "bộ điều nhiệt, bộ điều chỉnh nhiệt",
+    "example": "We need to verify that the temperature shown on the thermostat matches the actual room temperature.",
+    "clozeSentence": "We need to verify that the temperature shown on the t_________ matches the actual room temperature."
+  }
+]

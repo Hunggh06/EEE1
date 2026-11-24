@@ -1,0 +1,350 @@
+[
+  {
+    "id": "u5_01",
+    "unit": 5,
+    "topic": "Handling Complaints",
+    "word": "activation key",
+    "pos": "n.p",
+    "ipa": "/ˌæktɪˈveɪʃn kiː/",
+    "meaning": "mã kích hoạt",
+    "example": "The customer called technical support because the activation key for the PLC software did not seem to work.",
+    "clozeSentence": "The customer called technical support because the a_________ k__ for the PLC software did not seem to work."
+  },
+  {
+    "id": "u5_02",
+    "unit": 5,
+    "topic": "Handling Complaints",
+    "word": "apologise",
+    "pos": "v",
+    "ipa": "/əˈpɒlədʒaɪz/",
+    "meaning": "xin lỗi",
+    "synonyms": [
+      "apologize"
+    ],
+    "wordFamily": [
+      "apology (n)"
+    ],
+    "example": "We would like to apologise for sending the wrong power supply module to your factory.",
+    "clozeSentence": "We would like to a________ for sending the wrong power supply module to your factory."
+  },
+  {
+    "id": "u5_03",
+    "unit": 5,
+    "topic": "Handling Complaints",
+    "word": "apology",
+    "pos": "n",
+    "ipa": "/əˈpɒlədʒi/",
+    "meaning": "sự xin lỗi, lời xin lỗi",
+    "wordFamily": [
+      "apologise (v)",
+      "apologize (v)"
+    ],
+    "example": "Our sales manager sent a formal email of apology after the delayed delivery of the inverters.",
+    "clozeSentence": "Our sales manager sent a formal email of a______ after the delayed delivery of the inverters."
+  },
+  {
+    "id": "u5_04",
+    "unit": 5,
+    "topic": "Handling Complaints",
+    "word": "customer service",
+    "pos": "n.p",
+    "ipa": "/ˌkʌstəmə ˈsɜːvɪs/",
+    "meaning": "dịch vụ khách hàng, chăm sóc khách hàng",
+    "example": "Good customer service helps an electronics manufacturer build long-term trust with industrial clients.",
+    "clozeSentence": "Good c_______ s______ helps an electronics manufacturer build long-term trust with industrial clients."
+  },
+  {
+    "id": "u5_05",
+    "unit": 5,
+    "topic": "Handling Complaints",
+    "word": "deal",
+    "pos": "v",
+    "ipa": "/diːl/",
+    "meaning": "giải quyết, đối phó (thường đi với with)",
+    "synonyms": [
+      "handle",
+      "resolve"
+    ],
+    "example": "Help-desk engineers must learn how to deal with technical complaints calmly over the phone.",
+    "clozeSentence": "Help-desk engineers must learn how to d___ with technical complaints calmly over the phone."
+  },
+  {
+    "id": "u5_06",
+    "unit": 5,
+    "topic": "Handling Complaints",
+    "word": "detail",
+    "pos": "n",
+    "ipa": "/ˈdiːteɪl/",
+    "meaning": "chi tiết",
+    "wordFamily": [
+      "detailed (adj)"
+    ],
+    "example": "Please include every serial number detail in your warranty claim so we can inspect the defective unit.",
+    "clozeSentence": "Please include every serial number d_____ in your warranty claim so we can inspect the defective unit."
+  },
+  {
+    "id": "u5_07",
+    "unit": 5,
+    "topic": "Handling Complaints",
+    "word": "evidence",
+    "pos": "n",
+    "ipa": "/ˈevɪdəns/",
+    "meaning": "bằng chứng, chứng cứ",
+    "synonyms": [
+      "proof"
+    ],
+    "wordFamily": [
+      "evident (adj)"
+    ],
+    "example": "The technician asked the buyer to attach a photo of the cracked display as evidence of shipping damage.",
+    "clozeSentence": "The technician asked the buyer to attach a photo of the cracked display as e_______ of shipping damage."
+  },
+  {
+    "id": "u5_08",
+    "unit": 5,
+    "topic": "Handling Complaints",
+    "word": "gesture",
+    "pos": "n",
+    "ipa": "/ˈdʒestʃə(r)/",
+    "meaning": "cử chỉ, hành động (để tỏ thiện ý)",
+    "example": "As a gesture of goodwill, the electronics store offered a free replacement adapter with the repaired laptop.",
+    "clozeSentence": "As a g______ of goodwill, the electronics store offered a free replacement adapter with the repaired laptop."
+  },
+  {
+    "id": "u5_09",
+    "unit": 5,
+    "topic": "Handling Complaints",
+    "word": "goodwill",
+    "pos": "n",
+    "ipa": "/ˌɡʊdˈwɪl/",
+    "meaning": "thiện ý, thiện chí",
+    "example": "Providing a 10% discount on the next component order is a common goodwill offer after a delivery mistake.",
+    "clozeSentence": "Providing a 10% discount on the next component order is a common g_______ offer after a delivery mistake."
+  },
+  {
+    "id": "u5_10",
+    "unit": 5,
+    "topic": "Handling Complaints",
+    "word": "handle",
+    "pos": "v",
+    "ipa": "/ˈhændl/",
+    "meaning": "giải quyết, xử lý",
+    "synonyms": [
+      "deal with",
+      "manage"
+    ],
+    "example": "When you handle complaints about faulty circuit boards, always listen carefully to the user first.",
+    "clozeSentence": "When you h_____ complaints about faulty circuit boards, always listen carefully to the user first."
+  },
+  {
+    "id": "u5_11",
+    "unit": 5,
+    "topic": "Handling Complaints",
+    "word": "inconvenience",
+    "pos": "n",
+    "ipa": "/ˌɪnkənˈviːniəns/",
+    "meaning": "sự bất tiện",
+    "wordFamily": [
+      "inconvenient (adj)"
+    ],
+    "example": "We are truly sorry for the inconvenience caused by the missing sensor cable in your shipment.",
+    "clozeSentence": "We are truly sorry for the i____________ caused by the missing sensor cable in your shipment."
+  },
+  {
+    "id": "u5_12",
+    "unit": 5,
+    "topic": "Handling Complaints",
+    "word": "investigation",
+    "pos": "n",
+    "ipa": "/ɪnˌvestɪˈɡeɪʃn/",
+    "meaning": "sự điều tra, quá trình kiểm tra xác minh",
+    "wordFamily": [
+      "investigate (v)"
+    ],
+    "example": "The quality team opened an investigation into why three power transformers failed the insulation test.",
+    "clozeSentence": "The quality team opened an i____________ into why three power transformers failed the insulation test."
+  },
+  {
+    "id": "u5_13",
+    "unit": 5,
+    "topic": "Handling Complaints",
+    "word": "query",
+    "pos": "n",
+    "ipa": "/ˈkwɪəri/",
+    "meaning": "thắc mắc, câu hỏi",
+    "synonyms": [
+      "question",
+      "inquiry"
+    ],
+    "example": "Please do not hesitate to contact our support engineer if you have a query about installation.",
+    "clozeSentence": "Please do not hesitate to contact our support engineer if you have a q____ about installation."
+  },
+  {
+    "id": "u5_14",
+    "unit": 5,
+    "topic": "Handling Complaints",
+    "word": "summarise",
+    "pos": "v",
+    "ipa": "/ˈsʌməraɪz/",
+    "meaning": "tóm tắt",
+    "synonyms": [
+      "summarize"
+    ],
+    "wordFamily": [
+      "summary (n)"
+    ],
+    "example": "Before ending the support call, you should summarise the agreed replacement steps for the customer.",
+    "clozeSentence": "Before ending the support call, you should s________ the agreed replacement steps for the customer."
+  },
+  {
+    "id": "u5_15",
+    "unit": 5,
+    "topic": "Handling Complaints",
+    "word": "sympathise",
+    "pos": "v",
+    "ipa": "/ˈsɪmpəθaɪz/",
+    "meaning": "thông cảm, đồng tình",
+    "synonyms": [
+      "sympathize"
+    ],
+    "wordFamily": [
+      "sympathy (n)",
+      "sympathetic (adj)"
+    ],
+    "example": "Support staff need to sympathise with frustrated clients whose industrial controllers stop running unexpectedly.",
+    "clozeSentence": "Support staff need to s_________ with frustrated clients whose industrial controllers stop running unexpectedly."
+  },
+  {
+    "id": "u5_16",
+    "unit": 5,
+    "topic": "Handling Complaints",
+    "word": "sympathy",
+    "pos": "n",
+    "ipa": "/ˈsɪmpəθi/",
+    "meaning": "sự đồng tình, sự thông cảm",
+    "wordFamily": [
+      "sympathise (v)",
+      "sympathize (v)",
+      "sympathetic (adj)"
+    ],
+    "example": "Showing genuine sympathy during a complaint call helps calm an upset customer before troubleshooting begins.",
+    "clozeSentence": "Showing genuine s_______ during a complaint call helps calm an upset customer before troubleshooting begins."
+  },
+  {
+    "id": "u5_17",
+    "unit": 5,
+    "topic": "Orders & Parts",
+    "word": "blade",
+    "pos": "n",
+    "ipa": "/bleɪd/",
+    "meaning": "lưỡi, cánh (cánh quạt, cánh tua-bin)",
+    "example": "The inspection report noted a bent cooling fan blade inside the variable-frequency drive enclosure.",
+    "clozeSentence": "The inspection report noted a bent cooling fan b____ inside the variable-frequency drive enclosure."
+  },
+  {
+    "id": "u5_18",
+    "unit": 5,
+    "topic": "Orders & Parts",
+    "word": "charge",
+    "pos": "v",
+    "ipa": "/tʃɑːdʒ/",
+    "meaning": "tính giá, tính phí",
+    "wordFamily": [
+      "charge (n)"
+    ],
+    "example": "Our billing system appears to charge your account for four voltage regulators instead of three.",
+    "clozeSentence": "Our billing system appears to c_____ your account for four voltage regulators instead of three."
+  },
+  {
+    "id": "u5_19",
+    "unit": 5,
+    "topic": "Orders & Parts",
+    "word": "credit note",
+    "pos": "n.p",
+    "ipa": "/ˈkredɪt nəʊt/",
+    "meaning": "giấy báo có, phiếu tín dụng (cho phép đổi món hàng khác ngang giá khi trả lại hàng)",
+    "example": "The supplier issued a credit note so our lab could exchange the incorrect relays for higher-rated models.",
+    "clozeSentence": "The supplier issued a c_____ n___ so our lab could exchange the incorrect relays for higher-rated models."
+  },
+  {
+    "id": "u5_20",
+    "unit": 5,
+    "topic": "Orders & Parts",
+    "word": "disc rotor",
+    "pos": "n.p",
+    "ipa": "/ˈdɪsk rəʊtə(r)/",
+    "meaning": "đĩa rô-tô (đĩa thép trong phanh đĩa quay cùng trục/bánh xe)",
+    "synonyms": [
+      "rotor disc"
+    ],
+    "example": "There seems to be a missing disc rotor in the spare-parts crate delivered to the maintenance bay.",
+    "clozeSentence": "There seems to be a missing d___ r____ in the spare-parts crate delivered to the maintenance bay."
+  },
+  {
+    "id": "u5_21",
+    "unit": 5,
+    "topic": "Orders & Parts",
+    "word": "invoice",
+    "pos": "n",
+    "ipa": "/ˈɪnvɔɪs/",
+    "meaning": "hóa đơn, danh đơn hàng gửi (liệt kê hàng hóa hoặc dịch vụ cùng giá cả)",
+    "example": "You can find the purchase order reference number at the top of the invoice we emailed yesterday.",
+    "clozeSentence": "You can find the purchase order reference number at the top of the i______ we emailed yesterday."
+  },
+  {
+    "id": "u5_22",
+    "unit": 5,
+    "topic": "Orders & Parts",
+    "word": "reduction",
+    "pos": "n",
+    "ipa": "/rɪˈdʌkʃn/",
+    "meaning": "sự giảm giá, mức giảm",
+    "synonyms": [
+      "discount"
+    ],
+    "wordFamily": [
+      "reduce (v)"
+    ],
+    "example": "To compensate for the late arrival of the oscilloscopes, the vendor agreed to a 15% price reduction.",
+    "clozeSentence": "To compensate for the late arrival of the oscilloscopes, the vendor agreed to a 15% price r________."
+  },
+  {
+    "id": "u5_23",
+    "unit": 5,
+    "topic": "Orders & Parts",
+    "word": "shipment",
+    "pos": "n",
+    "ipa": "/ˈʃɪpmənt/",
+    "meaning": "sự chuyển hàng, lô hàng",
+    "wordFamily": [
+      "ship (v)"
+    ],
+    "example": "The second shipment of lithium battery packs arrived intact with all protective seals verified.",
+    "clozeSentence": "The second s_______ of lithium battery packs arrived intact with all protective seals verified."
+  },
+  {
+    "id": "u5_24",
+    "unit": 5,
+    "topic": "Orders & Parts",
+    "word": "transaction",
+    "pos": "n",
+    "ipa": "/trænˈzækʃn/",
+    "meaning": "sự giao dịch",
+    "wordFamily": [
+      "transact (v)"
+    ],
+    "example": "Please keep the transaction ID from your online payment in case you need a full refund later.",
+    "clozeSentence": "Please keep the t__________ ID from your online payment in case you need a full refund later."
+  },
+  {
+    "id": "u5_25",
+    "unit": 5,
+    "topic": "Orders & Parts",
+    "word": "vane",
+    "pos": "n",
+    "ipa": "/veɪn/",
+    "meaning": "cánh quạt, cánh dẫn (của quạt gió hoặc động cơ máy bay)",
+    "example": "We had to return the cooling assembly because the factory installed the wrong type of airflow vane.",
+    "clozeSentence": "We had to return the cooling assembly because the factory installed the wrong type of airflow v___."
+  }
+]

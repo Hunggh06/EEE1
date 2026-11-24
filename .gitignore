@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.tmp/
+.env
+.env.*
+!.env.example
+*.pdf
+*.docx
+*.wma
+tsconfig.tsbuildinfo

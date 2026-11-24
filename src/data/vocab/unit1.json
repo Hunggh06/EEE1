@@ -1,0 +1,534 @@
+[
+  {
+    "id": "u1_01",
+    "unit": 1,
+    "topic": "Company Background",
+    "word": "competitor",
+    "pos": "n",
+    "ipa": "/kəmˈpetɪtə(r)/",
+    "meaning": "đối thủ cạnh tranh",
+    "example": "Samsung is a major competitor of Apple in the global smartphone market.",
+    "clozeSentence": "Samsung is a major c_________ of Apple in the global smartphone market."
+  },
+  {
+    "id": "u1_02",
+    "unit": 1,
+    "topic": "Company Background",
+    "word": "consumer electronics",
+    "pos": "n.p",
+    "ipa": "/kənˈsjuːmər ɪlekˈtrɒnɪks/",
+    "meaning": "đồ điện tử gia dụng, điện tử tiêu dùng",
+    "synonyms": [
+      "CE"
+    ],
+    "example": "Sony and LG produce a wide range of consumer electronics such as smart TVs and audio systems.",
+    "clozeSentence": "Sony and LG produce a wide range of c_______ e__________ such as smart TVs and audio systems."
+  },
+  {
+    "id": "u1_03",
+    "unit": 1,
+    "topic": "Company Background",
+    "word": "corporation",
+    "pos": "n",
+    "ipa": "/ˌkɔːpəˈreɪʃn/",
+    "meaning": "tập đoàn",
+    "example": "Intel is a multinational corporation famous for designing computer processors.",
+    "clozeSentence": "Intel is a multinational c__________ famous for designing computer processors."
+  },
+  {
+    "id": "u1_04",
+    "unit": 1,
+    "topic": "Company Background",
+    "word": "employ",
+    "pos": "v",
+    "ipa": "/ɪmˈplɔɪ/",
+    "meaning": "thuê, tuyển dụng",
+    "wordFamily": [
+      "employee (n)"
+    ],
+    "example": "Large semiconductor factories employ thousands of electrical engineers and technicians.",
+    "clozeSentence": "Large semiconductor factories e_____ thousands of electrical engineers and technicians."
+  },
+  {
+    "id": "u1_05",
+    "unit": 1,
+    "topic": "Company Background",
+    "word": "employee",
+    "pos": "n",
+    "ipa": "/ɪmˈplɔɪiː/",
+    "meaning": "người làm công, nhân viên",
+    "wordFamily": [
+      "employ (v)"
+    ],
+    "example": "Every new employee in the electronics lab must complete a safety training course.",
+    "clozeSentence": "Every new e_______ in the electronics lab must complete a safety training course."
+  },
+  {
+    "id": "u1_06",
+    "unit": 1,
+    "topic": "Company Background",
+    "word": "found",
+    "pos": "v",
+    "ipa": "/faʊnd/",
+    "meaning": "thành lập, sáng lập",
+    "synonyms": [
+      "establish"
+    ],
+    "example": "Masaru Ibuka and Akio Morita decided to found Sony in Tokyo in 1946.",
+    "clozeSentence": "Masaru Ibuka and Akio Morita decided to f____ Sony in Tokyo in 1946."
+  },
+  {
+    "id": "u1_07",
+    "unit": 1,
+    "topic": "Company Background",
+    "word": "establish",
+    "pos": "v",
+    "ipa": "/ɪˈstæblɪʃ/",
+    "meaning": "thành lập, thiết lập",
+    "synonyms": [
+      "found"
+    ],
+    "example": "The founders wanted to establish an innovative electronics enterprise in Japan.",
+    "clozeSentence": "The founders wanted to e________ an innovative electronics enterprise in Japan."
+  },
+  {
+    "id": "u1_08",
+    "unit": 1,
+    "topic": "Company Background",
+    "word": "goal",
+    "pos": "n",
+    "ipa": "/ɡəʊl/",
+    "meaning": "mục tiêu",
+    "synonyms": [
+      "objective"
+    ],
+    "example": "Our engineering department has a clear goal to reduce circuit power consumption by 20 percent.",
+    "clozeSentence": "Our engineering department has a clear g___ to reduce circuit power consumption by 20 percent."
+  },
+  {
+    "id": "u1_09",
+    "unit": 1,
+    "topic": "Company Background",
+    "word": "objective",
+    "pos": "n",
+    "ipa": "/əbˈdʒektɪv/",
+    "meaning": "mục tiêu",
+    "synonyms": [
+      "goal"
+    ],
+    "example": "A primary objective of the R&D team is to build faster and more reliable microchips.",
+    "clozeSentence": "A primary o________ of the R&D team is to build faster and more reliable microchips."
+  },
+  {
+    "id": "u1_10",
+    "unit": 1,
+    "topic": "Company Background",
+    "word": "graphics processing unit",
+    "pos": "n.p",
+    "ipa": "/ˈɡræfɪks ˈprəʊsesɪŋ ˈjuːnɪt/",
+    "meaning": "bộ xử lý đồ họa",
+    "synonyms": [
+      "GPU"
+    ],
+    "example": "Modern gaming laptops require a powerful graphics processing unit to render high-resolution images.",
+    "clozeSentence": "Modern gaming laptops require a powerful g_______ p_________ u___ to render high-resolution images."
+  },
+  {
+    "id": "u1_11",
+    "unit": 1,
+    "topic": "Company Background",
+    "word": "headquarter",
+    "pos": "v",
+    "ipa": "/ˌhedˈkwɔːtə(r)/",
+    "meaning": "đặt trụ sở",
+    "wordFamily": [
+      "headquarters (n)",
+      "head office (n)"
+    ],
+    "example": "Many global tech giants choose to headquarter their Asian branches in Singapore or Tokyo.",
+    "clozeSentence": "Many global tech giants choose to h__________ their Asian branches in Singapore or Tokyo."
+  },
+  {
+    "id": "u1_12",
+    "unit": 1,
+    "topic": "Company Background",
+    "word": "headquarters",
+    "pos": "n",
+    "ipa": "/hedˈkwɔːtəz/",
+    "meaning": "trụ sở chính",
+    "synonyms": [
+      "head office"
+    ],
+    "wordFamily": [
+      "headquarter (v)"
+    ],
+    "example": "Samsung Electronics has its global headquarters in Suwon, South Korea.",
+    "clozeSentence": "Samsung Electronics has its global h___________ in Suwon, South Korea."
+  },
+  {
+    "id": "u1_13",
+    "unit": 1,
+    "topic": "Company Background",
+    "word": "home appliance",
+    "pos": "n.p",
+    "ipa": "/həʊm əˈplaɪəns/",
+    "meaning": "thiết bị gia dụng",
+    "example": "An inverter air conditioner is an energy-saving home appliance used in many households.",
+    "clozeSentence": "An inverter air conditioner is an energy-saving h___ a________ used in many households."
+  },
+  {
+    "id": "u1_14",
+    "unit": 1,
+    "topic": "Company Background",
+    "word": "mission",
+    "pos": "n",
+    "ipa": "/ˈmɪʃn/",
+    "meaning": "sứ mệnh, nhiệm vụ",
+    "example": "The company's mission is to develop clean energy technologies that improve daily life.",
+    "clozeSentence": "The company's m______ is to develop clean energy technologies that improve daily life."
+  },
+  {
+    "id": "u1_15",
+    "unit": 1,
+    "topic": "Company Background",
+    "word": "multinational",
+    "pos": "adj",
+    "ipa": "/ˌmʌltiˈnæʃnəl/",
+    "meaning": "đa quốc gia",
+    "example": "Siemens is a multinational engineering company operating in more than 190 countries.",
+    "clozeSentence": "Siemens is a m____________ engineering company operating in more than 190 countries."
+  },
+  {
+    "id": "u1_16",
+    "unit": 1,
+    "topic": "Company Background",
+    "word": "operate",
+    "pos": "v",
+    "ipa": "/ˈɒpəreɪt/",
+    "meaning": "hoạt động, vận hành",
+    "wordFamily": [
+      "operation (n)"
+    ],
+    "example": "Panasonic plants operate through several divisions, including appliances and automotive systems.",
+    "clozeSentence": "Panasonic plants o______ through several divisions, including appliances and automotive systems."
+  },
+  {
+    "id": "u1_17",
+    "unit": 1,
+    "topic": "Company Background",
+    "word": "operation",
+    "pos": "n",
+    "ipa": "/ˌɒpəˈreɪʃn/",
+    "meaning": "sự hoạt động, hoạt động kinh doanh",
+    "wordFamily": [
+      "operate (v)"
+    ],
+    "example": "The new chip fabrication operation in Bac Ninh runs 24 hours a day.",
+    "clozeSentence": "The new chip fabrication o________ in Bac Ninh runs 24 hours a day."
+  },
+  {
+    "id": "u1_18",
+    "unit": 1,
+    "topic": "Company Background",
+    "word": "revenue",
+    "pos": "n",
+    "ipa": "/ˈrevənjuː/",
+    "meaning": "doanh thu",
+    "example": "Toshiba reported an annual revenue of more than 40 billion dollars from its electronics divisions.",
+    "clozeSentence": "Toshiba reported an annual r______ of more than 40 billion dollars from its electronics divisions."
+  },
+  {
+    "id": "u1_19",
+    "unit": 1,
+    "topic": "Company Background",
+    "word": "segment",
+    "pos": "n",
+    "ipa": "/ˈseɡmənt/",
+    "meaning": "phân khúc (thị trường), mảng kinh doanh",
+    "example": "Industrial automation is the fastest-growing segment of the corporation this year.",
+    "clozeSentence": "Industrial automation is the fastest-growing s______ of the corporation this year."
+  },
+  {
+    "id": "u1_20",
+    "unit": 1,
+    "topic": "Company Background",
+    "word": "semiconductor",
+    "pos": "n",
+    "ipa": "/ˌsemikənˈdʌktə(r)/",
+    "meaning": "chất bán dẫn",
+    "example": "Silicon is the most common semiconductor material used to manufacture integrated circuits.",
+    "clozeSentence": "Silicon is the most common s____________ material used to manufacture integrated circuits."
+  },
+  {
+    "id": "u1_21",
+    "unit": 1,
+    "topic": "Company Background",
+    "word": "specialize",
+    "pos": "v",
+    "ipa": "/ˈspeʃəlaɪz/",
+    "meaning": "chuyên (về một lĩnh vực)",
+    "wordFamily": [
+      "specialization (n)"
+    ],
+    "example": "Canon and Sony specialize in optical and imaging solutions for global consumers.",
+    "clozeSentence": "Canon and Sony s_________ in optical and imaging solutions for global consumers."
+  },
+  {
+    "id": "u1_22",
+    "unit": 1,
+    "topic": "Company Background",
+    "word": "specialization",
+    "pos": "n",
+    "ipa": "/ˌspeʃəlaɪˈzeɪʃn/",
+    "meaning": "chuyên ngành, lĩnh vực chuyên môn",
+    "wordFamily": [
+      "specialize (v)"
+    ],
+    "example": "Power electronics is a key specialization for students at Hanoi University of Industry.",
+    "clozeSentence": "Power electronics is a key s_____________ for students at Hanoi University of Industry."
+  },
+  {
+    "id": "u1_23",
+    "unit": 1,
+    "topic": "Company Background",
+    "word": "subsidiary",
+    "pos": "n",
+    "ipa": "/səbˈsɪdiəri/",
+    "meaning": "công ty con",
+    "synonyms": [
+      "affiliated company"
+    ],
+    "example": "Samsung Display operates as a major subsidiary of Samsung Electronics.",
+    "clozeSentence": "Samsung Display operates as a major s_________ of Samsung Electronics."
+  },
+  {
+    "id": "u1_24",
+    "unit": 1,
+    "topic": "Company Background",
+    "word": "affiliated company",
+    "pos": "n.p",
+    "ipa": "/əˈfɪlieɪtɪd ˈkʌmpəni/",
+    "meaning": "công ty con, công ty liên kết",
+    "synonyms": [
+      "subsidiary"
+    ],
+    "example": "Canon manufactures camera lenses through an affiliated company located in Vietnam.",
+    "clozeSentence": "Canon manufactures camera lenses through an a_________ c______ located in Vietnam."
+  },
+  {
+    "id": "u1_25",
+    "unit": 1,
+    "topic": "Company Background",
+    "word": "vision",
+    "pos": "n",
+    "ipa": "/ˈvɪʒn/",
+    "meaning": "tầm nhìn",
+    "example": "LG's corporate vision is to become a market-leading innovator in smart home technology.",
+    "clozeSentence": "LG's corporate v_____ is to become a market-leading innovator in smart home technology."
+  },
+  {
+    "id": "u1_26",
+    "unit": 1,
+    "topic": "Company Culture",
+    "word": "achievement",
+    "pos": "n",
+    "ipa": "/əˈtʃiːvmənt/",
+    "meaning": "thành tựu, thành tích, sự đạt được",
+    "example": "Developing the first 3-nanometer processor was a remarkable achievement for the research team.",
+    "clozeSentence": "Developing the first 3-nanometer processor was a remarkable a__________ for the research team."
+  },
+  {
+    "id": "u1_27",
+    "unit": 1,
+    "topic": "Company Culture",
+    "word": "consider",
+    "pos": "v",
+    "ipa": "/kənˈsɪdə(r)/",
+    "meaning": "xem như, coi như",
+    "example": "Industry experts consider Apple as one of the most valuable brands in consumer technology.",
+    "clozeSentence": "Industry experts c_______ Apple as one of the most valuable brands in consumer technology."
+  },
+  {
+    "id": "u1_28",
+    "unit": 1,
+    "topic": "Company Culture",
+    "word": "contribute",
+    "pos": "v",
+    "ipa": "/kənˈtrɪbjuːt/",
+    "meaning": "đóng góp",
+    "example": "Junior engineers actively contribute to product testing and circuit optimization.",
+    "clozeSentence": "Junior engineers actively c_________ to product testing and circuit optimization."
+  },
+  {
+    "id": "u1_29",
+    "unit": 1,
+    "topic": "Company Culture",
+    "word": "convey",
+    "pos": "v",
+    "ipa": "/kənˈveɪ/",
+    "meaning": "truyền đạt, chuyển tải",
+    "example": "Technical managers must clearly convey safety guidelines to all factory staff.",
+    "clozeSentence": "Technical managers must clearly c_____ safety guidelines to all factory staff."
+  },
+  {
+    "id": "u1_30",
+    "unit": 1,
+    "topic": "Company Culture",
+    "word": "cooperate",
+    "pos": "v",
+    "ipa": "/kəʊˈɒpəreɪt/",
+    "meaning": "hợp tác",
+    "wordFamily": [
+      "cooperation (n)"
+    ],
+    "example": "Hardware and software teams need to cooperate closely to launch a reliable smart device.",
+    "clozeSentence": "Hardware and software teams need to c________ closely to launch a reliable smart device."
+  },
+  {
+    "id": "u1_31",
+    "unit": 1,
+    "topic": "Company Culture",
+    "word": "cooperation",
+    "pos": "n",
+    "ipa": "/kəʊˌɒpəˈreɪʃn/",
+    "meaning": "sự hợp tác",
+    "wordFamily": [
+      "cooperate (v)"
+    ],
+    "example": "Strong cooperation between departments helps Panasonic solve manufacturing problems quickly.",
+    "clozeSentence": "Strong c__________ between departments helps Panasonic solve manufacturing problems quickly."
+  },
+  {
+    "id": "u1_32",
+    "unit": 1,
+    "topic": "Company Culture",
+    "word": "create",
+    "pos": "v",
+    "ipa": "/kriˈeɪt/",
+    "meaning": "tạo ra, sáng tạo",
+    "wordFamily": [
+      "creativity (n)"
+    ],
+    "example": "Sony's design engineers aim to create a compact projector that turns any wall into a touchscreen.",
+    "clozeSentence": "Sony's design engineers aim to c_____ a compact projector that turns any wall into a touchscreen."
+  },
+  {
+    "id": "u1_33",
+    "unit": 1,
+    "topic": "Company Culture",
+    "word": "creativity",
+    "pos": "n",
+    "ipa": "/ˌkriːeɪˈtɪvəti/",
+    "meaning": "tính sáng tạo, óc sáng tạo",
+    "wordFamily": [
+      "create (v)"
+    ],
+    "example": "Google encourages employee creativity by giving engineers time to explore personal tech projects.",
+    "clozeSentence": "Google encourages employee c_________ by giving engineers time to explore personal tech projects."
+  },
+  {
+    "id": "u1_34",
+    "unit": 1,
+    "topic": "Company Culture",
+    "word": "culture",
+    "pos": "n",
+    "ipa": "/ˈkʌltʃə(r)/",
+    "meaning": "văn hóa",
+    "example": "An open workplace culture helps engineers share technical ideas without hesitation.",
+    "clozeSentence": "An open workplace c______ helps engineers share technical ideas without hesitation."
+  },
+  {
+    "id": "u1_35",
+    "unit": 1,
+    "topic": "Company Culture",
+    "word": "encourage",
+    "pos": "v",
+    "ipa": "/ɪnˈkʌrɪdʒ/",
+    "meaning": "động viên, khích lệ",
+    "example": "Team leaders encourage technicians to suggest improvements for the assembly line.",
+    "clozeSentence": "Team leaders e________ technicians to suggest improvements for the assembly line."
+  },
+  {
+    "id": "u1_36",
+    "unit": 1,
+    "topic": "Company Culture",
+    "word": "enhance",
+    "pos": "v",
+    "ipa": "/ɪnˈhɑːns/",
+    "meaning": "nâng cao, tăng cường",
+    "example": "Regular workshops help electrical engineers enhance their PCB design and troubleshooting skills.",
+    "clozeSentence": "Regular workshops help electrical engineers e______ their PCB design and troubleshooting skills."
+  },
+  {
+    "id": "u1_37",
+    "unit": 1,
+    "topic": "Company Culture",
+    "word": "focus",
+    "pos": "v",
+    "ipa": "/ˈfəʊkəs/",
+    "meaning": "tập trung (vào việc gì đó)",
+    "example": "Our laboratory teams focus on developing high-efficiency solar inverters.",
+    "clozeSentence": "Our laboratory teams f____ on developing high-efficiency solar inverters."
+  },
+  {
+    "id": "u1_38",
+    "unit": 1,
+    "topic": "Company Culture",
+    "word": "innovation",
+    "pos": "n",
+    "ipa": "/ˌɪnəˈveɪʃn/",
+    "meaning": "sự đổi mới",
+    "wordFamily": [
+      "innovative (adj)"
+    ],
+    "example": "Continuous innovation in battery technology has extended the range of electric vehicles.",
+    "clozeSentence": "Continuous i_________ in battery technology has extended the range of electric vehicles."
+  },
+  {
+    "id": "u1_39",
+    "unit": 1,
+    "topic": "Company Culture",
+    "word": "innovative",
+    "pos": "adj",
+    "ipa": "/ˈɪnəveɪtɪv/",
+    "meaning": "có tính đổi mới, sáng tạo",
+    "wordFamily": [
+      "innovation (n)"
+    ],
+    "example": "Toshiba invests heavily in innovative energy solutions for modern smart grids.",
+    "clozeSentence": "Toshiba invests heavily in i_________ energy solutions for modern smart grids."
+  },
+  {
+    "id": "u1_40",
+    "unit": 1,
+    "topic": "Company Culture",
+    "word": "integrity",
+    "pos": "n",
+    "ipa": "/ɪnˈteɡrəti/",
+    "meaning": "sự liêm khiết, sự chính trực",
+    "example": "Engineering firms value integrity when testing product safety and reporting compliance data.",
+    "clozeSentence": "Engineering firms value i________ when testing product safety and reporting compliance data."
+  },
+  {
+    "id": "u1_41",
+    "unit": 1,
+    "topic": "Company Culture",
+    "word": "respect",
+    "pos": "n, v",
+    "ipa": "/rɪˈspekt/",
+    "meaning": "(sự) tôn trọng",
+    "example": "Companies earn employee loyalty when managers treat every worker with fairness and respect.",
+    "clozeSentence": "Companies earn employee loyalty when managers treat every worker with fairness and r______."
+  },
+  {
+    "id": "u1_42",
+    "unit": 1,
+    "topic": "Company Culture",
+    "word": "reward",
+    "pos": "v",
+    "ipa": "/rɪˈwɔːd/",
+    "meaning": "thưởng, trao thưởng",
+    "example": "Tech corporations often reward outstanding engineers with bonuses and patent incentives.",
+    "clozeSentence": "Tech corporations often r_____ outstanding engineers with bonuses and patent incentives."
+  }
+]

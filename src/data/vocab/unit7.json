@@ -1,0 +1,431 @@
+[
+  {
+    "id": "u7_01",
+    "unit": 7,
+    "topic": "CV & Qualifications",
+    "word": "achievement",
+    "pos": "n",
+    "ipa": "/əˈtʃiːvmənt/",
+    "meaning": "thành tựu, thành tích",
+    "wordFamily": [
+      "achieve (v)"
+    ],
+    "example": "Winning the national robotics design award was the proudest academic achievement listed on his CV.",
+    "clozeSentence": "Winning the national robotics design award was the proudest academic a__________ listed on his CV."
+  },
+  {
+    "id": "u7_02",
+    "unit": 7,
+    "topic": "CV & Qualifications",
+    "word": "curriculum vitae",
+    "pos": "n.p",
+    "ipa": "/kəˌrɪkjələm ˈviːtaɪ/",
+    "meaning": "sơ yếu lý lịch",
+    "synonyms": [
+      "CV",
+      "resume"
+    ],
+    "example": "Before applying for the automation engineer role, make sure your curriculum vitae fits on two clean pages.",
+    "clozeSentence": "Before applying for the automation engineer role, make sure your c_________ v____ fits on two clean pages."
+  },
+  {
+    "id": "u7_03",
+    "unit": 7,
+    "topic": "CV & Qualifications",
+    "word": "long-term",
+    "pos": "adj",
+    "ipa": "/ˌlɒŋ ˈtɜːm/",
+    "meaning": "dài hạn",
+    "example": "Her long-term career objective is to lead an embedded systems research team at a semiconductor firm.",
+    "clozeSentence": "Her l___-t___ career objective is to lead an embedded systems research team at a semiconductor firm."
+  },
+  {
+    "id": "u7_04",
+    "unit": 7,
+    "topic": "CV & Qualifications",
+    "word": "networking",
+    "pos": "n",
+    "ipa": "/ˈnetwɜːkɪŋ/",
+    "meaning": "tạo dựng mối quan hệ (nghề nghiệp)",
+    "wordFamily": [
+      "network (n, v)"
+    ],
+    "example": "Attending technical workshops gives junior engineers a great opportunity for networking with industry experts.",
+    "clozeSentence": "Attending technical workshops gives junior engineers a great opportunity for n_________ with industry experts."
+  },
+  {
+    "id": "u7_05",
+    "unit": 7,
+    "topic": "CV & Qualifications",
+    "word": "professional development",
+    "pos": "n.p",
+    "ipa": "/prəˈfeʃənl dɪˈveləpmənt/",
+    "meaning": "phát triển nghề nghiệp",
+    "example": "The company funds annual PLC training courses to support the professional development of its electrical staff.",
+    "clozeSentence": "The company funds annual PLC training courses to support the p___________ d__________ of its electrical staff."
+  },
+  {
+    "id": "u7_06",
+    "unit": 7,
+    "topic": "CV & Qualifications",
+    "word": "qualification",
+    "pos": "n",
+    "ipa": "/ˌkwɒlɪfɪˈkeɪʃn/",
+    "meaning": "bằng cấp, trình độ chuyên môn, năng lực",
+    "wordFamily": [
+      "qualify (v)",
+      "qualified (adj)"
+    ],
+    "example": "The minimum academic qualification for this power-systems designer position is a bachelor's degree.",
+    "clozeSentence": "The minimum academic q____________ for this power-systems designer position is a bachelor's degree."
+  },
+  {
+    "id": "u7_07",
+    "unit": 7,
+    "topic": "CV & Qualifications",
+    "word": "reference",
+    "pos": "n",
+    "ipa": "/ˈrefrəns/",
+    "meaning": "người giới thiệu, sự giới thiệu",
+    "wordFamily": [
+      "refer (v)"
+    ],
+    "example": "When applying for an engineering role, listing an academic reference from your project supervisor adds credibility.",
+    "clozeSentence": "When applying for an engineering role, listing an academic r________ from your project supervisor adds credibility."
+  },
+  {
+    "id": "u7_08",
+    "unit": 7,
+    "topic": "CV & Qualifications",
+    "word": "scholarship",
+    "pos": "n",
+    "ipa": "/ˈskɒləʃɪp/",
+    "meaning": "học bổng",
+    "example": "Receiving a Samsung engineering scholarship in her third year motivated her to specialize in VLSI design.",
+    "clozeSentence": "Receiving a Samsung engineering s__________ in her third year motivated her to specialize in VLSI design."
+  },
+  {
+    "id": "u7_09",
+    "unit": 7,
+    "topic": "CV & Qualifications",
+    "word": "seminar",
+    "pos": "n",
+    "ipa": "/ˈsemɪnɑː(r)/",
+    "meaning": "hội thảo",
+    "synonyms": [
+      "workshop"
+    ],
+    "example": "Our faculty organized an industry seminar on smart microgrids and power electronics testing.",
+    "clozeSentence": "Our faculty organized an industry s______ on smart microgrids and power electronics testing."
+  },
+  {
+    "id": "u7_10",
+    "unit": 7,
+    "topic": "CV & Qualifications",
+    "word": "short-term",
+    "pos": "adj",
+    "ipa": "/ˌʃɔːt ˈtɜːm/",
+    "meaning": "ngắn hạn",
+    "example": "My short-term goal after graduation is to master PCB layout tools and industrial troubleshooting.",
+    "clozeSentence": "My s____-t___ goal after graduation is to master PCB layout tools and industrial troubleshooting."
+  },
+  {
+    "id": "u7_11",
+    "unit": 7,
+    "topic": "CV & Qualifications",
+    "word": "strategy",
+    "pos": "n",
+    "ipa": "/ˈstrætədʒi/",
+    "meaning": "chiến lược",
+    "wordFamily": [
+      "strategic (adj)"
+    ],
+    "example": "Preparing concise examples of past lab projects is a smart strategy for answering behavioral interview questions.",
+    "clozeSentence": "Preparing concise examples of past lab projects is a smart s_______ for answering behavioral interview questions."
+  },
+  {
+    "id": "u7_12",
+    "unit": 7,
+    "topic": "CV & Qualifications",
+    "word": "strength",
+    "pos": "n",
+    "ipa": "/streŋθ/",
+    "meaning": "điểm mạnh",
+    "wordFamily": [
+      "strong (adj)",
+      "strengthen (v)"
+    ],
+    "example": "When interviewers ask about your greatest strength, give clear proof from an electronics internship or project.",
+    "clozeSentence": "When interviewers ask about your greatest s_______, give clear proof from an electronics internship or project."
+  },
+  {
+    "id": "u7_13",
+    "unit": 7,
+    "topic": "CV & Qualifications",
+    "word": "weakness",
+    "pos": "n",
+    "ipa": "/ˈwiːknəs/",
+    "meaning": "điểm yếu",
+    "wordFamily": [
+      "weak (adj)",
+      "weaken (v)"
+    ],
+    "example": "One honest weakness I am actively improving is spending too long perfecting minor solder joints.",
+    "clozeSentence": "One honest w_______ I am actively improving is spending too long perfecting minor solder joints."
+  },
+  {
+    "id": "u7_14",
+    "unit": 7,
+    "topic": "CV & Qualifications",
+    "word": "when it comes to",
+    "pos": "idiom",
+    "ipa": "/wen ɪt kʌmz tə/",
+    "meaning": "khi nói đến, đề cập đến",
+    "example": "Employers value practical troubleshooting experience when it comes to hiring maintenance technicians.",
+    "clozeSentence": "Employers value practical troubleshooting experience w___ i_ c____ t_ hiring maintenance technicians."
+  },
+  {
+    "id": "u7_15",
+    "unit": 7,
+    "topic": "Engineering Tasks & Qualities",
+    "word": "assign",
+    "pos": "v",
+    "ipa": "/əˈsaɪn/",
+    "meaning": "phân công, giao nhiệm vụ",
+    "wordFamily": [
+      "assignment (n)"
+    ],
+    "example": "The project supervisor will assign each junior engineer a specific sensor calibration task tomorrow.",
+    "clozeSentence": "The project supervisor will a_____ each junior engineer a specific sensor calibration task tomorrow."
+  },
+  {
+    "id": "u7_16",
+    "unit": 7,
+    "topic": "Engineering Tasks & Qualities",
+    "word": "attention to detail",
+    "pos": "n.p",
+    "ipa": "/əˈtenʃn tə ˈdiːteɪl/",
+    "meaning": "sự chú ý đến chi tiết, tính tỉ mỉ",
+    "example": "Inspecting high-density circuit boards requires patience and strong attention to detail to spot hairline bridges.",
+    "clozeSentence": "Inspecting high-density circuit boards requires patience and strong a________ t_ d_____ to spot hairline bridges."
+  },
+  {
+    "id": "u7_17",
+    "unit": 7,
+    "topic": "Engineering Tasks & Qualities",
+    "word": "commitment",
+    "pos": "n",
+    "ipa": "/kəˈmɪtmənt/",
+    "meaning": "sự cam kết, sự tận tụy",
+    "wordFamily": [
+      "commit (v)",
+      "committed (adj)"
+    ],
+    "example": "Completing emergency substation repairs overnight demonstrated the engineering team's commitment to reliability.",
+    "clozeSentence": "Completing emergency substation repairs overnight demonstrated the engineering team's c_________ to reliability."
+  },
+  {
+    "id": "u7_18",
+    "unit": 7,
+    "topic": "Engineering Tasks & Qualities",
+    "word": "compile",
+    "pos": "v",
+    "ipa": "/kəmˈpaɪl/",
+    "meaning": "lập (danh sách nhiệm vụ), tổng hợp, biên soạn",
+    "wordFamily": [
+      "compilation (n)"
+    ],
+    "example": "Every Monday morning, the team leader must compile a list of tasks for preventive equipment checks.",
+    "clozeSentence": "Every Monday morning, the team leader must c______ a list of tasks for preventive equipment checks."
+  },
+  {
+    "id": "u7_19",
+    "unit": 7,
+    "topic": "Engineering Tasks & Qualities",
+    "word": "diagnose malfunctioning systems",
+    "pos": "v.p",
+    "ipa": "/ˈdaɪəɡnəʊz ˌmælˈfʌŋkʃənɪŋ ˈsɪstəmz/",
+    "meaning": "chẩn đoán hệ thống bị hỏng, gặp sự cố",
+    "example": "As a field service engineer, you will diagnose malfunctioning systems and replace faulty control relays.",
+    "clozeSentence": "As a field service engineer, you will d_______ m_____________ s______ and replace faulty control relays."
+  },
+  {
+    "id": "u7_20",
+    "unit": 7,
+    "topic": "Engineering Tasks & Qualities",
+    "word": "enthusiasm",
+    "pos": "n",
+    "ipa": "/ɪnˈθjuːziæzəm/",
+    "meaning": "sự nhiệt tình, nhiệt huyết",
+    "wordFamily": [
+      "enthusiastic (adj)"
+    ],
+    "example": "Candidates who show genuine enthusiasm for learning new industrial automation tools stand out in interviews.",
+    "clozeSentence": "Candidates who show genuine e_________ for learning new industrial automation tools stand out in interviews."
+  },
+  {
+    "id": "u7_21",
+    "unit": 7,
+    "topic": "Engineering Tasks & Qualities",
+    "word": "evaluate",
+    "pos": "v",
+    "ipa": "/ɪˈvæljueɪt/",
+    "meaning": "đánh giá",
+    "wordFamily": [
+      "evaluation (n)"
+    ],
+    "example": "After each periodic inspection, technicians evaluate motor vibration data to decide whether bearings need servicing.",
+    "clozeSentence": "After each periodic inspection, technicians e_______ motor vibration data to decide whether bearings need servicing."
+  },
+  {
+    "id": "u7_22",
+    "unit": 7,
+    "topic": "Engineering Tasks & Qualities",
+    "word": "execute",
+    "pos": "v",
+    "ipa": "/ˈeksɪkjuːt/",
+    "meaning": "thực hiện, thi hành",
+    "wordFamily": [
+      "execution (n)"
+    ],
+    "example": "Our maintenance crew will execute the switchgear upgrade plan during the scheduled Sunday shutdown.",
+    "clozeSentence": "Our maintenance crew will e______ the switchgear upgrade plan during the scheduled Sunday shutdown."
+  },
+  {
+    "id": "u7_23",
+    "unit": 7,
+    "topic": "Engineering Tasks & Qualities",
+    "word": "impact",
+    "pos": "n",
+    "ipa": "/ˈɪmpækt/",
+    "meaning": "sức ảnh hưởng, tác động",
+    "synonyms": [
+      "effect",
+      "influence"
+    ],
+    "example": "His long-term ambition is to make an impact on energy efficiency through smarter motor drives.",
+    "clozeSentence": "His long-term ambition is to make an i_____ on energy efficiency through smarter motor drives."
+  },
+  {
+    "id": "u7_24",
+    "unit": 7,
+    "topic": "Engineering Tasks & Qualities",
+    "word": "interpersonal skills",
+    "pos": "n.p",
+    "ipa": "/ˌɪntəˈpɜːsənl skɪlz/",
+    "meaning": "kỹ năng giao tiếp, kỹ năng liên nhân (làm việc với mọi người)",
+    "example": "Strong interpersonal skills help engineers collaborate smoothly with technicians, suppliers, and clients.",
+    "clozeSentence": "Strong i____________ s_____ help engineers collaborate smoothly with technicians, suppliers, and clients."
+  },
+  {
+    "id": "u7_25",
+    "unit": 7,
+    "topic": "Engineering Tasks & Qualities",
+    "word": "leadership",
+    "pos": "n",
+    "ipa": "/ˈliːdəʃɪp/",
+    "meaning": "khả năng lãnh đạo",
+    "wordFamily": [
+      "lead (v)",
+      "leader (n)"
+    ],
+    "example": "Serving as captain of the university Robocon team helped me develop practical leadership under tight deadlines.",
+    "clozeSentence": "Serving as captain of the university Robocon team helped me develop practical l_________ under tight deadlines."
+  },
+  {
+    "id": "u7_26",
+    "unit": 7,
+    "topic": "Engineering Tasks & Qualities",
+    "word": "motivated",
+    "pos": "adj",
+    "ipa": "/ˈməʊtɪveɪtɪd/",
+    "meaning": "có động lực, tích cực",
+    "wordFamily": [
+      "motivate (v)",
+      "motivation (n)"
+    ],
+    "example": "Engineering firms look for motivated graduates who take initiative when solving unfamiliar hardware faults.",
+    "clozeSentence": "Engineering firms look for m________ graduates who take initiative when solving unfamiliar hardware faults."
+  },
+  {
+    "id": "u7_27",
+    "unit": 7,
+    "topic": "Engineering Tasks & Qualities",
+    "word": "multimeter",
+    "pos": "n",
+    "ipa": "/ˌmʌltiˈmiːtə(r)/",
+    "meaning": "đồng hồ vạn năng, đa năng kế",
+    "synonyms": [
+      "multimetre",
+      "multi-tester"
+    ],
+    "example": "Use a digital multimeter to verify DC bus voltage and check continuity across the fuse.",
+    "clozeSentence": "Use a digital m_________ to verify DC bus voltage and check continuity across the fuse."
+  },
+  {
+    "id": "u7_28",
+    "unit": 7,
+    "topic": "Engineering Tasks & Qualities",
+    "word": "navigation equipment",
+    "pos": "n.p",
+    "ipa": "/ˌnævɪˈɡeɪʃn ɪˈkwɪpmənt/",
+    "meaning": "thiết bị dẫn đường, thiết bị định vị",
+    "example": "Marine electronics technicians regularly calibrate radar and satellite navigation equipment on commercial vessels.",
+    "clozeSentence": "Marine electronics technicians regularly calibrate radar and satellite n_________ e________ on commercial vessels."
+  },
+  {
+    "id": "u7_29",
+    "unit": 7,
+    "topic": "Engineering Tasks & Qualities",
+    "word": "observe",
+    "pos": "v",
+    "ipa": "/əbˈzɜːv/",
+    "meaning": "quan sát",
+    "wordFamily": [
+      "observation (n)"
+    ],
+    "example": "Before opening the cabinet, a technician should visit the site to observe how the conveyor behaves under load.",
+    "clozeSentence": "Before opening the cabinet, a technician should visit the site to o______ how the conveyor behaves under load."
+  },
+  {
+    "id": "u7_30",
+    "unit": 7,
+    "topic": "Engineering Tasks & Qualities",
+    "word": "receiver",
+    "pos": "n",
+    "ipa": "/rɪˈsiːvə(r)/",
+    "meaning": "bộ thu, máy thu",
+    "wordFamily": [
+      "receive (v)",
+      "reception (n)"
+    ],
+    "example": "In a wireless telemetry link, the RF receiver decodes sensor signals sent from the remote field node.",
+    "clozeSentence": "In a wireless telemetry link, the RF r_______ decodes sensor signals sent from the remote field node."
+  },
+  {
+    "id": "u7_31",
+    "unit": 7,
+    "topic": "Engineering Tasks & Qualities",
+    "word": "technical expertise",
+    "pos": "n.p",
+    "ipa": "/ˈteknɪkl ˌekspɜːˈtiːz/",
+    "meaning": "chuyên môn kỹ thuật",
+    "example": "Designing high-voltage protection relays requires deep technical expertise and strict safety discipline.",
+    "clozeSentence": "Designing high-voltage protection relays requires deep t________ e________ and strict safety discipline."
+  },
+  {
+    "id": "u7_32",
+    "unit": 7,
+    "topic": "Engineering Tasks & Qualities",
+    "word": "transmitter",
+    "pos": "n",
+    "ipa": "/trænsˈmɪtə(r)/",
+    "meaning": "bộ phát, máy phát",
+    "wordFamily": [
+      "transmit (v)",
+      "transmission (n)"
+    ],
+    "example": "The microwave transmitter broadcasts telemetry data from the offshore weather buoy back to shore.",
+    "clozeSentence": "The microwave t__________ broadcasts telemetry data from the offshore weather buoy back to shore."
+  }
+]

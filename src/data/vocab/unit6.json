@@ -1,0 +1,451 @@
+[
+  {
+    "id": "u6_01",
+    "unit": 6,
+    "topic": "Describing Graphs",
+    "word": "bar graph",
+    "pos": "n.p",
+    "ipa": "/ˈbɑː(r) ɡræf/",
+    "meaning": "biểu đồ cột",
+    "synonyms": [
+      "bar chart",
+      "column graph"
+    ],
+    "example": "The bar graph compares monthly power consumption across three automated assembly lines in 2024.",
+    "clozeSentence": "The b__ g____ compares monthly power consumption across three automated assembly lines in 2024."
+  },
+  {
+    "id": "u6_02",
+    "unit": 6,
+    "topic": "Describing Graphs",
+    "word": "line graph",
+    "pos": "n.p",
+    "ipa": "/ˈlaɪn ɡræf/",
+    "meaning": "biểu đồ đường",
+    "synonyms": [
+      "line chart"
+    ],
+    "example": "I would like to show you a line graph illustrating how solar inverter output changes over twelve months.",
+    "clozeSentence": "I would like to show you a l___ g____ illustrating how solar inverter output changes over twelve months."
+  },
+  {
+    "id": "u6_03",
+    "unit": 6,
+    "topic": "Describing Graphs",
+    "word": "demonstrate",
+    "pos": "v",
+    "ipa": "/ˈdemənstreɪt/",
+    "meaning": "biểu thị, chứng minh",
+    "wordFamily": [
+      "demonstration (n)"
+    ],
+    "example": "These test charts clearly demonstrate a steady improvement in battery efficiency after firmware optimization.",
+    "clozeSentence": "These test charts clearly d__________ a steady improvement in battery efficiency after firmware optimization."
+  },
+  {
+    "id": "u6_04",
+    "unit": 6,
+    "topic": "Describing Graphs",
+    "word": "illustrate",
+    "pos": "v",
+    "ipa": "/ˈɪləstreɪt/",
+    "meaning": "minh họa",
+    "wordFamily": [
+      "illustration (n)"
+    ],
+    "example": "The figures in the report illustrate how smart grid sensors reduce peak electricity demand.",
+    "clozeSentence": "The figures in the report i_________ how smart grid sensors reduce peak electricity demand."
+  },
+  {
+    "id": "u6_05",
+    "unit": 6,
+    "topic": "Describing Graphs",
+    "word": "represent",
+    "pos": "v",
+    "ipa": "/ˌreprɪˈzent/",
+    "meaning": "trình bày, biểu diễn, đại diện cho",
+    "wordFamily": [
+      "representation (n)"
+    ],
+    "example": "On this chart, the blue bars represent annual sales of industrial PLCs in Southeast Asia.",
+    "clozeSentence": "On this chart, the blue bars r________ annual sales of industrial PLCs in Southeast Asia."
+  },
+  {
+    "id": "u6_06",
+    "unit": 6,
+    "topic": "Describing Graphs",
+    "word": "refer",
+    "pos": "v",
+    "ipa": "/rɪˈfɜː(r)/",
+    "meaning": "nhắc tới, đề cập tới (thường đi với to)",
+    "wordFamily": [
+      "reference (n)"
+    ],
+    "example": "During a technical presentation, engineers often refer to visual aids to highlight key performance data.",
+    "clozeSentence": "During a technical presentation, engineers often r____ to visual aids to highlight key performance data."
+  },
+  {
+    "id": "u6_07",
+    "unit": 6,
+    "topic": "Describing Graphs",
+    "word": "trend",
+    "pos": "n",
+    "ipa": "/trend/",
+    "meaning": "xu hướng",
+    "example": "The survey reveals a clear upward trend in the adoption of brushless DC motors for electric vehicles.",
+    "clozeSentence": "The survey reveals a clear upward t____ in the adoption of brushless DC motors for electric vehicles."
+  },
+  {
+    "id": "u6_08",
+    "unit": 6,
+    "topic": "Describing Graphs",
+    "word": "percentage",
+    "pos": "n",
+    "ipa": "/pəˈsentɪdʒ/",
+    "meaning": "tỷ lệ phần trăm",
+    "wordFamily": [
+      "percent (n)"
+    ],
+    "example": "This pie chart displays the percentage of household electricity consumed by air conditioners and water heaters.",
+    "clozeSentence": "This pie chart displays the p_________ of household electricity consumed by air conditioners and water heaters."
+  },
+  {
+    "id": "u6_09",
+    "unit": 6,
+    "topic": "Describing Graphs",
+    "word": "figure",
+    "pos": "n",
+    "ipa": "/ˈfɪɡə(r)/",
+    "meaning": "hình minh họa; con số, số liệu",
+    "example": "The total energy loss figure for the upgraded substation is much lower than last year's measurement.",
+    "clozeSentence": "The total energy loss f_____ for the upgraded substation is much lower than last year's measurement."
+  },
+  {
+    "id": "u6_10",
+    "unit": 6,
+    "topic": "Describing Trends",
+    "word": "account for",
+    "pos": "v.p",
+    "ipa": "/əˈkaʊnt fɔː(r)/",
+    "meaning": "chiếm (tỷ lệ), gây ra",
+    "synonyms": [
+      "make up"
+    ],
+    "example": "Semiconductor components account for nearly half of the total production cost of a smart controller.",
+    "clozeSentence": "Semiconductor components a______ f__ nearly half of the total production cost of a smart controller."
+  },
+  {
+    "id": "u6_11",
+    "unit": 6,
+    "topic": "Describing Trends",
+    "word": "constant",
+    "pos": "adj",
+    "ipa": "/ˈkɒnstənt/",
+    "meaning": "không đổi, ổn định",
+    "synonyms": [
+      "stable",
+      "unchanged"
+    ],
+    "wordFamily": [
+      "constantly (adv)"
+    ],
+    "example": "The supply voltage remained constant at 24 volts throughout the six-hour laboratory endurance test.",
+    "clozeSentence": "The supply voltage remained c_______ at 24 volts throughout the six-hour laboratory endurance test."
+  },
+  {
+    "id": "u6_12",
+    "unit": 6,
+    "topic": "Describing Trends",
+    "word": "decline",
+    "pos": "n, v",
+    "ipa": "/dɪˈklaɪn/",
+    "meaning": "giảm, sụt; sự suy giảm",
+    "synonyms": [
+      "decrease",
+      "drop",
+      "fall"
+    ],
+    "example": "Analysts expect landline phone sales to decline steadily as more users switch to mobile broadband.",
+    "clozeSentence": "Analysts expect landline phone sales to d______ steadily as more users switch to mobile broadband."
+  },
+  {
+    "id": "u6_13",
+    "unit": 6,
+    "topic": "Describing Trends",
+    "word": "decrease",
+    "pos": "n, v",
+    "ipa": "/dɪˈkriːs/",
+    "meaning": "giảm; sự giảm xuống",
+    "synonyms": [
+      "decline",
+      "drop",
+      "fall"
+    ],
+    "example": "There was a sharp decrease in transformer overheating incidents after installing additional cooling fans.",
+    "clozeSentence": "There was a sharp d_______ in transformer overheating incidents after installing additional cooling fans."
+  },
+  {
+    "id": "u6_14",
+    "unit": 6,
+    "topic": "Describing Trends",
+    "word": "downward",
+    "pos": "adj",
+    "ipa": "/ˈdaʊnwəd/",
+    "meaning": "hướng xuống, đi xuống",
+    "wordFamily": [
+      "downwards (adv)"
+    ],
+    "example": "The plotted curve shows a downward trend in defective PCB units over the past four quarters.",
+    "clozeSentence": "The plotted curve shows a d_______ trend in defective PCB units over the past four quarters."
+  },
+  {
+    "id": "u6_15",
+    "unit": 6,
+    "topic": "Describing Trends",
+    "word": "dramatic",
+    "pos": "adj",
+    "ipa": "/drəˈmætɪk/",
+    "meaning": "đột ngột, mạnh mẽ",
+    "wordFamily": [
+      "dramatically (adv)"
+    ],
+    "example": "Storage capacity per microchip experienced a dramatic expansion between 2010 and 2020.",
+    "clozeSentence": "Storage capacity per microchip experienced a d_______ expansion between 2010 and 2020."
+  },
+  {
+    "id": "u6_16",
+    "unit": 6,
+    "topic": "Describing Trends",
+    "word": "drop",
+    "pos": "n, v",
+    "ipa": "/drɒp/",
+    "meaning": "giảm, tụt; sự sụt giảm",
+    "synonyms": [
+      "fall",
+      "decline",
+      "decrease"
+    ],
+    "example": "The recorded data showed a sudden drop in solar panel output when heavy clouds covered the array.",
+    "clozeSentence": "The recorded data showed a sudden d___ in solar panel output when heavy clouds covered the array."
+  },
+  {
+    "id": "u6_17",
+    "unit": 6,
+    "topic": "Describing Trends",
+    "word": "fall",
+    "pos": "n, v",
+    "ipa": "/fɔːl/",
+    "meaning": "giảm, rơi xuống; sự sụt giảm",
+    "synonyms": [
+      "drop",
+      "decline",
+      "decrease"
+    ],
+    "example": "Manufacturing defects continued to fall after the plant introduced automated optical inspection.",
+    "clozeSentence": "Manufacturing defects continued to f___ after the plant introduced automated optical inspection."
+  },
+  {
+    "id": "u6_18",
+    "unit": 6,
+    "topic": "Describing Trends",
+    "word": "fluctuate",
+    "pos": "v",
+    "ipa": "/ˈflʌktʃueɪt/",
+    "meaning": "dao động, biến động",
+    "wordFamily": [
+      "fluctuation (n)"
+    ],
+    "example": "Grid frequency can fluctuate slightly when heavy industrial motors start up at the same time.",
+    "clozeSentence": "Grid frequency can f________ slightly when heavy industrial motors start up at the same time."
+  },
+  {
+    "id": "u6_19",
+    "unit": 6,
+    "topic": "Describing Trends",
+    "word": "gradual",
+    "pos": "adj",
+    "ipa": "/ˈɡrædʒuəl/",
+    "meaning": "dần dần, từ từ",
+    "wordFamily": [
+      "gradually (adv)"
+    ],
+    "example": "The line graph reflects a gradual increase in electric scooter battery range over five model generations.",
+    "clozeSentence": "The line graph reflects a g______ increase in electric scooter battery range over five model generations."
+  },
+  {
+    "id": "u6_20",
+    "unit": 6,
+    "topic": "Describing Trends",
+    "word": "increase",
+    "pos": "n, v",
+    "ipa": "/ɪnˈkriːs/",
+    "meaning": "tăng; sự gia tăng",
+    "synonyms": [
+      "rise",
+      "grow",
+      "growth"
+    ],
+    "example": "We observed a significant increase in the lifespan of LED drivers after replacing electrolytic capacitors.",
+    "clozeSentence": "We observed a significant i_______ in the lifespan of LED drivers after replacing electrolytic capacitors."
+  },
+  {
+    "id": "u6_21",
+    "unit": 6,
+    "topic": "Describing Trends",
+    "word": "level off",
+    "pos": "v.p",
+    "ipa": "/ˈlevl ɒf/",
+    "meaning": "đi ngang, chững lại, ngang bằng",
+    "synonyms": [
+      "stabilize",
+      "flatten out"
+    ],
+    "example": "After rising quickly for three years, quarterly smartphone shipments began to level off at 40 million units.",
+    "clozeSentence": "After rising quickly for three years, quarterly smartphone shipments began to l____ o__ at 40 million units."
+  },
+  {
+    "id": "u6_22",
+    "unit": 6,
+    "topic": "Describing Trends",
+    "word": "majority",
+    "pos": "n",
+    "ipa": "/məˈdʒɒrəti/",
+    "meaning": "phần lớn, đa số",
+    "example": "In our factory survey, the vast majority of control systems run on industrial Ethernet protocols.",
+    "clozeSentence": "In our factory survey, the vast m_______ of control systems run on industrial Ethernet protocols."
+  },
+  {
+    "id": "u6_23",
+    "unit": 6,
+    "topic": "Describing Trends",
+    "word": "minority",
+    "pos": "n",
+    "ipa": "/maɪˈnɒrəti/",
+    "meaning": "phần ít, thiểu số",
+    "example": "Only a small minority of customer complaints involved hardware failure rather than software setup errors.",
+    "clozeSentence": "Only a small m_______ of customer complaints involved hardware failure rather than software setup errors."
+  },
+  {
+    "id": "u6_24",
+    "unit": 6,
+    "topic": "Describing Trends",
+    "word": "peak",
+    "pos": "n, v",
+    "ipa": "/piːk/",
+    "meaning": "đỉnh; đạt tới đỉnh cao nhất",
+    "example": "Residential air-conditioner demand normally reaches its annual peak during the hottest weeks of July.",
+    "clozeSentence": "Residential air-conditioner demand normally reaches its annual p___ during the hottest weeks of July."
+  },
+  {
+    "id": "u6_25",
+    "unit": 6,
+    "topic": "Describing Trends",
+    "word": "remain",
+    "pos": "v",
+    "ipa": "/rɪˈmeɪn/",
+    "meaning": "giữ nguyên, vẫn",
+    "example": "The unit price of standard microcontroller boards is forecast to remain stable for the next two quarters.",
+    "clozeSentence": "The unit price of standard microcontroller boards is forecast to r_____ stable for the next two quarters."
+  },
+  {
+    "id": "u6_26",
+    "unit": 6,
+    "topic": "Describing Trends",
+    "word": "rise",
+    "pos": "n, v",
+    "ipa": "/raɪz/",
+    "meaning": "tăng; sự tăng lên",
+    "synonyms": [
+      "increase",
+      "climb",
+      "growth"
+    ],
+    "example": "There is a steady rise in the number of engineering graduates specializing in renewable energy.",
+    "clozeSentence": "There is a steady r___ in the number of engineering graduates specializing in renewable energy."
+  },
+  {
+    "id": "u6_27",
+    "unit": 6,
+    "topic": "Describing Trends",
+    "word": "sharp",
+    "pos": "adj",
+    "ipa": "/ʃɑːp/",
+    "meaning": "mạnh, đột ngột, sắc nét",
+    "wordFamily": [
+      "sharply (adv)"
+    ],
+    "example": "A sharp spike in startup current can trip a circuit breaker if no soft-starter is installed.",
+    "clozeSentence": "A s____ spike in startup current can trip a circuit breaker if no soft-starter is installed."
+  },
+  {
+    "id": "u6_28",
+    "unit": 6,
+    "topic": "Describing Trends",
+    "word": "significant",
+    "pos": "adj",
+    "ipa": "/sɪɡˈnɪfɪkənt/",
+    "meaning": "đáng kể, quan trọng",
+    "wordFamily": [
+      "significantly (adv)",
+      "significance (n)"
+    ],
+    "example": "Switching to variable-speed drives produced a significant reduction in factory electricity bills.",
+    "clozeSentence": "Switching to variable-speed drives produced a s__________ reduction in factory electricity bills."
+  },
+  {
+    "id": "u6_29",
+    "unit": 6,
+    "topic": "Describing Trends",
+    "word": "slight",
+    "pos": "adj",
+    "ipa": "/slaɪt/",
+    "meaning": "nhẹ, không đáng kể",
+    "wordFamily": [
+      "slightly (adv)"
+    ],
+    "example": "Between 2018 and 2020, there was only a slight change in average copper winding costs.",
+    "clozeSentence": "Between 2018 and 2020, there was only a s_____ change in average copper winding costs."
+  },
+  {
+    "id": "u6_30",
+    "unit": 6,
+    "topic": "Describing Trends",
+    "word": "steady",
+    "pos": "adj",
+    "ipa": "/ˈstedi/",
+    "meaning": "đều đặn, vững chắc",
+    "wordFamily": [
+      "steadily (adv)"
+    ],
+    "example": "The monitoring log shows steady growth in wind turbine power generation across all coastal stations.",
+    "clozeSentence": "The monitoring log shows s_____ growth in wind turbine power generation across all coastal stations."
+  },
+  {
+    "id": "u6_31",
+    "unit": 6,
+    "topic": "Describing Trends",
+    "word": "sudden",
+    "pos": "adj",
+    "ipa": "/ˈsʌdn/",
+    "meaning": "đột ngột",
+    "wordFamily": [
+      "suddenly (adv)"
+    ],
+    "example": "A sudden surge in line voltage damaged two unprotected power adapters in the laboratory.",
+    "clozeSentence": "A s_____ surge in line voltage damaged two unprotected power adapters in the laboratory."
+  },
+  {
+    "id": "u6_32",
+    "unit": 6,
+    "topic": "Describing Trends",
+    "word": "upward",
+    "pos": "adj",
+    "ipa": "/ˈʌpwəd/",
+    "meaning": "hướng lên, đi lên",
+    "wordFamily": [
+      "upwards (adv)"
+    ],
+    "example": "Demand for high-efficiency heat pumps maintained an upward trajectory throughout the winter season.",
+    "clozeSentence": "Demand for high-efficiency heat pumps maintained an u_____ trajectory throughout the winter season."
+  }
+]

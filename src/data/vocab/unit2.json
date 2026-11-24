@@ -1,0 +1,365 @@
+[
+  {
+    "id": "u2_01",
+    "unit": 2,
+    "topic": "Sensors & Hardware",
+    "word": "accelerometer sensor",
+    "pos": "n.p",
+    "ipa": "/əkˌseləˈrɒmɪtə(r) ˈsensə(r)/",
+    "meaning": "cảm biến gia tốc",
+    "example": "A smartphone uses an accelerometer sensor to detect tilt and automatically rotate the screen.",
+    "clozeSentence": "A smartphone uses an a____________ s_____ to detect tilt and automatically rotate the screen."
+  },
+  {
+    "id": "u2_02",
+    "unit": 2,
+    "topic": "Sensors & Hardware",
+    "word": "barometer sensor",
+    "pos": "n.p",
+    "ipa": "/bəˈrɒmɪtə(r) ˈsensə(r)/",
+    "meaning": "cảm biến đo khí áp",
+    "example": "A smartwatch relies on its barometer sensor to measure atmospheric pressure and altitude changes.",
+    "clozeSentence": "A smartwatch relies on its b________ s_____ to measure atmospheric pressure and altitude changes."
+  },
+  {
+    "id": "u2_03",
+    "unit": 2,
+    "topic": "Sensors & Hardware",
+    "word": "gyroscope sensor",
+    "pos": "n.p",
+    "ipa": "/ˈdʒaɪrəskəʊp ˈsensə(r)/",
+    "meaning": "cảm biến con quay hồi chuyển",
+    "example": "Drones use a gyroscope sensor to measure angular velocity and maintain stable flight.",
+    "clozeSentence": "Drones use a g________ s_____ to measure angular velocity and maintain stable flight."
+  },
+  {
+    "id": "u2_04",
+    "unit": 2,
+    "topic": "Sensors & Hardware",
+    "word": "motion sensor",
+    "pos": "n.p",
+    "ipa": "/ˈməʊʃn ˈsensə(r)/",
+    "meaning": "cảm biến chuyển động",
+    "example": "The smart security camera triggers an alarm whenever its motion sensor detects movement in the hallway.",
+    "clozeSentence": "The smart security camera triggers an alarm whenever its m_____ s_____ detects movement in the hallway."
+  },
+  {
+    "id": "u2_05",
+    "unit": 2,
+    "topic": "Sensors & Hardware",
+    "word": "control panel",
+    "pos": "n.p",
+    "ipa": "/kənˈtrəʊl ˈpænl/",
+    "meaning": "bảng điều khiển",
+    "example": "The technician adjusted the washing temperature using the digital control panel on the front door.",
+    "clozeSentence": "The technician adjusted the washing temperature using the digital c______ p____ on the front door."
+  },
+  {
+    "id": "u2_06",
+    "unit": 2,
+    "topic": "Sensors & Hardware",
+    "word": "diameter",
+    "pos": "n",
+    "ipa": "/daɪˈæmɪtə(r)/",
+    "meaning": "đường kính",
+    "example": "This smartwatch features a round OLED display with a case diameter of 44 millimeters.",
+    "clozeSentence": "This smartwatch features a round OLED display with a case d_______ of 44 millimeters."
+  },
+  {
+    "id": "u2_07",
+    "unit": 2,
+    "topic": "Sensors & Hardware",
+    "word": "gadget",
+    "pos": "n",
+    "ipa": "/ˈɡædʒɪt/",
+    "meaning": "thiết bị cải tiến, thiết bị tiện ích",
+    "example": "A wireless smart plug is a compact gadget that lets users turn appliances off remotely.",
+    "clozeSentence": "A wireless smart plug is a compact g_____ that lets users turn appliances off remotely."
+  },
+  {
+    "id": "u2_08",
+    "unit": 2,
+    "topic": "Sensors & Hardware",
+    "word": "Global Positioning System",
+    "pos": "n.p",
+    "ipa": "/ˈɡləʊbl pəˈzɪʃnɪŋ ˈsɪstəm/",
+    "meaning": "hệ thống định vị toàn cầu",
+    "synonyms": [
+      "GPS"
+    ],
+    "example": "Fitness watches connect to the Global Positioning System to map outdoor running routes accurately.",
+    "clozeSentence": "Fitness watches connect to the G_____ P__________ S_____ to map outdoor running routes accurately."
+  },
+  {
+    "id": "u2_09",
+    "unit": 2,
+    "topic": "Sensors & Hardware",
+    "word": "infrared",
+    "pos": "n",
+    "ipa": "/ˌɪnfrəˈred/",
+    "meaning": "tia hồng ngoại",
+    "synonyms": [
+      "IR"
+    ],
+    "example": "Many smart home hubs include an infrared transmitter to control older televisions and air conditioners.",
+    "clozeSentence": "Many smart home hubs include an i_______ transmitter to control older televisions and air conditioners."
+  },
+  {
+    "id": "u2_10",
+    "unit": 2,
+    "topic": "Sensors & Hardware",
+    "word": "operating system",
+    "pos": "n.p",
+    "ipa": "/ˈɒpəreɪtɪŋ sɪstəm/",
+    "meaning": "hệ điều hành",
+    "synonyms": [
+      "OS"
+    ],
+    "example": "A lightweight operating system allows this smart speaker to respond quickly to voice input.",
+    "clozeSentence": "A lightweight o________ s_____ allows this smart speaker to respond quickly to voice input."
+  },
+  {
+    "id": "u2_11",
+    "unit": 2,
+    "topic": "Sensors & Hardware",
+    "word": "predecessor",
+    "pos": "n",
+    "ipa": "/ˈpriːdɪsesə(r)/",
+    "meaning": "sản phẩm trước cùng dòng, thiết bị tiền nhiệm",
+    "example": "The new smartwatch offers double the battery life compared to its predecessor.",
+    "clozeSentence": "The new smartwatch offers double the battery life compared to its p__________."
+  },
+  {
+    "id": "u2_12",
+    "unit": 2,
+    "topic": "Sensors & Hardware",
+    "word": "processor",
+    "pos": "n",
+    "ipa": "/ˈprəʊsesə(r)/",
+    "meaning": "bộ xử lý",
+    "example": "This smart TV is powered by a quad-core processor for smooth 4K video playback.",
+    "clozeSentence": "This smart TV is powered by a quad-core p________ for smooth 4K video playback."
+  },
+  {
+    "id": "u2_13",
+    "unit": 2,
+    "topic": "Features & Functions",
+    "word": "activate",
+    "pos": "v",
+    "ipa": "/ˈæktɪveɪt/",
+    "meaning": "kích hoạt",
+    "example": "Users can say a wake word to activate the smart assistant inside the living room speaker.",
+    "clozeSentence": "Users can say a wake word to a_______ the smart assistant inside the living room speaker."
+  },
+  {
+    "id": "u2_14",
+    "unit": 2,
+    "topic": "Features & Functions",
+    "word": "adjust",
+    "pos": "v",
+    "ipa": "/əˈdʒʌst/",
+    "meaning": "điều chỉnh",
+    "example": "You can adjust the room temperature from your phone before arriving home.",
+    "clozeSentence": "You can a_____ the room temperature from your phone before arriving home."
+  },
+  {
+    "id": "u2_15",
+    "unit": 2,
+    "topic": "Features & Functions",
+    "word": "attach",
+    "pos": "v",
+    "ipa": "/əˈtætʃ/",
+    "meaning": "gắn, đính kèm",
+    "example": "Magnetic pins make it easy to attach the charging cable to the back of the fitness tracker.",
+    "clozeSentence": "Magnetic pins make it easy to a_____ the charging cable to the back of the fitness tracker."
+  },
+  {
+    "id": "u2_16",
+    "unit": 2,
+    "topic": "Features & Functions",
+    "word": "certify",
+    "pos": "v",
+    "ipa": "/ˈsɜːtɪfaɪ/",
+    "meaning": "chứng nhận",
+    "example": "Independent laboratories test and certify smart wearables for dust and water protection.",
+    "clozeSentence": "Independent laboratories test and c______ smart wearables for dust and water protection."
+  },
+  {
+    "id": "u2_17",
+    "unit": 2,
+    "topic": "Features & Functions",
+    "word": "command",
+    "pos": "n",
+    "ipa": "/kəˈmɑːnd/",
+    "meaning": "mệnh lệnh, câu lệnh",
+    "example": "The voice assistant executes each spoken command within less than a second.",
+    "clozeSentence": "The voice assistant executes each spoken c______ within less than a second."
+  },
+  {
+    "id": "u2_18",
+    "unit": 2,
+    "topic": "Features & Functions",
+    "word": "compatible",
+    "pos": "adj",
+    "ipa": "/kəmˈpætəbl/",
+    "meaning": "tương thích",
+    "example": "This smart thermostat is compatible with both Android and iOS mobile applications.",
+    "clozeSentence": "This smart thermostat is c_________ with both Android and iOS mobile applications."
+  },
+  {
+    "id": "u2_19",
+    "unit": 2,
+    "topic": "Features & Functions",
+    "word": "detect",
+    "pos": "v",
+    "ipa": "/dɪˈtekt/",
+    "meaning": "phát hiện",
+    "example": "Modern optical heart-rate modules can detect irregular pulse rhythms with high accuracy.",
+    "clozeSentence": "Modern optical heart-rate modules can d_____ irregular pulse rhythms with high accuracy."
+  },
+  {
+    "id": "u2_20",
+    "unit": 2,
+    "topic": "Features & Functions",
+    "word": "equip",
+    "pos": "v",
+    "ipa": "/ɪˈkwɪp/",
+    "meaning": "trang bị",
+    "example": "Manufacturers often equip flagship phones with dual cameras and fast-charging batteries.",
+    "clozeSentence": "Manufacturers often e____ flagship phones with dual cameras and fast-charging batteries."
+  },
+  {
+    "id": "u2_21",
+    "unit": 2,
+    "topic": "Features & Functions",
+    "word": "feature",
+    "pos": "n, v",
+    "ipa": "/ˈfiːtʃə(r)/",
+    "meaning": "đặc điểm nổi bật (n), có tính năng (v)",
+    "example": "Noise cancellation is a useful feature on wireless earbuds for commuters.",
+    "clozeSentence": "Noise cancellation is a useful f______ on wireless earbuds for commuters."
+  },
+  {
+    "id": "u2_22",
+    "unit": 2,
+    "topic": "Features & Functions",
+    "word": "ingress protection",
+    "pos": "n.p",
+    "ipa": "/ˈɪŋɡres prəˈtekʃn/",
+    "meaning": "chuẩn chống bụi, chống nước của thiết bị điện tử",
+    "synonyms": [
+      "IP"
+    ],
+    "example": "An ingress protection rating of IP68 indicates that the smartwatch can withstand dust and water immersion.",
+    "clozeSentence": "An i______ p_________ rating of IP68 indicates that the smartwatch can withstand dust and water immersion."
+  },
+  {
+    "id": "u2_23",
+    "unit": 2,
+    "topic": "Features & Functions",
+    "word": "integrate",
+    "pos": "v",
+    "ipa": "/ˈɪntɪɡreɪt/",
+    "meaning": "tích hợp",
+    "example": "Engineers integrate Wi-Fi and Bluetooth chips onto a single microcontroller board.",
+    "clozeSentence": "Engineers i________ Wi-Fi and Bluetooth chips onto a single microcontroller board."
+  },
+  {
+    "id": "u2_24",
+    "unit": 2,
+    "topic": "Features & Functions",
+    "word": "monitor",
+    "pos": "n, v",
+    "ipa": "/ˈmɒnɪtə(r)/",
+    "meaning": "(bộ) giám sát, theo dõi",
+    "example": "Wearable fitness bands continuously monitor the user's heart rate and sleep quality.",
+    "clozeSentence": "Wearable fitness bands continuously m______ the user's heart rate and sleep quality."
+  },
+  {
+    "id": "u2_25",
+    "unit": 2,
+    "topic": "Features & Functions",
+    "word": "recognition",
+    "pos": "n",
+    "ipa": "/ˌrekəɡˈnɪʃn/",
+    "meaning": "chức năng nhận diện, sự nhận dạng",
+    "example": "Facial recognition lets users unlock their smartphones securely in low-light conditions.",
+    "clozeSentence": "Facial r__________ lets users unlock their smartphones securely in low-light conditions."
+  },
+  {
+    "id": "u2_26",
+    "unit": 2,
+    "topic": "Features & Functions",
+    "word": "resistance",
+    "pos": "n",
+    "ipa": "/rɪˈzɪstəns/",
+    "meaning": "tính chống chịu, khả năng kháng",
+    "example": "The rugged phone offers strong resistance against dust, moisture, and accidental drops.",
+    "clozeSentence": "The rugged phone offers strong r_________ against dust, moisture, and accidental drops."
+  },
+  {
+    "id": "u2_27",
+    "unit": 2,
+    "topic": "Features & Functions",
+    "word": "resolution",
+    "pos": "n",
+    "ipa": "/ˌrezəˈluːʃn/",
+    "meaning": "độ phân giải",
+    "example": "An Ultra HD smart monitor delivers a crisp resolution of 3840 by 2160 pixels.",
+    "clozeSentence": "An Ultra HD smart monitor delivers a crisp r_________ of 3840 by 2160 pixels."
+  },
+  {
+    "id": "u2_28",
+    "unit": 2,
+    "topic": "Features & Functions",
+    "word": "sync",
+    "pos": "n",
+    "ipa": "/sɪŋk/",
+    "meaning": "sự đồng bộ hóa",
+    "synonyms": [
+      "synchronization"
+    ],
+    "wordFamily": [
+      "synchronize (v)"
+    ],
+    "example": "Automatic cloud sync keeps all fitness measurements updated across your tablet and phone.",
+    "clozeSentence": "Automatic cloud s___ keeps all fitness measurements updated across your tablet and phone."
+  },
+  {
+    "id": "u2_29",
+    "unit": 2,
+    "topic": "Features & Functions",
+    "word": "synchronize",
+    "pos": "v",
+    "ipa": "/ˈsɪŋkrənaɪz/",
+    "meaning": "đồng bộ hóa",
+    "wordFamily": [
+      "sync (n)",
+      "synchronization (n)"
+    ],
+    "example": "The wearable app will synchronize your daily step count with the server via Bluetooth.",
+    "clozeSentence": "The wearable app will s__________ your daily step count with the server via Bluetooth."
+  },
+  {
+    "id": "u2_30",
+    "unit": 2,
+    "topic": "Features & Functions",
+    "word": "track",
+    "pos": "v",
+    "ipa": "/træk/",
+    "meaning": "theo dõi",
+    "example": "Smartwatches can track your daily distance, calories burned, and outdoor cycling speed.",
+    "clozeSentence": "Smartwatches can t____ your daily distance, calories burned, and outdoor cycling speed."
+  },
+  {
+    "id": "u2_31",
+    "unit": 2,
+    "topic": "Features & Functions",
+    "word": "waterproof",
+    "pos": "adj",
+    "ipa": "/ˈwɔːtəpruːf/",
+    "meaning": "chống nước",
+    "example": "Because the watch casing is waterproof up to 50 meters, swimmers can wear it in the pool.",
+    "clozeSentence": "Because the watch casing is w_________ up to 50 meters, swimmers can wear it in the pool."
+  }
+]
