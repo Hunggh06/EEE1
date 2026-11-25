@@ -19,9 +19,11 @@ import {
   Volume2
 } from 'lucide-react';
 import { AI_MODEL_OPTIONS } from '../../data/tutorKnowledge';
-import { ALL_VOCAB, ALL_WORD_IDS } from '../../data/vocab';
-import { getDueWords } from '../../engine/srs';
-import type { AppSettings, StudyState } from '../../types/vocab';
+import { UNITS_META } from '../../data/unitsMeta';
+import { ALL_VOCAB, ALL_WORD_IDS, getUnitVocab } from '../../data/vocab';
+import { getDueWords, getLevelDistribution } from '../../engine/srs';
+import type { AppSettings, StudyState, UnitResetScope } from '../../types/vocab';
+import { ResetUnitControl } from '../common/ResetUnitControl';
 import { type TestAiConnectionResult, testAiConnection } from '../../utils/aiClient';
 import {
   playClickSound,
@@ -32,8 +34,10 @@ import {
 } from '../../utils/soundEffects';
 import {
   getAvailableEnglishVoices,
+  getAvailableVietnameseVoices,
   isSpeechSupported,
   speakText,
+  speakVietnameseText,
   subscribeVoicesChanged
 } from '../../utils/speech';
 import {
@@ -49,6 +53,7 @@ interface SettingsViewProps {
   state: StudyState;
   onUpdateSettings: (patch: Partial<AppSettings>) => void;
   onReplaceState: (nextState: StudyState) => void;
+  onResetUnit: (unitNumber: number, scope: UnitResetScope) => void;
   onResetAll: () => void;
 }
 
@@ -56,9 +61,13 @@ export function SettingsView({
   state,
   onUpdateSettings,
   onReplaceState,
+  onResetUnit,
   onResetAll
 }: SettingsViewProps) {
   const [voices, setVoices] = useState<SpeechSynthesisVoice[]>(() => getAvailableEnglishVoices());
+  const [viVoices, setViVoices] = useState<SpeechSynthesisVoice[]>(() =>
+    getAvailableVietnameseVoices()
+  );
   const [importPreview, setImportPreview] = useState<{
     state: StudyState;
     wordCount: number;
@@ -69,6 +78,7 @@ export function SettingsView({
   const [importError, setImportError] = useState<string | null>(null);
   const [statusMessage, setStatusMessage] = useState<string | null>(null);
   const [confirmReset, setConfirmReset] = useState(false);
+  const [resetUnitTarget, setResetUnitTarget] = useState<number>(1);
   const [showApiKey, setShowApiKey] = useState(false);
   const [testingAi, setTestingAi] = useState(false);
   const [aiTestResult, setAiTestResult] = useState<TestAiConnectionResult | null>(null);
@@ -77,8 +87,10 @@ export function SettingsView({
 
   useEffect(() => {
     setVoices(getAvailableEnglishVoices());
+    setViVoices(getAvailableVietnameseVoices());
     return subscribeVoicesChanged(() => {
       setVoices(getAvailableEnglishVoices());
+      setViVoices(getAvailableVietnameseVoices());
     });
   }, []);
 
@@ -208,21 +220,37 @@ export function SettingsView({
             <h2 className="text-base font-bold text-slate-900">Phát âm & Giọng đọc (Web Speech API)</h2>
             <p className="text-xs sm:text-sm text-slate-500">
               {speechSupported
-                ? `Tìm thấy ${voices.length} giọng tiếng Anh trên trình duyệt của bạn.`
+                ? `Tìm thấy ${voices.length} giọng tiếng Anh và ${viVoices.length} giọng tiếng Việt (vi-VN) trên trình duyệt.`
                 : 'Trình duyệt hiện tại không hỗ trợ Web Speech API.'}
             </p>
           </div>
-          <button
-            type="button"
-            disabled={!speechSupported}
-            onClick={() =>
-              speakText('Three-phase transformer and semiconductor manufacturing', state.settings)
-            }
-            className="inline-flex items-center gap-2 rounded-xl border border-blue-200 bg-blue-50 hover:bg-blue-100 text-blue-700 px-3.5 py-2 text-xs sm:text-sm font-semibold transition-colors focus-ring disabled:opacity-45"
-          >
-            <Volume2 className="w-4 h-4" aria-hidden="true" />
-            <span>Nghe thử giọng đọc</span>
-          </button>
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              type="button"
+              disabled={!speechSupported}
+              onClick={() =>
+                speakText('Three-phase transformer and semiconductor manufacturing', state.settings)
+              }
+              className="inline-flex items-center gap-2 rounded-xl border border-blue-200 bg-blue-50 hover:bg-blue-100 text-blue-700 px-3.5 py-2 text-xs sm:text-sm font-semibold transition-colors focus-ring disabled:opacity-45"
+            >
+              <Volume2 className="w-4 h-4" aria-hidden="true" />
+              <span>Nghe thử tiếng Anh</span>
+            </button>
+            <button
+              type="button"
+              disabled={!speechSupported}
+              onClick={() =>
+                speakVietnameseText(
+                  'Nghe như cơm bê tí tờ: hai quán cơm cạnh tranh khốc liệt, bê chậm một tí là thua ngay đối thủ!',
+                  state.settings.speechRate === 0.8 ? 0.9 : 1.0
+                )
+              }
+              className="inline-flex items-center gap-2 rounded-xl border border-amber-200 bg-amber-50 hover:bg-amber-100 text-amber-800 px-3.5 py-2 text-xs sm:text-sm font-semibold transition-colors focus-ring disabled:opacity-45"
+            >
+              <Volume2 className="w-4 h-4" aria-hidden="true" />
+              <span>Nghe thử giọng Việt (vi-VN)</span>
+            </button>
+          </div>
         </div>
 
         {/* Accent & Speed */}
@@ -709,6 +737,49 @@ export function SettingsView({
             </div>
           </div>
         )}
+
+        {/* Reset Per-Unit Progress */}
+        <div className="pt-4 border-t border-slate-100 space-y-3">
+          <div>
+            <div className="text-sm font-bold text-slate-900">
+              Đặt lại tiến trình theo từng Unit
+            </div>
+            <p className="text-xs text-slate-500">
+              Chọn 1 Unit cụ thể để xóa tiến độ Từ vựng hoặc toàn bộ kỹ năng (các Unit khác không bị ảnh hưởng).
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row sm:items-start gap-3">
+            <select
+              value={resetUnitTarget}
+              onChange={(e) => setResetUnitTarget(Number(e.target.value))}
+              aria-label="Chọn Unit để đặt lại tiến trình"
+              className="rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-sm text-slate-800 outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20"
+            >
+              {UNITS_META.map((u) => {
+                const uVocab = getUnitVocab(u.unit);
+                const uDist = getLevelDistribution(uVocab, state.progress, Date.now());
+                return (
+                  <option key={u.unit} value={u.unit}>
+                    Unit {u.unit}: {u.vietnameseTitle} ({uDist.learnedCount}/{uDist.total} từ)
+                  </option>
+                );
+              })}
+            </select>
+            <ResetUnitControl
+              key={`settings-reset-u${resetUnitTarget}`}
+              unitNumber={resetUnitTarget}
+              learnedCount={
+                getLevelDistribution(
+                  getUnitVocab(resetUnitTarget),
+                  state.progress,
+                  Date.now()
+                ).learnedCount
+              }
+              onResetUnit={onResetUnit}
+              variant="header"
+            />
+          </div>
+        </div>
 
         {/* Reset Data */}
         <div className="pt-4 border-t border-slate-100">

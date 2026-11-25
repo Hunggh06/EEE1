@@ -301,3 +301,27 @@ export function fastForwardDueDates(state: StudyState, days: number = 1): StudyS
     progress: nextProgress
   };
 }
+
+export function clearUnitVocabProgress(
+  state: StudyState,
+  wordIds: Iterable<string>
+): StudyState {
+  const idSet = wordIds instanceof Set ? wordIds : new Set(wordIds);
+  if (idSet.size === 0) return state;
+
+  let changed = false;
+  const nextProgress: Record<string, WordProgress> = {};
+  for (const [wordId, wp] of Object.entries(state.progress)) {
+    if (idSet.has(wordId)) {
+      changed = true;
+      continue;
+    }
+    nextProgress[wordId] = wp;
+  }
+
+  if (!changed) return state;
+  return {
+    ...state,
+    progress: nextProgress
+  };
+}

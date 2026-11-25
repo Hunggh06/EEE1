@@ -12,6 +12,7 @@ export interface VocabItem {
   wordFamily?: string[];
   example: string;
   clozeSentence: string;
+  mnemonicVi?: string;
 }
 
 export type SrsLevel = 0 | 1 | 2 | 3 | 4 | 5;
@@ -65,6 +66,8 @@ export type SkillKey =
   | 'monotalk'
   | 'listening'
   | 'reading';
+
+export type UnitResetScope = 'vocab' | 'all';
 
 export type UnitSkillKey = Exclude<SkillKey, 'vocabulary' | 'cards' | 'monotalk'>;
 

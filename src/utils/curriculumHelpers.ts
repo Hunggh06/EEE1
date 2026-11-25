@@ -490,3 +490,68 @@ export function clearCardSheetDraft(cardId: string, role: 'A' | 'B'): CardSheetD
   }
   return nextMap;
 }
+
+function clearUnitEntryFromStorageMap(storageKey: string, unitNumber: number): void {
+  if (typeof window === 'undefined' || !window.localStorage) return;
+  try {
+    const raw = window.localStorage.getItem(storageKey);
+    if (!raw) return;
+    const parsed: unknown = JSON.parse(raw);
+    if (typeof parsed !== 'object' || parsed === null || Array.isArray(parsed)) return;
+    const nextMap = { ...(parsed as Record<string, unknown>) };
+    const unitKey = String(unitNumber);
+    if (!(unitKey in nextMap)) return;
+    delete nextMap[unitKey];
+    window.localStorage.setItem(storageKey, JSON.stringify(nextMap));
+  } catch {
+    // Ignore quota / privacy mode errors
+  }
+}
+
+export function clearGrammarUnitProgress(unitNumber: number): void {
+  clearUnitEntryFromStorageMap(GRAMMAR_PROGRESS_STORAGE_KEY, unitNumber);
+}
+
+export function clearListeningUnitProgress(unitNumber: number): void {
+  clearUnitEntryFromStorageMap(LISTENING_PROGRESS_STORAGE_KEY, unitNumber);
+}
+
+export function clearReadingUnitProgress(unitNumber: number): void {
+  clearUnitEntryFromStorageMap(READING_PROGRESS_STORAGE_KEY, unitNumber);
+}
+
+export function clearUnitCardSheetDrafts(cardIds: Iterable<string>): CardSheetDraftsMap {
+  const idList = [...cardIds];
+  const current = loadCardSheetDrafts();
+  if (idList.length === 0) return current;
+
+  const nextMap: CardSheetDraftsMap = { ...current };
+  let changed = false;
+  for (const key of Object.keys(nextMap)) {
+    if (idList.some((cardId) => key.startsWith(`${cardId}__`))) {
+      delete nextMap[key];
+      changed = true;
+    }
+  }
+
+  if (changed && typeof window !== 'undefined' && window.localStorage) {
+    try {
+      window.localStorage.setItem(CARD_SHEET_DRAFT_STORAGE_KEY, JSON.stringify(nextMap));
+    } catch {
+      // Ignore quota / privacy mode errors
+    }
+  }
+  return nextMap;
+}
+
+export function clearAllUnitSkillProgress(
+  unitNumber: number,
+  cardIds: Iterable<string>
+): void {
+  clearGrammarUnitProgress(unitNumber);
+  clearWritingUnitProgress(unitNumber);
+  clearMonoTalkUnitProgress(unitNumber);
+  clearListeningUnitProgress(unitNumber);
+  clearReadingUnitProgress(unitNumber);
+  clearUnitCardSheetDrafts(cardIds);
+}

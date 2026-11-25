@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 import { Volume2 } from 'lucide-react';
 import type { AppSettings } from '../../types/vocab';
-import { isSpeechSupported, speakText } from '../../utils/speech';
+import { isSpeechSupported, speakText, speakVietnameseText } from '../../utils/speech';
 
 interface SpeakButtonProps {
   text: string;
   settings: Pick<AppSettings, 'speechRate' | 'preferredAccent' | 'selectedVoiceURI'>;
+  lang?: 'en' | 'vi';
   label?: string;
   size?: 'sm' | 'md' | 'lg';
   variant?: 'primary' | 'outline' | 'ghost';
@@ -16,6 +17,7 @@ interface SpeakButtonProps {
 export function SpeakButton({
   text,
   settings,
+  lang = 'en',
   label,
   size = 'md',
   variant = 'outline',
@@ -36,7 +38,7 @@ export function SpeakButton({
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     if (!supported) return;
-    speakText(text, settings, {
+    const callbacks = {
       onStart: () => {
         if (mountedRef.current) setIsSpeaking(true);
       },
@@ -46,7 +48,15 @@ export function SpeakButton({
       onError: () => {
         if (mountedRef.current) setIsSpeaking(false);
       }
-    });
+    };
+
+    if (lang === 'vi') {
+      const viRate = settings.speechRate === 0.8 ? 0.9 : 1.0;
+      speakVietnameseText(text, viRate, callbacks);
+      return;
+    }
+
+    speakText(text, settings, callbacks);
   };
 
   const sizeClasses = {

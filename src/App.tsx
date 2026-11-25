@@ -8,12 +8,26 @@ import { NewWordSession } from './components/session/NewWordSession';
 import { SettingsView } from './components/settings/SettingsView';
 import { AiTutorView, type TutorRouteParams } from './components/tutor/AiTutorView';
 import { UnitDetailView } from './components/unit/UnitDetailView';
-import { ALL_VOCAB, ALL_WORD_IDS, VOCAB_BY_ID } from './data/vocab';
+import { CARDS_BY_UNIT } from './data/cards/speakingCards';
+import { ALL_VOCAB, ALL_WORD_IDS, VOCAB_BY_ID, getUnitVocab } from './data/vocab';
 import { getDueWords, promoteLearnedChunk, updateStudyStreak } from './engine/srs';
-import type { AppSettings, SkillKey, StudyState, TutorMode, WordProgress } from './types/vocab';
+import type {
+  AppSettings,
+  SkillKey,
+  StudyState,
+  TutorMode,
+  UnitResetScope,
+  WordProgress
+} from './types/vocab';
+import { clearAllUnitSkillProgress } from './utils/curriculumHelpers';
 import { playClickSound, setSoundEffectsEnabled } from './utils/soundEffects';
 import { stopSpeaking } from './utils/speech';
-import { createInitialStudyState, loadStudyState, saveStudyState } from './utils/storage';
+import {
+  clearUnitVocabProgress,
+  createInitialStudyState,
+  loadStudyState,
+  saveStudyState
+} from './utils/storage';
 
 type ParsedRoute =
   | { view: 'dashboard' }
@@ -124,6 +138,7 @@ function parseHashRoute(hash: string): ParsedRoute {
 export function App() {
   const [state, setState] = useState<StudyState>(() => loadStudyState(ALL_WORD_IDS));
   const [routeHash, setRouteHash] = useState<string>(() => window.location.hash || '#/');
+  const [unitResetVersions, setUnitResetVersions] = useState<Record<number, number>>({});
 
   useEffect(() => {
     saveStudyState(state);
@@ -223,6 +238,22 @@ export function App() {
     setState(createInitialStudyState());
   }, []);
 
+  const handleResetUnit = useCallback((unitNumber: number, scope: UnitResetScope = 'all') => {
+    stopSpeaking();
+    const unitWordIds = getUnitVocab(unitNumber).map((w) => w.id);
+    setState((prev) => clearUnitVocabProgress(prev, unitWordIds));
+
+    if (scope === 'all') {
+      const unitCardIds = (CARDS_BY_UNIT[unitNumber] ?? []).map((c) => c.id);
+      clearAllUnitSkillProgress(unitNumber, unitCardIds);
+    }
+
+    setUnitResetVersions((prev) => ({
+      ...prev,
+      [unitNumber]: (prev[unitNumber] ?? 0) + 1
+    }));
+  }, []);
+
   const parsedRoute = parseHashRoute(routeHash);
   const dueCount = getDueWords(ALL_VOCAB, state.progress, Date.now()).length;
   const activeRouteKey: ActiveRouteKey = parsedRoute.view;
@@ -239,7 +270,7 @@ export function App() {
 
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-6 sm:py-8">
         {parsedRoute.view === 'dashboard' && (
-          <DashboardView state={state} onNavigate={navigate} />
+          <DashboardView state={state} onResetUnit={handleResetUnit} onNavigate={navigate} />
         )}
 
         {parsedRoute.view === 'unit' && (
@@ -247,8 +278,10 @@ export function App() {
             key={`unit-${parsedRoute.unit}`}
             unitNumber={parsedRoute.unit}
             initialSkill={parsedRoute.skill}
+            resetVersion={unitResetVersions[parsedRoute.unit] ?? 0}
             state={state}
             onUpdateSettings={handleUpdateSettings}
+            onResetUnit={handleResetUnit}
             onNavigate={navigate}
           />
         )}
@@ -264,7 +297,7 @@ export function App() {
 
         {parsedRoute.view === 'learn' && (
           <NewWordSession
-            key={`learn-${parsedRoute.unit}`}
+            key={`learn-${parsedRoute.unit}-${unitResetVersions[parsedRoute.unit] ?? 0}`}
             unitNumber={parsedRoute.unit}
             state={state}
             onUpdateSettings={handleUpdateSettings}
@@ -307,6 +340,7 @@ export function App() {
             state={state}
             onUpdateSettings={handleUpdateSettings}
             onReplaceState={handleReplaceState}
+            onResetUnit={handleResetUnit}
             onResetAll={handleResetAll}
           />
         )}

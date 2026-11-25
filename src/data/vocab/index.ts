@@ -1,4 +1,6 @@
 import type { VocabItem } from '../../types/vocab';
+import { MNEMONICS_U1_TO_U4 } from './mnemonicsU1to4';
+import { MNEMONICS_U5_TO_U8 } from './mnemonicsU5to8';
 import unit1Data from './unit1.json';
 import unit2Data from './unit2.json';
 import unit3Data from './unit3.json';
@@ -8,14 +10,27 @@ import unit6Data from './unit6.json';
 import unit7Data from './unit7.json';
 import unit8Data from './unit8.json';
 
-const unit1 = unit1Data as VocabItem[];
-const unit2 = unit2Data as VocabItem[];
-const unit3 = unit3Data as VocabItem[];
-const unit4 = unit4Data as VocabItem[];
-const unit5 = unit5Data as VocabItem[];
-const unit6 = unit6Data as VocabItem[];
-const unit7 = unit7Data as VocabItem[];
-const unit8 = unit8Data as VocabItem[];
+export const VOCAB_MNEMONICS_VI: Record<string, string> = {
+  ...MNEMONICS_U1_TO_U4,
+  ...MNEMONICS_U5_TO_U8
+};
+
+function attachMnemonics(rawItems: unknown): VocabItem[] {
+  const items = rawItems as VocabItem[];
+  return items.map((item) => {
+    const mnemonic = VOCAB_MNEMONICS_VI[item.id];
+    return mnemonic ? { ...item, mnemonicVi: mnemonic } : item;
+  });
+}
+
+const unit1 = attachMnemonics(unit1Data);
+const unit2 = attachMnemonics(unit2Data);
+const unit3 = attachMnemonics(unit3Data);
+const unit4 = attachMnemonics(unit4Data);
+const unit5 = attachMnemonics(unit5Data);
+const unit6 = attachMnemonics(unit6Data);
+const unit7 = attachMnemonics(unit7Data);
+const unit8 = attachMnemonics(unit8Data);
 
 export const VOCAB_BY_UNIT: Record<number, VocabItem[]> = {
   1: unit1,

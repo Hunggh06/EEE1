@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react';
 import { ArrowLeft, ArrowRight, RotateCw } from 'lucide-react';
 import type { AppSettings, VocabItem } from '../../types/vocab';
 import { playFlipSound } from '../../utils/soundEffects';
-import { speakText } from '../../utils/speech';
+import { speakText, speakVietnameseText, stopSpeaking } from '../../utils/speech';
 import { HighlightedExample } from '../common/HighlightedExample';
 import { SpeakButton } from '../common/SpeakButton';
+import { VocabMnemonicBox } from '../common/VocabMnemonicBox';
 
 interface Flashcard3DProps {
   cards: VocabItem[];
@@ -32,12 +33,14 @@ export function Flashcard3D({ cards, settings, onFinishStage1 }: Flashcard3DProp
 
   const goPrev = () => {
     if (index > 0) {
+      stopSpeaking();
       setIsFlipped(false);
       setIndex((i) => i - 1);
     }
   };
 
   const goNext = () => {
+    stopSpeaking();
     if (!isLast) {
       setIsFlipped(false);
       setIndex((i) => i + 1);
@@ -65,6 +68,9 @@ export function Flashcard3D({ cards, settings, onFinishStage1 }: Flashcard3DProp
       } else if (e.key.toLowerCase() === 'r' && currentCard) {
         e.preventDefault();
         speakText(currentCard.word, settings);
+      } else if (e.key.toLowerCase() === 'm' && currentCard?.mnemonicVi) {
+        e.preventDefault();
+        speakVietnameseText(currentCard.mnemonicVi, settings.speechRate === 0.8 ? 0.9 : 1.0);
       }
     };
 
@@ -88,6 +94,7 @@ export function Flashcard3D({ cards, settings, onFinishStage1 }: Flashcard3DProp
               key={c.id}
               type="button"
               onClick={() => {
+                stopSpeaking();
                 setIsFlipped(false);
                 setIndex(idx);
               }}
@@ -103,7 +110,7 @@ export function Flashcard3D({ cards, settings, onFinishStage1 }: Flashcard3DProp
           ))}
         </div>
         <span className="hidden sm:inline text-xs text-slate-400 font-mono">
-          Space: Lật • R: Nghe • ←/→: Chuyển
+          Space: Lật • R: Đọc EN • M: Mẹo VI • ←/→: Chuyển
         </span>
       </div>
 
@@ -235,6 +242,12 @@ export function Flashcard3D({ cards, settings, onFinishStage1 }: Flashcard3DProp
                   <HighlightedExample sentence={currentCard.example} targetWord={currentCard.word} />
                 </p>
               </div>
+
+              <VocabMnemonicBox
+                mnemonicVi={currentCard.mnemonicVi}
+                word={currentCard.word}
+                settings={settings}
+              />
             </div>
 
             <div className="flex items-center justify-center gap-2 text-xs font-medium text-slate-400">

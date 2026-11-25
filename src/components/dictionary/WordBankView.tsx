@@ -7,6 +7,7 @@ import type { SrsLevel, StudyState } from '../../types/vocab';
 import { HighlightedExample } from '../common/HighlightedExample';
 import { SpeakButton } from '../common/SpeakButton';
 import { SrsBadge } from '../common/SrsBadge';
+import { VocabMnemonicBox } from '../common/VocabMnemonicBox';
 
 interface WordBankViewProps {
   state: StudyState;
@@ -210,6 +211,13 @@ export function WordBankView({
                         className="leading-relaxed pt-0.5"
                       />
                     </div>
+
+                    <VocabMnemonicBox
+                      mnemonicVi={item.mnemonicVi}
+                      word={item.word}
+                      settings={state.settings}
+                      compact
+                    />
                   </div>
 
                   <div className="flex flex-row lg:flex-col items-center lg:items-end justify-between gap-2 shrink-0 pt-2 lg:pt-0 border-t lg:border-t-0 border-slate-100">

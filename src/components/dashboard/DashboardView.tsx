@@ -11,15 +11,17 @@ import {
 import { UNITS_META } from '../../data/unitsMeta';
 import { ALL_VOCAB, getUnitVocab } from '../../data/vocab';
 import { getDueWords, getLevelDistribution, getNewWordsChunk } from '../../engine/srs';
-import type { SrsLevel, StudyState } from '../../types/vocab';
+import type { SrsLevel, StudyState, UnitResetScope } from '../../types/vocab';
+import { ResetUnitControl } from '../common/ResetUnitControl';
 import { UnitIcon } from '../common/UnitIcon';
 
 interface DashboardViewProps {
   state: StudyState;
+  onResetUnit: (unitNumber: number, scope: UnitResetScope) => void;
   onNavigate: (hash: string) => void;
 }
 
-export function DashboardView({ state, onNavigate }: DashboardViewProps) {
+export function DashboardView({ state, onResetUnit, onNavigate }: DashboardViewProps) {
   const now = Date.now();
   const dist = getLevelDistribution(ALL_VOCAB, state.progress, now);
   const dueWords = getDueWords(ALL_VOCAB, state.progress, now);
@@ -357,7 +359,7 @@ export function DashboardView({ state, onNavigate }: DashboardViewProps) {
                 </div>
 
                 {/* Unit Quick Actions */}
-                <div className="flex items-center gap-2.5 pt-2 border-t border-slate-100">
+                <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-slate-100">
                   {nextChunk.length > 0 ? (
                     <button
                       type="button"
@@ -391,6 +393,13 @@ export function DashboardView({ state, onNavigate }: DashboardViewProps) {
                     <span>Chi tiết Unit</span>
                     <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </button>
+
+                  <ResetUnitControl
+                    unitNumber={unitMeta.unit}
+                    learnedCount={uDist.learnedCount}
+                    onResetUnit={onResetUnit}
+                    variant="compact"
+                  />
                 </div>
               </article>
             );

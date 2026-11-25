@@ -32,12 +32,14 @@ import {
   getWordProgress,
   normalizeAnswer
 } from '../../engine/srs';
-import type { AppSettings, SkillKey, SrsLevel, StudyState } from '../../types/vocab';
+import type { AppSettings, SkillKey, SrsLevel, StudyState, UnitResetScope } from '../../types/vocab';
 import { SpeakingCardsWorkspace } from '../cards/SpeakingCardsWorkspace';
 import { HighlightedExample } from '../common/HighlightedExample';
+import { ResetUnitControl } from '../common/ResetUnitControl';
 import { SpeakButton } from '../common/SpeakButton';
 import { SrsBadge } from '../common/SrsBadge';
 import { UnitIcon } from '../common/UnitIcon';
+import { VocabMnemonicBox } from '../common/VocabMnemonicBox';
 import { GrammarTab } from './GrammarTab';
 import { ListeningTab } from './ListeningTab';
 import { MonoTalkTab } from './MonoTalkTab';
@@ -47,8 +49,10 @@ import { WritingTab } from './WritingTab';
 interface UnitDetailViewProps {
   unitNumber: number;
   initialSkill?: SkillKey;
+  resetVersion?: number;
   state: StudyState;
   onUpdateSettings: (patch: Partial<AppSettings>) => void;
+  onResetUnit: (unitNumber: number, scope: UnitResetScope) => void;
   onNavigate: (hash: string) => void;
 }
 
@@ -57,8 +61,10 @@ type LevelFilter = 'all' | 'wrong' | SrsLevel;
 export function UnitDetailView({
   unitNumber,
   initialSkill,
+  resetVersion = 0,
   state,
   onUpdateSettings,
+  onResetUnit,
   onNavigate
 }: UnitDetailViewProps) {
   const unitMeta = UNITS_META_BY_NUMBER[unitNumber];
@@ -215,14 +221,23 @@ export function UnitDetailView({
             </div>
           </div>
 
-          <button
-            type="button"
-            onClick={() => onNavigate(`#/tutor?unit=${unitMeta.unit}`)}
-            className="inline-flex items-center justify-center gap-2 rounded-xl border border-blue-200 bg-blue-50 hover:bg-blue-100 text-blue-700 px-4 py-2.5 text-sm font-bold shadow-2xs transition-colors focus-ring shrink-0"
-          >
-            <Bot className="w-4 h-4" aria-hidden="true" />
-            <span>Hỏi Gia sư AI</span>
-          </button>
+          <div className="flex flex-col sm:flex-row md:flex-col items-stretch md:items-end gap-2.5 shrink-0">
+            <button
+              type="button"
+              onClick={() => onNavigate(`#/tutor?unit=${unitMeta.unit}`)}
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-blue-200 bg-blue-50 hover:bg-blue-100 text-blue-700 px-4 py-2.5 text-sm font-bold shadow-2xs transition-colors focus-ring shrink-0"
+            >
+              <Bot className="w-4 h-4" aria-hidden="true" />
+              <span>Hỏi Gia sư AI</span>
+            </button>
+
+            <ResetUnitControl
+              unitNumber={unitMeta.unit}
+              learnedCount={dist.learnedCount}
+              onResetUnit={onResetUnit}
+              variant="header"
+            />
+          </div>
         </div>
 
         {/* Textbook Overall Objectives */}
@@ -286,12 +301,14 @@ export function UnitDetailView({
       {/* Tab Content */}
       {activeSkill === 'grammar' ? (
         <GrammarTab
+          key={`grammar-u${unitMeta.unit}-r${resetVersion}`}
           unitNumber={unitMeta.unit}
           settings={state.settings}
           onNavigate={onNavigate}
         />
       ) : activeSkill === 'cards' ? (
         <SpeakingCardsWorkspace
+          key={`cards-u${unitMeta.unit}-r${resetVersion}`}
           unitNumber={unitMeta.unit}
           settings={state.settings}
           onUpdateSettings={onUpdateSettings}
@@ -299,6 +316,7 @@ export function UnitDetailView({
         />
       ) : activeSkill === 'writing' ? (
         <WritingTab
+          key={`writing-u${unitMeta.unit}-r${resetVersion}`}
           unitNumber={unitMeta.unit}
           settings={state.settings}
           onUpdateSettings={onUpdateSettings}
@@ -306,15 +324,24 @@ export function UnitDetailView({
         />
       ) : activeSkill === 'monotalk' ? (
         <MonoTalkTab
+          key={`monotalk-u${unitMeta.unit}-r${resetVersion}`}
           unitNumber={unitMeta.unit}
           settings={state.settings}
           onUpdateSettings={onUpdateSettings}
           onNavigate={onNavigate}
         />
       ) : activeSkill === 'listening' ? (
-        <ListeningTab unitNumber={unitMeta.unit} settings={state.settings} />
+        <ListeningTab
+          key={`listening-u${unitMeta.unit}-r${resetVersion}`}
+          unitNumber={unitMeta.unit}
+          settings={state.settings}
+        />
       ) : activeSkill === 'reading' ? (
-        <ReadingTab unitNumber={unitMeta.unit} settings={state.settings} />
+        <ReadingTab
+          key={`reading-u${unitMeta.unit}-r${resetVersion}`}
+          unitNumber={unitMeta.unit}
+          settings={state.settings}
+        />
       ) : (
         <div className="space-y-4">
           {/* Action Bar */}
@@ -489,6 +516,13 @@ export function UnitDetailView({
                             className="leading-relaxed pt-0.5"
                           />
                         </div>
+
+                        <VocabMnemonicBox
+                          mnemonicVi={item.mnemonicVi}
+                          word={item.word}
+                          settings={state.settings}
+                          compact
+                        />
                       </div>
 
                       {/* Right: SRS Status, Wrong Count & AI Tutor button */}
