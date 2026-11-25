@@ -234,6 +234,7 @@ export function UnitDetailView({
             <ResetUnitControl
               unitNumber={unitMeta.unit}
               learnedCount={dist.learnedCount}
+              activeSkill={activeSkill}
               onResetUnit={onResetUnit}
               variant="header"
             />

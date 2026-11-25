@@ -14,7 +14,6 @@ import {
   RotateCcw,
   Settings,
   Sparkles,
-  Trash2,
   Upload,
   Volume2
 } from 'lucide-react';
@@ -23,7 +22,7 @@ import { UNITS_META } from '../../data/unitsMeta';
 import { ALL_VOCAB, ALL_WORD_IDS, getUnitVocab } from '../../data/vocab';
 import { getDueWords, getLevelDistribution } from '../../engine/srs';
 import type { AppSettings, StudyState, UnitResetScope } from '../../types/vocab';
-import { ResetUnitControl } from '../common/ResetUnitControl';
+import { ResetAllControl, ResetUnitControl } from '../common/ResetUnitControl';
 import { type TestAiConnectionResult, testAiConnection } from '../../utils/aiClient';
 import {
   playClickSound,
@@ -54,7 +53,7 @@ interface SettingsViewProps {
   onUpdateSettings: (patch: Partial<AppSettings>) => void;
   onReplaceState: (nextState: StudyState) => void;
   onResetUnit: (unitNumber: number, scope: UnitResetScope) => void;
-  onResetAll: () => void;
+  onResetAll: (options?: { preserveSettings?: boolean }) => void;
 }
 
 export function SettingsView({
@@ -77,7 +76,6 @@ export function SettingsView({
   } | null>(null);
   const [importError, setImportError] = useState<string | null>(null);
   const [statusMessage, setStatusMessage] = useState<string | null>(null);
-  const [confirmReset, setConfirmReset] = useState(false);
   const [resetUnitTarget, setResetUnitTarget] = useState<number>(1);
   const [showApiKey, setShowApiKey] = useState(false);
   const [testingAi, setTestingAi] = useState(false);
@@ -738,14 +736,14 @@ export function SettingsView({
           </div>
         )}
 
-        {/* Reset Per-Unit Progress */}
+        {/* Reset Per-Unit / Per-Part Progress */}
         <div className="pt-4 border-t border-slate-100 space-y-3">
           <div>
             <div className="text-sm font-bold text-slate-900">
-              Đặt lại tiến trình theo từng Unit
+              Đặt lại tiến trình theo từng Unit hoặc từng phần
             </div>
             <p className="text-xs text-slate-500">
-              Chọn 1 Unit cụ thể để xóa tiến độ Từ vựng hoặc toàn bộ kỹ năng (các Unit khác không bị ảnh hưởng).
+              Chọn 1 Unit rồi chọn reset riêng từng phần (Vocabulary, Grammar, Cards, Writing, Mono Talk, Listening, Reading) hoặc toàn bộ Unit đó.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row sm:items-start gap-3">
@@ -781,44 +779,12 @@ export function SettingsView({
           </div>
         </div>
 
-        {/* Reset Data */}
-        <div className="pt-4 border-t border-slate-100">
-          {!confirmReset ? (
-            <button
-              type="button"
-              onClick={() => setConfirmReset(true)}
-              className="inline-flex items-center gap-2 rounded-xl border border-rose-200 bg-rose-50 hover:bg-rose-100 text-rose-700 px-4 py-2 text-xs sm:text-sm font-semibold transition-colors focus-ring"
-            >
-              <Trash2 className="w-4 h-4" aria-hidden="true" />
-              <span>Xoá toàn bộ tiến độ học</span>
-            </button>
-          ) : (
-            <div className="rounded-xl border border-rose-300 bg-rose-50 p-4 flex flex-wrap items-center justify-between gap-3">
-              <span className="text-sm font-semibold text-rose-900">
-                Bạn chắc chắn muốn xoá sạch toàn bộ tiến độ SRS?
-              </span>
-              <div className="flex gap-2">
-                <button
-                  type="button"
-                  onClick={() => {
-                    onResetAll();
-                    setConfirmReset(false);
-                    setStatusMessage('Đã đặt lại toàn bộ dữ liệu học tập về trạng thái ban đầu.');
-                  }}
-                  className="rounded-lg bg-rose-600 hover:bg-rose-700 text-white px-4 py-1.5 text-xs sm:text-sm font-bold focus-ring"
-                >
-                  Xoá ngay
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setConfirmReset(false)}
-                  className="rounded-lg border border-slate-300 bg-white hover:bg-slate-50 text-slate-700 px-4 py-1.5 text-xs sm:text-sm font-semibold focus-ring"
-                >
-                  Huỷ
-                </button>
-              </div>
-            </div>
-          )}
+        {/* Reset All Progress */}
+        <div className="pt-4 border-t border-slate-100 space-y-2">
+          <div className="text-sm font-bold text-slate-900">
+            Reset toàn bộ tất cả học phần (8 Units &amp; mọi kỹ năng)
+          </div>
+          <ResetAllControl onResetAll={onResetAll} variant="settings" />
         </div>
       </section>
 

@@ -67,7 +67,7 @@ export type SkillKey =
   | 'listening'
   | 'reading';
 
-export type UnitResetScope = 'vocab' | 'all';
+export type UnitResetScope = 'all' | SkillKey;
 
 export type UnitSkillKey = Exclude<SkillKey, 'vocabulary' | 'cards' | 'monotalk'>;
 

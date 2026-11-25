@@ -19,13 +19,17 @@ import type {
   UnitResetScope,
   WordProgress
 } from './types/vocab';
-import { clearAllUnitSkillProgress } from './utils/curriculumHelpers';
+import {
+  clearAllGlobalSkillProgress,
+  clearAllUnitSkillProgress,
+  clearSingleUnitSkillProgress
+} from './utils/curriculumHelpers';
 import { playClickSound, setSoundEffectsEnabled } from './utils/soundEffects';
 import { stopSpeaking } from './utils/speech';
 import {
   clearUnitVocabProgress,
-  createInitialStudyState,
   loadStudyState,
+  resetAllVocabAndStats,
   saveStudyState
 } from './utils/storage';
 
@@ -234,18 +238,33 @@ export function App() {
     setState(nextState);
   }, []);
 
-  const handleResetAll = useCallback(() => {
-    setState(createInitialStudyState());
+  const handleResetAll = useCallback((options: { preserveSettings?: boolean } = {}) => {
+    stopSpeaking();
+    setState((prev) => resetAllVocabAndStats(prev, options));
+    clearAllGlobalSkillProgress();
+    setUnitResetVersions((prev) => {
+      const next = { ...prev };
+      for (let u = 1; u <= 8; u += 1) {
+        next[u] = (next[u] ?? 0) + 1;
+      }
+      return next;
+    });
   }, []);
 
   const handleResetUnit = useCallback((unitNumber: number, scope: UnitResetScope = 'all') => {
     stopSpeaking();
-    const unitWordIds = getUnitVocab(unitNumber).map((w) => w.id);
-    setState((prev) => clearUnitVocabProgress(prev, unitWordIds));
+
+    if (scope === 'all' || scope === 'vocabulary') {
+      const unitWordIds = getUnitVocab(unitNumber).map((w) => w.id);
+      setState((prev) => clearUnitVocabProgress(prev, unitWordIds));
+    }
 
     if (scope === 'all') {
       const unitCardIds = (CARDS_BY_UNIT[unitNumber] ?? []).map((c) => c.id);
       clearAllUnitSkillProgress(unitNumber, unitCardIds);
+    } else if (scope !== 'vocabulary') {
+      const unitCardIds = (CARDS_BY_UNIT[unitNumber] ?? []).map((c) => c.id);
+      clearSingleUnitSkillProgress(unitNumber, scope, unitCardIds);
     }
 
     setUnitResetVersions((prev) => ({
@@ -270,7 +289,12 @@ export function App() {
 
       <main className="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-6 sm:py-8">
         {parsedRoute.view === 'dashboard' && (
-          <DashboardView state={state} onResetUnit={handleResetUnit} onNavigate={navigate} />
+          <DashboardView
+            state={state}
+            onResetUnit={handleResetUnit}
+            onResetAll={() => handleResetAll({ preserveSettings: true })}
+            onNavigate={navigate}
+          />
         )}
 
         {parsedRoute.view === 'unit' && (

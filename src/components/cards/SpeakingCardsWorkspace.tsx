@@ -65,6 +65,203 @@ function getSourceBadge(source: SpeakingCard['source']) {
   );
 }
 
+interface CardFramingSlotProps {
+  slotKey: 'lead_in' | 'closing';
+  badgeLabel: string;
+  title: string;
+  starterSpeaker: 'A' | 'B';
+  userRole: 'A' | 'B';
+  partnerDisplayName: string;
+  partnerLine?: string;
+  userHint: string;
+  referenceLine?: string;
+  placeholder: string;
+  value: string;
+  evaluation?: CardTurnEvaluation;
+  isRevealed: boolean;
+  isChecking: boolean;
+  rowError?: string;
+  settings: AppSettings;
+  onChange: (val: string) => void;
+  onCheckAi: () => void;
+  onToggleReveal: () => void;
+}
+
+function CardFramingSlot({
+  slotKey,
+  badgeLabel,
+  title,
+  starterSpeaker,
+  userRole,
+  partnerDisplayName,
+  partnerLine,
+  userHint,
+  referenceLine,
+  placeholder,
+  value,
+  evaluation,
+  isRevealed,
+  isChecking,
+  rowError,
+  settings,
+  onChange,
+  onCheckAi,
+  onToggleReveal
+}: CardFramingSlotProps) {
+  const userSpeaksFirst = starterSpeaker === userRole;
+  const isLeadIn = slotKey === 'lead_in';
+
+  return (
+    <div
+      className={`rounded-2xl border p-4 sm:p-5 transition-colors space-y-3 ${
+        evaluation
+          ? evaluation.isCorrect
+            ? 'border-emerald-200 bg-emerald-50/35'
+            : 'border-amber-200 bg-amber-50/35'
+          : isLeadIn
+            ? 'border-violet-200 bg-violet-50/35'
+            : 'border-teal-200 bg-teal-50/30'
+      }`}
+    >
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <div className="flex items-center gap-2">
+          <span
+            className={`px-2.5 py-0.5 rounded-lg text-[11px] font-bold uppercase tracking-wider text-white ${
+              isLeadIn ? 'bg-violet-600' : 'bg-teal-600'
+            }`}
+          >
+            {badgeLabel}
+          </span>
+          <h4 className="text-sm sm:text-base font-bold text-slate-900">{title}</h4>
+        </div>
+
+        <span
+          className={`inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[11px] font-bold border ${
+            userSpeaksFirst
+              ? 'bg-amber-100 border-amber-200 text-amber-800'
+              : 'bg-blue-100 border-blue-200 text-blue-800'
+          }`}
+        >
+          <MessagesSquare className="w-3 h-3" aria-hidden="true" />
+          {userSpeaksFirst ? 'Bạn mở lời trước' : `${partnerDisplayName} mở lời trước — Bạn đáp lại`}
+        </span>
+      </div>
+
+      {!userSpeaksFirst && partnerLine && (
+        <div className="rounded-xl border border-blue-200 bg-blue-50/75 px-3.5 py-2.5 flex items-start justify-between gap-3">
+          <div>
+            <span className="text-[11px] font-bold uppercase tracking-wider text-blue-700 block mb-0.5">
+              Lời thoại từ {partnerDisplayName}:
+            </span>
+            <p className="text-xs sm:text-sm font-bold text-slate-900">“{partnerLine}”</p>
+          </div>
+          <SpeakButton text={partnerLine} settings={settings} size="sm" />
+        </div>
+      )}
+
+      <div className="rounded-xl border border-dashed border-slate-300 bg-white/80 px-3.5 py-2.5 text-xs sm:text-sm text-slate-800">
+        <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 block mb-0.5">
+          Nhiệm vụ câu thoại của bạn:
+        </span>
+        <span>{userHint}</span>
+      </div>
+
+      <textarea
+        rows={2}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        placeholder={placeholder}
+        className="w-full rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-sm text-slate-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none resize-y"
+      />
+
+      <div className="flex flex-wrap items-center gap-2">
+        <button
+          type="button"
+          data-sound="custom"
+          disabled={isChecking || !value.trim()}
+          onClick={onCheckAi}
+          className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 disabled:opacity-45 text-white text-xs font-semibold transition-colors focus-ring"
+        >
+          {isChecking ? (
+            <Loader2 className="w-3.5 h-3.5 animate-spin" aria-hidden="true" />
+          ) : (
+            <Bot className="w-3.5 h-3.5" aria-hidden="true" />
+          )}
+          <span>{isChecking ? 'Đang chấm...' : 'Kiểm tra AI'}</span>
+        </button>
+
+        {referenceLine && (
+          <button
+            type="button"
+            data-sound="custom"
+            onClick={onToggleReveal}
+            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 text-xs font-semibold transition-colors focus-ring"
+          >
+            {isRevealed ? (
+              <>
+                <EyeOff className="w-3.5 h-3.5" aria-hidden="true" />
+                <span>Ẩn đáp án</span>
+              </>
+            ) : (
+              <>
+                <Eye className="w-3.5 h-3.5" aria-hidden="true" />
+                <span>Hiện đáp án</span>
+              </>
+            )}
+          </button>
+        )}
+      </div>
+
+      {rowError && (
+        <p className="text-xs font-medium text-rose-700 bg-rose-50 border border-rose-200 rounded-xl px-3 py-2">
+          {rowError}
+        </p>
+      )}
+
+      {evaluation && (
+        <div
+          className={`rounded-xl border px-3.5 py-2.5 text-xs sm:text-sm space-y-1.5 ${
+            evaluation.isCorrect
+              ? 'border-emerald-200 bg-emerald-50 text-emerald-950'
+              : 'border-amber-200 bg-amber-50 text-amber-950'
+          }`}
+        >
+          <div className="flex items-center justify-between gap-2 font-bold">
+            <span className="inline-flex items-center gap-1.5">
+              {evaluation.isCorrect ? (
+                <CheckCircle2 className="w-4 h-4 text-emerald-600" aria-hidden="true" />
+              ) : (
+                <XCircle className="w-4 h-4 text-amber-600" aria-hidden="true" />
+              )}
+              <span>{evaluation.isCorrect ? 'Đạt yêu cầu' : 'Cần chỉnh sửa'}</span>
+            </span>
+            <span className="font-mono">{evaluation.score}/10</span>
+          </div>
+          <p>{evaluation.feedbackVi}</p>
+          <div className="flex flex-wrap items-center justify-between gap-2 pt-1 border-t border-black/5">
+            <span>
+              <strong>Gợi ý chuẩn hơn:</strong> {evaluation.improvedLine}
+            </span>
+            <SpeakButton text={evaluation.improvedLine} settings={settings} size="sm" />
+          </div>
+        </div>
+      )}
+
+      {isRevealed && referenceLine && (
+        <div className="rounded-xl border border-indigo-200 bg-indigo-50/70 px-3.5 py-2.5 text-xs sm:text-sm text-indigo-950 flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <span className="font-bold text-indigo-800 block text-[11px] uppercase">
+              Câu mẫu tham khảo:
+            </span>
+            <span className="font-semibold">{referenceLine}</span>
+          </div>
+          <SpeakButton text={referenceLine} settings={settings} size="sm" />
+        </div>
+      )}
+    </div>
+  );
+}
+
 export function SpeakingCardsWorkspace({
   unitNumber,
   settings,
@@ -197,7 +394,7 @@ export function SpeakingCardsWorkspace({
   const handleCheckSlotAi = async (params: {
     slotKey: string;
     fieldLabel: string;
-    taskKind: 'question' | 'answer' | 'step';
+    taskKind: 'question' | 'answer' | 'step' | 'leadin' | 'closing';
     cueInfo?: string;
     referenceLine?: string;
   }) => {
@@ -269,6 +466,14 @@ export function SpeakingCardsWorkspace({
   const activeRoleEntries = useMemo(() => {
     const entries: Array<{ label: string; userText: string; expectedText?: string }> = [];
 
+    if (activeCard.leadIn) {
+      entries.push({
+        label: 'Mở đầu & Câu dẫn dắt vào nội dung',
+        userText: inputs['lead_in'] ?? '',
+        expectedText: userRole === 'A' ? activeCard.leadIn.sampleLineA : activeCard.leadIn.sampleLineB
+      });
+    }
+
     if (activeCard.rows) {
       activeCard.rows.forEach((r, idx) => {
         const key = `row_${idx}`;
@@ -295,6 +500,18 @@ export function SpeakingCardsWorkspace({
             expectedText: step.sampleLine
           });
         }
+      });
+    }
+
+    if (
+      activeCard.leadIn &&
+      (activeCard.leadIn.sampleClosingA || activeCard.leadIn.sampleClosingB)
+    ) {
+      entries.push({
+        label: 'Kết thúc hội thoại',
+        userText: inputs['closing'] ?? '',
+        expectedText:
+          userRole === 'A' ? activeCard.leadIn.sampleClosingA : activeCard.leadIn.sampleClosingB
       });
     }
 
@@ -498,6 +715,88 @@ export function SpeakingCardsWorkspace({
               </div>
             </div>
           )}
+
+          {/* Lead-in Opening Slot (Mở đầu & Câu dẫn dắt vào nội dung) */}
+          {activeCard.leadIn && (
+            <div className="space-y-3">
+              <div className="flex items-center justify-between gap-2">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-violet-700">
+                  1. Mở đầu &amp; Câu dẫn dắt vào nội dung
+                </h4>
+              </div>
+              <CardFramingSlot
+                slotKey="lead_in"
+                badgeLabel="Dẫn dắt"
+                title="Chào hỏi & Dẫn dắt vào chủ đề"
+                starterSpeaker={activeCard.leadIn.starterSpeaker}
+                userRole={userRole}
+                partnerDisplayName={
+                  userRole === 'A' ? activeCard.roleBName : activeCard.roleAName
+                }
+                partnerLine={
+                  userRole === 'A'
+                    ? activeCard.leadIn.sampleLineB
+                    : activeCard.leadIn.sampleLineA
+                }
+                userHint={
+                  userRole === 'A'
+                    ? activeCard.leadIn.contextHintA
+                    : activeCard.leadIn.contextHintB
+                }
+                referenceLine={
+                  userRole === 'A'
+                    ? activeCard.leadIn.sampleLineA
+                    : activeCard.leadIn.sampleLineB
+                }
+                placeholder="Viết câu chào mở đầu và câu dẫn dắt vào nội dung chính..."
+                value={inputs['lead_in'] ?? ''}
+                evaluation={evaluations['lead_in']}
+                isRevealed={revealedKeys.has('lead_in')}
+                isChecking={loadingKey === 'lead_in'}
+                rowError={rowErrors['lead_in']}
+                settings={settings}
+                onChange={(val) => handleInputChange('lead_in', val)}
+                onCheckAi={() => {
+                  const partnerName =
+                    userRole === 'A' ? activeCard.roleBName : activeCard.roleAName;
+                  const partnerLine =
+                    userRole === 'A'
+                      ? activeCard.leadIn?.sampleLineB
+                      : activeCard.leadIn?.sampleLineA;
+                  const userHint =
+                    userRole === 'A'
+                      ? activeCard.leadIn?.contextHintA
+                      : activeCard.leadIn?.contextHintB;
+                  const refLine =
+                    userRole === 'A'
+                      ? activeCard.leadIn?.sampleLineA
+                      : activeCard.leadIn?.sampleLineB;
+                  void handleCheckSlotAi({
+                    slotKey: 'lead_in',
+                    fieldLabel: 'Mở đầu & Câu dẫn dắt vào nội dung',
+                    taskKind: 'leadin',
+                    cueInfo:
+                      activeCard.leadIn?.starterSpeaker !== userRole && partnerLine
+                        ? `Đối tác (${partnerName}) mở lời trước: "${partnerLine}" | Nhiệm vụ của bạn: ${userHint}`
+                        : `Nhiệm vụ dẫn dắt: ${userHint}`,
+                    referenceLine: refLine
+                  });
+                }}
+                onToggleReveal={() => toggleRevealAnswer('lead_in')}
+              />
+            </div>
+          )}
+
+          {/* Main Section Heading */}
+          {activeCard.leadIn &&
+            ((activeCard.rows && activeCard.rows.length > 0) ||
+              (activeCard.flowSteps && activeCard.flowSteps.length > 0)) && (
+              <div className="pt-1 flex items-center justify-between gap-2">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-slate-500">
+                  2. Nội dung chính trên phiếu
+                </h4>
+              </div>
+            )}
 
           {/* Table Cue Card Rows (100% single-role, ZERO leaked question/answer strings) */}
           {activeCard.rows && activeCard.rows.length > 0 && (
@@ -906,6 +1205,80 @@ export function SpeakingCardsWorkspace({
               </div>
             </div>
           )}
+
+          {/* Closing Slot (Kết thúc hội thoại) */}
+          {activeCard.leadIn &&
+            (activeCard.leadIn.sampleClosingA || activeCard.leadIn.sampleClosingB) && (
+              <div className="space-y-3">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-teal-700">
+                  3. Kết thúc hội thoại
+                </h4>
+                <CardFramingSlot
+                  slotKey="closing"
+                  badgeLabel="Kết thúc"
+                  title="Chốt nội dung & Chào kết thúc"
+                  starterSpeaker={activeCard.leadIn.closingStarter ?? activeCard.leadIn.starterSpeaker}
+                  userRole={userRole}
+                  partnerDisplayName={
+                    userRole === 'A' ? activeCard.roleBName : activeCard.roleAName
+                  }
+                  partnerLine={
+                    userRole === 'A'
+                      ? activeCard.leadIn.sampleClosingB
+                      : activeCard.leadIn.sampleClosingA
+                  }
+                  userHint={
+                    (userRole === 'A'
+                      ? activeCard.leadIn.closingHintA
+                      : activeCard.leadIn.closingHintB) ??
+                    'Cảm ơn đối tác đã trao đổi thông tin và chào kết thúc lịch sự.'
+                  }
+                  referenceLine={
+                    userRole === 'A'
+                      ? activeCard.leadIn.sampleClosingA
+                      : activeCard.leadIn.sampleClosingB
+                  }
+                  placeholder="Viết câu cảm ơn chốt nội dung và lời chào kết thúc..."
+                  value={inputs['closing'] ?? ''}
+                  evaluation={evaluations['closing']}
+                  isRevealed={revealedKeys.has('closing')}
+                  isChecking={loadingKey === 'closing'}
+                  rowError={rowErrors['closing']}
+                  settings={settings}
+                  onChange={(val) => handleInputChange('closing', val)}
+                  onCheckAi={() => {
+                    const closingStarter =
+                      activeCard.leadIn?.closingStarter ?? activeCard.leadIn?.starterSpeaker;
+                    const partnerName =
+                      userRole === 'A' ? activeCard.roleBName : activeCard.roleAName;
+                    const partnerLine =
+                      userRole === 'A'
+                        ? activeCard.leadIn?.sampleClosingB
+                        : activeCard.leadIn?.sampleClosingA;
+                    const userHint =
+                      (userRole === 'A'
+                        ? activeCard.leadIn?.closingHintA
+                        : activeCard.leadIn?.closingHintB) ??
+                      'Cảm ơn đối tác đã trao đổi thông tin và chào kết thúc lịch sự.';
+                    const refLine =
+                      userRole === 'A'
+                        ? activeCard.leadIn?.sampleClosingA
+                        : activeCard.leadIn?.sampleClosingB;
+                    void handleCheckSlotAi({
+                      slotKey: 'closing',
+                      fieldLabel: 'Kết thúc hội thoại',
+                      taskKind: 'closing',
+                      cueInfo:
+                        closingStarter !== userRole && partnerLine
+                          ? `Đối tác (${partnerName}) chốt trước: "${partnerLine}" | Nhiệm vụ của bạn: ${userHint}`
+                          : `Nhiệm vụ kết thúc: ${userHint}`,
+                      referenceLine: refLine
+                    });
+                  }}
+                  onToggleReveal={() => toggleRevealAnswer('closing')}
+                />
+              </div>
+            )}
 
           {/* Full Sheet Actions Footer */}
           <div className="pt-4 border-t border-slate-200 flex flex-wrap items-center justify-between gap-3">

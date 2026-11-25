@@ -325,3 +325,16 @@ export function clearUnitVocabProgress(
     progress: nextProgress
   };
 }
+
+export function resetAllVocabAndStats(
+  state: StudyState,
+  options: { preserveSettings?: boolean } = {}
+): StudyState {
+  const preserveSettings = options.preserveSettings ?? true;
+  return {
+    version: 1,
+    progress: {},
+    settings: preserveSettings ? state.settings : { ...DEFAULT_SETTINGS },
+    stats: { ...DEFAULT_STATS }
+  };
+}

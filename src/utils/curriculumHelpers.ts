@@ -5,6 +5,7 @@ import type {
   ListeningQuestion,
   ReadingQuestion
 } from '../types/curriculum';
+import type { SkillKey } from '../types/vocab';
 import type { CardTurnEvaluation, WritingSentenceEvaluation } from './aiClient';
 
 export const GRAMMAR_PROGRESS_STORAGE_KEY = 'eee5_grammar_progress_v1';
@@ -544,6 +545,33 @@ export function clearUnitCardSheetDrafts(cardIds: Iterable<string>): CardSheetDr
   return nextMap;
 }
 
+export function clearSingleUnitSkillProgress(
+  unitNumber: number,
+  skill: Exclude<SkillKey, 'vocabulary'>,
+  cardIds: Iterable<string>
+): void {
+  switch (skill) {
+    case 'grammar':
+      clearGrammarUnitProgress(unitNumber);
+      break;
+    case 'cards':
+      clearUnitCardSheetDrafts(cardIds);
+      break;
+    case 'writing':
+      clearWritingUnitProgress(unitNumber);
+      break;
+    case 'monotalk':
+      clearMonoTalkUnitProgress(unitNumber);
+      break;
+    case 'listening':
+      clearListeningUnitProgress(unitNumber);
+      break;
+    case 'reading':
+      clearReadingUnitProgress(unitNumber);
+      break;
+  }
+}
+
 export function clearAllUnitSkillProgress(
   unitNumber: number,
   cardIds: Iterable<string>
@@ -554,4 +582,28 @@ export function clearAllUnitSkillProgress(
   clearListeningUnitProgress(unitNumber);
   clearReadingUnitProgress(unitNumber);
   clearUnitCardSheetDrafts(cardIds);
+}
+
+const ALL_SKILL_PROGRESS_KEYS = [
+  GRAMMAR_PROGRESS_STORAGE_KEY,
+  WRITING_PROGRESS_STORAGE_KEY,
+  MONOTALK_PROGRESS_STORAGE_KEY,
+  LISTENING_PROGRESS_STORAGE_KEY,
+  READING_PROGRESS_STORAGE_KEY,
+  CARD_SHEET_DRAFT_STORAGE_KEY
+] as const;
+
+export function clearAllGlobalSkillProgress(): void {
+  if (typeof window === 'undefined' || !window.localStorage) return;
+  for (const key of ALL_SKILL_PROGRESS_KEYS) {
+    try {
+      if (typeof window.localStorage.removeItem === 'function') {
+        window.localStorage.removeItem(key);
+      } else {
+        window.localStorage.setItem(key, '{}');
+      }
+    } catch {
+      // Ignore quota / privacy mode errors
+    }
+  }
 }

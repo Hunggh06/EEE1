@@ -76,6 +76,19 @@ export interface CardMiniChart {
   multiSeries?: Array<{ name: string; color: string; points: Array<{ label: string; value: number }> }>;
 }
 
+export interface CardLeadIn {
+  starterSpeaker: 'A' | 'B';
+  contextHintA: string;
+  contextHintB: string;
+  sampleLineA: string;
+  sampleLineB: string;
+  closingStarter?: 'A' | 'B';
+  closingHintA?: string;
+  closingHintB?: string;
+  sampleClosingA?: string;
+  sampleClosingB?: string;
+}
+
 export interface SpeakingCard {
   id: string;
   unit: number;
@@ -86,6 +99,7 @@ export interface SpeakingCard {
   scenarioVi: string;
   roleAName: string;
   roleBName: string;
+  leadIn?: CardLeadIn;
   rows?: CardTableRow[];
   flowSteps?: CardFlowStep[];
   charts?: CardMiniChart[];

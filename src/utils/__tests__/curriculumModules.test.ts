@@ -82,8 +82,12 @@ describe('Phase 2 Curriculum Data Integrity (Units 1–8)', () => {
     }
   });
 
-  it('provides all 9 Speaking Cards matching ÔN TẬP THI KTHP SPEAKING across all 8 Units plus 7 Mono Talks', () => {
-    expect(SPEAKING_CARDS).toHaveLength(9);
+  it('provides all 11 Speaking Cards matching Card.md & ÔN TẬP THI KTHP SPEAKING across all 8 Units plus 7 Mono Talks', () => {
+    expect(SPEAKING_CARDS).toHaveLength(11);
+    expect(CARDS_BY_UNIT[3].length).toBeGreaterThanOrEqual(2);
+    expect(CARDS_BY_UNIT[4].length).toBeGreaterThanOrEqual(2);
+    expect(CARDS_BY_UNIT[3].map((c) => c.id)).toContain('card_u3_ceiling_fan');
+    expect(CARDS_BY_UNIT[4].map((c) => c.id)).toContain('card_u4_electrolux_washer');
 
     for (let u = 1; u <= 8; u += 1) {
       const cards = CARDS_BY_UNIT[u];
@@ -92,6 +96,14 @@ describe('Phase 2 Curriculum Data Integrity (Units 1–8)', () => {
 
       for (const card of cards) {
         expect(card.unit).toBe(u);
+        expect(card.leadIn).toBeDefined();
+        expect(['A', 'B']).toContain(card.leadIn!.starterSpeaker);
+        expect(card.leadIn!.contextHintA.trim().length).toBeGreaterThan(10);
+        expect(card.leadIn!.contextHintB.trim().length).toBeGreaterThan(10);
+        expect(card.leadIn!.sampleLineA.trim().length).toBeGreaterThan(5);
+        expect(card.leadIn!.sampleLineB.trim().length).toBeGreaterThan(5);
+        expect(card.leadIn!.sampleClosingA?.trim().length).toBeGreaterThan(5);
+        expect(card.leadIn!.sampleClosingB?.trim().length).toBeGreaterThan(5);
         expect(card.sampleDialogue.length).toBeGreaterThanOrEqual(4);
         for (const turn of card.sampleDialogue) {
           expect(['A', 'B']).toContain(turn.speaker);

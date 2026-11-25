@@ -8,14 +8,18 @@ import {
   MONOTALK_PROGRESS_STORAGE_KEY,
   READING_PROGRESS_STORAGE_KEY,
   WRITING_PROGRESS_STORAGE_KEY,
-  clearAllUnitSkillProgress
+  clearAllGlobalSkillProgress,
+  clearAllUnitSkillProgress,
+  clearSingleUnitSkillProgress
 } from '../curriculumHelpers';
 import { selectBestVietnameseVoice } from '../speech';
 import {
+  DEFAULT_SETTINGS,
   clearUnitVocabProgress,
   createInitialStudyState,
   fastForwardDueDates,
-  parseAndValidateBackupJson
+  parseAndValidateBackupJson,
+  resetAllVocabAndStats
 } from '../storage';
 
 describe('Dataset Integrity & Storage Utilities', () => {
@@ -183,5 +187,68 @@ describe('Dataset Integrity & Storage Utilities', () => {
         g.window = prevWindow;
       }
     }
+  });
+
+  it('clears a single skill part without affecting other skills and supports global reset', () => {
+    const store: Record<string, string> = {
+      [GRAMMAR_PROGRESS_STORAGE_KEY]: JSON.stringify({
+        1: { bestScore: 8, lastScore: 8, totalQuestions: 8, answers: {}, checkedIds: [], updatedAt: 1 }
+      }),
+      [LISTENING_PROGRESS_STORAGE_KEY]: JSON.stringify({
+        1: { bestScore: 5, lastScore: 5, totalQuestions: 5, answers: {}, checkedIds: [], updatedAt: 1 }
+      }),
+      [WRITING_PROGRESS_STORAGE_KEY]: JSON.stringify({
+        1: { sentences: {}, updatedAt: 1 }
+      })
+    };
+
+    const g = globalThis as unknown as { window?: unknown };
+    const prevWindow = g.window;
+    g.window = {
+      localStorage: {
+        getItem: (k: string) => store[k] ?? null,
+        setItem: (k: string, v: string) => {
+          store[k] = v;
+        },
+        removeItem: (k: string) => {
+          delete store[k];
+        }
+      }
+    };
+
+    try {
+      clearSingleUnitSkillProgress(1, 'grammar', []);
+      expect(JSON.parse(store[GRAMMAR_PROGRESS_STORAGE_KEY])['1']).toBeUndefined();
+      expect(JSON.parse(store[LISTENING_PROGRESS_STORAGE_KEY])['1']).toBeDefined();
+      expect(JSON.parse(store[WRITING_PROGRESS_STORAGE_KEY])['1']).toBeDefined();
+
+      clearAllGlobalSkillProgress();
+      expect(store[GRAMMAR_PROGRESS_STORAGE_KEY]).toBeUndefined();
+      expect(store[LISTENING_PROGRESS_STORAGE_KEY]).toBeUndefined();
+      expect(store[WRITING_PROGRESS_STORAGE_KEY]).toBeUndefined();
+    } finally {
+      if (prevWindow === undefined) {
+        delete g.window;
+      } else {
+        g.window = prevWindow;
+      }
+    }
+
+    const activeState = createInitialStudyState();
+    activeState.settings.aiApiKey = 'custom_key_123';
+    activeState.settings.speechRate = 0.8;
+    activeState.stats.streakDays = 7;
+    activeState.progress['u1_01'] = { level: 5, nextReview: 5000, wrongCount: 0 };
+
+    const keptSettings = resetAllVocabAndStats(activeState, { preserveSettings: true });
+    expect(keptSettings.progress).toEqual({});
+    expect(keptSettings.stats.streakDays).toBe(0);
+    expect(keptSettings.settings.aiApiKey).toBe('custom_key_123');
+    expect(keptSettings.settings.speechRate).toBe(0.8);
+
+    const factoryReset = resetAllVocabAndStats(activeState, { preserveSettings: false });
+    expect(factoryReset.progress).toEqual({});
+    expect(factoryReset.settings).toEqual(DEFAULT_SETTINGS);
+    expect(factoryReset.settings.speechRate).toBe(1.0);
   });
 });

@@ -12,16 +12,22 @@ import { UNITS_META } from '../../data/unitsMeta';
 import { ALL_VOCAB, getUnitVocab } from '../../data/vocab';
 import { getDueWords, getLevelDistribution, getNewWordsChunk } from '../../engine/srs';
 import type { SrsLevel, StudyState, UnitResetScope } from '../../types/vocab';
-import { ResetUnitControl } from '../common/ResetUnitControl';
+import { ResetAllControl, ResetUnitControl } from '../common/ResetUnitControl';
 import { UnitIcon } from '../common/UnitIcon';
 
 interface DashboardViewProps {
   state: StudyState;
   onResetUnit: (unitNumber: number, scope: UnitResetScope) => void;
+  onResetAll: () => void;
   onNavigate: (hash: string) => void;
 }
 
-export function DashboardView({ state, onResetUnit, onNavigate }: DashboardViewProps) {
+export function DashboardView({
+  state,
+  onResetUnit,
+  onResetAll,
+  onNavigate
+}: DashboardViewProps) {
   const now = Date.now();
   const dist = getLevelDistribution(ALL_VOCAB, state.progress, now);
   const dueWords = getDueWords(ALL_VOCAB, state.progress, now);
@@ -262,15 +268,16 @@ export function DashboardView({ state, onResetUnit, onNavigate }: DashboardViewP
 
       {/* 8-Unit Grid */}
       <section aria-labelledby="units-grid-heading" className="space-y-4">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <div>
             <h2 id="units-grid-heading" className="text-lg font-bold text-slate-900">
               8 Chủ đề học phần (Units 1–8)
             </h2>
             <p className="text-sm text-slate-500">
-              Chọn một Unit để học cụm {state.settings.chunkSize} từ mới hoặc xem toàn bộ từ vựng & kỹ năng mở rộng.
+              Chọn một Unit để học cụm {state.settings.chunkSize} từ mới hoặc xem toàn bộ từ vựng &amp; kỹ năng mở rộng.
             </p>
           </div>
+          <ResetAllControl onResetAll={() => onResetAll()} variant="dashboard" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

@@ -1352,7 +1352,7 @@ export interface EvaluateCardSheetItemParams {
   userRole: 'A' | 'B';
   card: SpeakingCard;
   fieldLabel: string;
-  taskKind: 'question' | 'answer' | 'step';
+  taskKind: 'question' | 'answer' | 'step' | 'leadin' | 'closing';
   cueInfo?: string;
   referenceLine?: string;
   userInput: string;
@@ -1395,9 +1395,13 @@ export async function evaluateCardSheetItem({
   const taskLabel =
     taskKind === 'question'
       ? 'Sinh viên phải tự đặt CÂU HỎI tiếng Anh để hỏi đối tác lấy thông tin cho mục này.'
-      : taskKind === 'step'
-        ? 'Sinh viên phải viết CÂU THOẠI tiếng Anh thực hiện đúng bước trong lưu đồ.'
-        : 'Sinh viên phải viết CÂU TRẢ LỜI / MÔ TẢ tiếng Anh đúng thông tin gợi ý trên phiếu.';
+      : taskKind === 'leadin'
+        ? 'Sinh viên phải viết CÂU CHÀO MỞ ĐẦU & DẪN DẮT tự nhiên vào nội dung chính của hội thoại theo đúng vai.'
+        : taskKind === 'closing'
+          ? 'Sinh viên phải viết CÂU KẾT THÚC / CHÀO TẠM BIỆT lịch sự để khép lại cuộc trao đổi.'
+          : taskKind === 'step'
+            ? 'Sinh viên phải viết CÂU THOẠI tiếng Anh thực hiện đúng bước trong lưu đồ.'
+            : 'Sinh viên phải viết CÂU TRẢ LỜI / MÔ TẢ tiếng Anh đúng thông tin gợi ý trên phiếu.';
 
   const userPrompt = [
     summarizeCardContext(card),
