@@ -58,13 +58,16 @@ export function MiniChartSvg({ chart }: MiniChartSvgProps) {
   const labels = seriesList[0]?.points.map((p) => p.label) ?? [];
   const allValues = seriesList.flatMap((s) => s.points.map((p) => p.value));
   const rawMax = allValues.length > 0 ? Math.max(...allValues) : 10;
-  const { maxY, ticks } = computeNiceScale(rawMax * 1.08, 4);
+  const isPercentScale = chart.unitLabel.trim() === '%' && rawMax <= 100;
+  const { maxY, ticks } = isPercentScale
+    ? { maxY: 100, ticks: [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100] }
+    : computeNiceScale(rawMax * 1.08, 4);
 
   const width = 560;
-  const height = 246;
+  const height = 286;
   const padLeft = 56;
   const padRight = 24;
-  const padTop = 24;
+  const padTop = 26;
   const padBottom = 38;
   const plotW = width - padLeft - padRight;
   const plotH = height - padTop - padBottom;
@@ -257,9 +260,17 @@ export function MiniChartSvg({ chart }: MiniChartSvgProps) {
 
                     // Offset label cleanly above/below in multi-series so labels don't collide
                     let labelY = cy - 9;
-                    if (hasMultiSeries && seriesList.length === 2) {
-                      const otherVal = seriesList[1 - sIdx]?.points[i]?.value;
-                      if (otherVal !== undefined && p.value < otherVal) {
+                    if (hasMultiSeries && seriesList.length >= 2) {
+                      const hasCloseHigherNeighbor = seriesList.some((otherSeries, otherIdx) => {
+                        if (otherIdx === sIdx) return false;
+                        const otherVal = otherSeries.points[i]?.value;
+                        return (
+                          otherVal !== undefined &&
+                          otherVal > p.value &&
+                          otherVal - p.value <= maxY * 0.09
+                        );
+                      });
+                      if (hasCloseHigherNeighbor) {
                         labelY = cy + 16;
                       }
                     }

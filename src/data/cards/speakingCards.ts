@@ -1654,27 +1654,27 @@ export const SPEAKING_CARDS: SpeakingCard[] = [
   },
 
   /* ==========================================================================
-   * UNIT 6 (MONO TALK CHART): Home Appliance Ownership in Vietnam (2006-2014)
+   * UNIT 6 (MONO TALK CHART): Home Appliance Ownership in Vietnam (2018-2025)
    * ======================================================================== */
   {
     id: 'card_u6_appliance_ownership',
     unit: 6,
     cardCode: 'Unit 6 • Mono Talk Graph',
-    title: 'Home Appliance Ownership in Vietnam (2006–2014)',
-    subtitleVi: 'Mô tả biểu đồ đường tỷ lệ sở hữu điều hoà, tủ lạnh và quạt trần (ÔN TẬP THI KTHP)',
+    title: 'Home Appliance Ownership in Vietnam (2018–2025)',
+    subtitleVi: 'Mô tả biểu đồ đường tỷ lệ sở hữu tủ lạnh, điều hoà và máy sưởi điện (2018–2025)',
     source: 'card_docx',
     scenarioVi:
-      'Bám sát phần III. MONO TALK Unit 6 trong ÔN TẬP THI KTHP SPEAKING: Student A thuyết trình số liệu biểu đồ đường tỷ lệ hộ gia đình sở hữu 3 thiết bị điện từ 2006 đến 2014; Student B đặt câu hỏi kiểm tra xu hướng và so sánh.',
+      'Bám sát phần III. MONO TALK Unit 6: Student A thuyết trình số liệu biểu đồ đường tỷ lệ hộ gia đình sở hữu 3 thiết bị gia dụng tại Việt Nam từ 2018 đến 2025; Student B đặt câu hỏi kiểm tra xu hướng và so sánh.',
     roleAName: 'Student A (Presenter)',
     roleBName: 'Student B (Colleague)',
     leadIn: {
       starterSpeaker: 'A',
       contextHintA:
-        'Chào đối tác/người nghe và dẫn dắt giới thiệu tổng quan biểu đồ đường: tỷ lệ sở hữu thiết bị gia dụng tại Việt Nam từ 2006 đến 2014 (gồm điều hòa, tủ lạnh, quạt trần).',
+        'Chào đối tác/người nghe và dẫn dắt giới thiệu tổng quan biểu đồ đường: tỷ lệ sở hữu thiết bị gia dụng tại Việt Nam từ 2018 đến 2025 (gồm tủ lạnh, điều hoà, máy sưởi điện).',
       contextHintB:
         'Đáp lại lịch sự và mời người thuyết trình bắt đầu phân tích số liệu từng thiết bị.',
       sampleLineA:
-        'Hello! Today I would like to present this line graph, which shows the percentage of home appliance ownership in Vietnam from 2006 to 2014, including air conditioners, refrigerators, and ceiling fans.',
+        'Hello! Today I would like to present this line graph, which shows the percentage of home appliance ownership in Vietnam from 2018 to 2025, including refrigerators, air conditioners, and electric heaters.',
       sampleLineB: 'Sure, please go ahead! I am looking forward to the trends.',
       closingStarter: 'A',
       closingHintA: 'Chốt lại ngắn gọn cảm ơn người nghe sau phần trình bày biểu đồ.',
@@ -1685,36 +1685,36 @@ export const SPEAKING_CARDS: SpeakingCard[] = [
     },
     charts: [
       {
-        title: 'Home Appliance Ownership in Vietnam (2006–2014)',
+        title: 'Home appliance ownership in Vietnam; in percent',
         chartType: 'line',
         unitLabel: '%',
         points: [],
         multiSeries: [
           {
-            name: 'Air conditioners (%)',
+            name: 'Refrigerator',
             color: '#2563eb',
             points: [
-              { label: '2006', value: 5 },
-              { label: '2010', value: 7 },
-              { label: '2014', value: 40 }
+              { label: '2018', value: 90 },
+              { label: '2021', value: 89 },
+              { label: '2025', value: 95 }
             ]
           },
           {
-            name: 'Refrigerators (%)',
-            color: '#10b981',
+            name: 'Air conditioner',
+            color: '#ea580c',
             points: [
-              { label: '2006', value: 30 },
-              { label: '2010', value: 45 },
-              { label: '2014', value: 55 }
+              { label: '2018', value: 80 },
+              { label: '2021', value: 75 },
+              { label: '2025', value: 69 }
             ]
           },
           {
-            name: 'Ceiling fans (%)',
-            color: '#dc2626',
+            name: 'Electric heater',
+            color: '#16a34a',
             points: [
-              { label: '2006', value: 90 },
-              { label: '2010', value: 70 },
-              { label: '2014', value: 50 }
+              { label: '2018', value: 46 },
+              { label: '2021', value: 54 },
+              { label: '2025', value: 76 }
             ]
           }
         ]
@@ -1722,72 +1722,75 @@ export const SPEAKING_CARDS: SpeakingCard[] = [
     ],
     rows: [
       {
-        field: 'Air conditioners trend (2006–2014)',
-        studentA: '2006: 5% -> 2010: 7% (increased slightly) -> 2014: 40% (rose sharply)',
-        studentB: '(1) How did air conditioner ownership change from 2006 to 2014?',
+        field: 'Refrigerators trend (2018–2025)',
+        studentA: '2018: 90% -> 2021: 89% (decreased slightly) -> 2025: 95% (rose to a peak)',
+        studentB: '(1) How did refrigerator ownership change from 2018 to 2025?',
         bIsQuestionPrompt: true,
-        suggestedQuestion: 'How did the percentage of air conditioners change from 2006 to 2014?',
+        suggestedQuestion: 'How did the percentage of refrigerators change from 2018 to 2025?',
         suggestedAnswer:
-          'The percentage of air conditioners increased slightly from 5% in 2006 to 7% in 2010, and then rose sharply to 40% in 2014.'
+          'The percentage of refrigerators started at 90% in 2018, decreased slightly to 89% in 2021, and then rose to a peak of 95% in 2025.'
       },
       {
-        field: 'Refrigerators trend (2006–2014)',
-        studentA: '2006: 30% -> 2010: 45% -> 2014: 55% (increased steadily)',
-        studentB: '(2) What happened to refrigerators over the same period?',
+        field: 'Air conditioners trend (2018–2025)',
+        studentA: '2018: 80% -> 2021: 75% -> 2025: 69% (decreased steadily)',
+        studentB: '(2) What happened to air conditioners over the same period?',
         bIsQuestionPrompt: true,
-        suggestedQuestion: 'What happened to refrigerator ownership over the same period?',
+        suggestedQuestion: 'What happened to air conditioner ownership over the same period?',
         suggestedAnswer:
-          'The percentage of refrigerators increased steadily from 30% in 2006 to 45% in 2010 and 55% in 2014.'
+          'The percentage of air conditioners decreased steadily from 80% in 2018 to 75% in 2021 and dropped to 69% in 2025.'
       },
       {
-        field: 'Ceiling fans & Overall comparison',
+        field: 'Electric heaters & Overall comparison',
         studentA:
-          '2006: 90% -> 2010: 70% (decreased significantly) -> 2014: 50% (continued to fall); AC & Fridges: upward trend, Fans: downward',
-        studentB: '(3) What is the trend for ceiling fans and the overall conclusion?',
+          '2018: 46% -> 2021: 54% (increased gradually) -> 2025: 76% (rose sharply, overtook AC); Fridges & Heaters: upward trend, AC: downward',
+        studentB: '(3) What is the trend for electric heaters and the overall conclusion?',
         bIsQuestionPrompt: true,
-        suggestedQuestion: 'What is the trend for ceiling fans and the overall takeaway?',
+        suggestedQuestion: 'What is the trend for electric heaters and the overall takeaway?',
         suggestedAnswer:
-          'Ceiling fans decreased significantly from 90% in 2006 to 70% in 2010, then fell to 50% in 2014. Overall, air conditioners and refrigerators showed an upward trend, while ceiling fans showed a downward trend.'
+          'Electric heaters stood at 46% in 2018, increased gradually to 54% in 2021, and then rose sharply to 76% in 2025, overtaking air conditioners. Overall, refrigerators and electric heaters showed an upward trend, while air conditioners showed a downward trend.'
       }
     ],
     keyExpressions: [
-      'The line graph shows the percentage of ... from 2006 to 2014.',
-      'increased slightly from 5% to 7%',
-      'rose sharply to 40%',
-      'increased steadily from 30% to 55%',
-      'decreased significantly from 90% to 70%',
+      'The line graph shows the percentage of ... from 2018 to 2025.',
+      'started at 90% and decreased slightly to 89%',
+      'rose to a peak of 95%',
+      'decreased steadily from 80% to 75% and 69%',
+      'rose sharply to 76%, overtaking ...',
       'showed an upward / downward trend'
     ],
     sampleDialogue: [
       {
         speaker: 'A',
         roleLabel: 'Presenter',
-        line: 'The line graph shows the percentage of home appliance ownership in Vietnam from 2006 to 2014, including air conditioners, refrigerators, and ceiling fans.',
-        translationVi: 'Biểu đồ đường thể hiện tỷ lệ sở hữu thiết bị gia dụng tại Việt Nam từ 2006 đến 2014 gồm điều hoà, tủ lạnh và quạt trần.'
+        line: 'The line graph shows the percentage of home appliance ownership in Vietnam from 2018 to 2025, including refrigerators, air conditioners, and electric heaters.',
+        translationVi:
+          'Biểu đồ đường thể hiện tỷ lệ sở hữu thiết bị gia dụng tại Việt Nam từ 2018 đến 2025 gồm tủ lạnh, điều hoà và máy sưởi điện.'
       },
       {
         speaker: 'B',
         roleLabel: 'Colleague',
-        line: 'How did the percentage of air conditioners change from 2006 to 2014?',
-        translationVi: 'Tỷ lệ sở hữu điều hoà thay đổi thế nào từ 2006 đến 2014?'
+        line: 'How did the percentage of refrigerators change from 2018 to 2025?',
+        translationVi: 'Tỷ lệ sở hữu tủ lạnh thay đổi thế nào từ 2018 đến 2025?'
       },
       {
         speaker: 'A',
         roleLabel: 'Presenter',
-        line: 'As you can see, the percentage of air conditioners increased slightly from 5% in 2006 to 7% in 2010. Then, it rose sharply to 40% in 2014.',
-        translationVi: 'Như bạn thấy, điều hoà tăng nhẹ từ 5% năm 2006 lên 7% năm 2010, sau đó tăng vọt lên 40% vào năm 2014.'
+        line: 'As you can see, the percentage of refrigerators started at 90% in 2018 and decreased slightly to 89% in 2021. Then, it rose to a peak of 95% in 2025.',
+        translationVi:
+          'Như bạn thấy, tủ lạnh khởi đầu ở 90% năm 2018 và giảm nhẹ xuống 89% năm 2021, sau đó tăng lên đỉnh 95% vào năm 2025.'
       },
       {
         speaker: 'B',
         roleLabel: 'Colleague',
-        line: 'And what about refrigerators and ceiling fans?',
-        translationVi: 'Thế còn tủ lạnh và quạt trần thì sao?'
+        line: 'And what about air conditioners and electric heaters?',
+        translationVi: 'Thế còn điều hoà và máy sưởi điện thì sao?'
       },
       {
         speaker: 'A',
         roleLabel: 'Presenter',
-        line: 'Refrigerators increased steadily from 30% in 2006 to 45% in 2010 and 55% in 2014. However, ceiling fans decreased significantly from 90% to 70% in 2010 and continued to fall to 50% in 2014. Overall, air conditioners and refrigerators showed an upward trend, while ceiling fans showed a downward trend.',
-        translationVi: 'Tủ lạnh tăng đều từ 30% lên 45% năm 2010 và 55% năm 2014. Ngược lại, quạt trần giảm đáng kể từ 90% xuống 70% và còn 50% năm 2014. Nhìn chung điều hoà và tủ lạnh có xu hướng tăng, còn quạt trần giảm.'
+        line: 'Meanwhile, air conditioners decreased steadily from 80% in 2018 to 75% in 2021 and dropped to 69% in 2025. For electric heaters, the figure stood at 46% in 2018, increased gradually to 54% in 2021, and rose sharply to 76% in 2025, overtaking air conditioners. Overall, refrigerators and electric heaters showed an upward trend, while air conditioners showed a downward trend.',
+        translationVi:
+          'Trong khi đó, điều hoà giảm đều từ 80% xuống 75% năm 2021 và còn 69% năm 2025. Máy sưởi điện ở mức 46% năm 2018, tăng dần lên 54% năm 2021 rồi vọt lên 76% năm 2025, vượt qua điều hoà. Nhìn chung tủ lạnh và máy sưởi điện có xu hướng tăng, còn điều hoà có xu hướng giảm.'
       }
     ]
   },
@@ -2153,10 +2156,10 @@ export const MONO_TALKS_BY_UNIT: Record<number, MonoTalkSample> = {
   },
   6: {
     unit: 6,
-    title: 'Line Graph: Home Appliance Ownership in Vietnam (2006–2014)',
-    topicVi: 'Mô tả biểu đồ đường sở hữu điều hoà, tủ lạnh và quạt trần (2006–2014)',
+    title: 'Line Graph: Home Appliance Ownership in Vietnam (2018–2025)',
+    topicVi: 'Mô tả biểu đồ đường sở hữu tủ lạnh, điều hoà và máy sưởi điện (2018–2025)',
     script:
-      'Today, I will talk about this line graph. The line graph shows the percentage of home appliance ownership in Vietnam from 2006 to 2014, including air conditioners, refrigerators, and ceiling fans. As you can see, the percentage of air conditioners increased slightly from 5% in 2006 to 7% in 2010. Then, it rose sharply to 40% in 2014. The percentage of refrigerators also increased steadily from 30% in 2006 to 45% in 2010 and 55% in 2014. However, the percentage of ceiling fans decreased significantly from 90% in 2006 to 70% in 2010. Then, it continued to fall to 50% in 2014. Overall, air conditioners and refrigerators showed an upward trend, while ceiling fans showed a downward trend.'
+      'Today, I will talk about this line graph, which shows the percentage of home appliance ownership in Vietnam from 2018 to 2025, including refrigerators, air conditioners, and electric heaters. As you can see, the percentage of refrigerators started at 90% in 2018 and decreased slightly to 89% in 2021. Then, it rose to a peak of 95% in 2025. Meanwhile, the percentage of air conditioners decreased steadily from 80% in 2018 to 75% in 2021 and dropped to 69% in 2025. For electric heaters, the figure stood at 46% in 2018 and increased gradually to 54% in 2021. Then, it rose sharply to 76% in 2025, overtaking air conditioners. Overall, refrigerators and electric heaters showed an upward trend, while air conditioners showed a downward trend.'
   },
   7: {
     unit: 7,

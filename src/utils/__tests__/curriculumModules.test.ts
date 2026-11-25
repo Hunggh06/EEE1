@@ -302,10 +302,33 @@ describe('Dedicated Mono Talk Module Integrity (Units 1–8)', () => {
       });
     }
 
-    // Unit 4 cueTable (Daikin U0), Unit 6 multiSeries chart, Unit 8 flowchart
+    // Unit 4 cueTable (Daikin U0), Unit 6 multiSeries chart (2018-2025), Unit 8 flowchart
     expect(getUnitMonoTalk(4)?.cueTable?.rows.length).toBeGreaterThanOrEqual(6);
     expect(getUnitMonoTalk(4)?.cueTable?.precautions).toHaveLength(3);
-    expect(getUnitMonoTalk(6)?.chart?.multiSeries).toHaveLength(3);
+    const u6ChartSeries = getUnitMonoTalk(6)?.chart?.multiSeries;
+    expect(u6ChartSeries).toHaveLength(3);
+    expect(u6ChartSeries?.map((s) => s.name)).toEqual([
+      'Refrigerator',
+      'Air conditioner',
+      'Electric heater'
+    ]);
+    expect(u6ChartSeries?.[0].points.map((p) => [p.label, p.value])).toEqual([
+      ['2018', 90],
+      ['2021', 89],
+      ['2025', 95]
+    ]);
+    expect(u6ChartSeries?.[1].points.map((p) => [p.label, p.value])).toEqual([
+      ['2018', 80],
+      ['2021', 75],
+      ['2025', 69]
+    ]);
+    expect(u6ChartSeries?.[2].points.map((p) => [p.label, p.value])).toEqual([
+      ['2018', 46],
+      ['2021', 54],
+      ['2025', 76]
+    ]);
+    expect(MONO_TALKS_BY_UNIT[6].script).toContain('2018 to 2025');
+    expect(MONO_TALKS_BY_UNIT[6].script).toContain('76% in 2025');
     expect(getUnitMonoTalk(8)?.flowSteps?.length).toBeGreaterThanOrEqual(8);
   });
 });

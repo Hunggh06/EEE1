@@ -603,22 +603,22 @@ export const ALL_MONOTALK_TASKS: UnitMonoTalkTask[] = [
 
   {
     unit: 6,
-    title: 'Line Graph: Home Appliance Ownership in Vietnam (2006–2014)',
+    title: 'Line Graph: Home Appliance Ownership in Vietnam (2018–2025)',
     taskTypeVi: 'Mono Talk • Visual Aid Graph Description',
     promptEn:
       'Describe a given chart/graph, using language for referring to visual aids. You should talk about:',
     promptBulletsEn: [
       'What the graph represents',
       'The overall trend',
-      'The trends of each subject (Air conditioner, Refrigerator, Ceiling fan from 2006 to 2014)'
+      'The trends of each subject (Refrigerator, Air conditioner, Electric heater from 2018 to 2025)'
     ],
     objectiveVi:
-      'Luyện từng câu bài thuyết trình mô tả biểu đồ đường tỷ lệ hộ gia đình sở hữu thiết bị điện tại Việt Nam (2006–2014) theo đúng Speaking Task Unit 6.',
+      'Luyện từng câu bài thuyết trình mô tả biểu đồ đường tỷ lệ phần trăm sở hữu thiết bị gia dụng tại Việt Nam (2018–2025) gồm tủ lạnh, điều hoà và máy sưởi điện.',
     targetChecklist: [
-      'Giới thiệu đối tượng biểu đồ ("The line graph shows the percentage of... from 2006 to 2014").',
+      'Giới thiệu đối tượng biểu đồ ("The line graph shows the percentage of... from 2018 to 2025").',
       'Dùng cụm dẫn chiếu biểu đồ ("As you can see,").',
-      'Mô tả chính xác số liệu & động từ xu hướng cho Điều hoà (5% -> 7% -> 40%: increased slightly, rose sharply).',
-      'Mô tả Tủ lạnh (30% -> 45% -> 55%: increased steadily) và Quạt trần (90% -> 70% -> 50%: decreased significantly, continued to fall).',
+      'Mô tả chính xác số liệu & xu hướng Tủ lạnh (90% -> 89% -> 95%: decreased slightly, rose to 95%).',
+      'Mô tả Điều hoà (80% -> 75% -> 69%: decreased steadily) và Máy sưởi điện (46% -> 54% -> 76%: increased gradually, rose sharply & overtook air conditioners).',
       'Chốt xu hướng tổng quát ("upward trend" vs "downward trend").'
     ],
     chart: {
@@ -628,30 +628,30 @@ export const ALL_MONOTALK_TASKS: UnitMonoTalkTask[] = [
       points: [],
       multiSeries: [
         {
-          name: 'Air conditioner',
-          color: '#16a34a',
-          points: [
-            { label: '2006', value: 5 },
-            { label: '2010', value: 7 },
-            { label: '2014', value: 40 }
-          ]
-        },
-        {
           name: 'Refrigerator',
           color: '#2563eb',
           points: [
-            { label: '2006', value: 30 },
-            { label: '2010', value: 45 },
-            { label: '2014', value: 55 }
+            { label: '2018', value: 90 },
+            { label: '2021', value: 89 },
+            { label: '2025', value: 95 }
           ]
         },
         {
-          name: 'Ceiling fan',
-          color: '#dc2626',
+          name: 'Air conditioner',
+          color: '#ea580c',
           points: [
-            { label: '2006', value: 90 },
-            { label: '2010', value: 70 },
-            { label: '2014', value: 50 }
+            { label: '2018', value: 80 },
+            { label: '2021', value: 75 },
+            { label: '2025', value: 69 }
+          ]
+        },
+        {
+          name: 'Electric heater',
+          color: '#16a34a',
+          points: [
+            { label: '2018', value: 46 },
+            { label: '2021', value: 54 },
+            { label: '2025', value: 76 }
           ]
         }
       ]
@@ -662,86 +662,88 @@ export const ALL_MONOTALK_TASKS: UnitMonoTalkTask[] = [
         order: 1,
         sectionLabel: 'Giới thiệu biểu đồ',
         vietnamesePrompt:
-          'Hôm nay tôi sẽ thuyết trình về biểu đồ đường này; biểu đồ thể hiện tỷ lệ phần trăm sở hữu thiết bị gia dụng tại Việt Nam từ năm 2006 đến năm 2014, gồm điều hoà, tủ lạnh và quạt trần.',
+          'Hôm nay tôi sẽ thuyết trình về biểu đồ đường này; biểu đồ thể hiện tỷ lệ phần trăm sở hữu thiết bị gia dụng tại Việt Nam từ năm 2018 đến năm 2025, gồm tủ lạnh, điều hoà và máy sưởi điện.',
         grammarTargets: ['The line graph shows...', 'percentage of...', 'from ... to ...'],
         keywordSkeleton:
-          'Today / talk about / line graph / shows / percentage / home appliance ownership / Vietnam / 2006 to 2014 / air conditioners, refrigerators, ceiling fans.',
+          'Today / talk about / line graph / shows / percentage / home appliance ownership / Vietnam / 2018 to 2025 / refrigerators, air conditioners, electric heaters.',
         modelSentence:
-          'Today, I will talk about this line graph, which shows the percentage of home appliance ownership in Vietnam from 2006 to 2014, including air conditioners, refrigerators, and ceiling fans.',
-        tipVi: 'Câu mở bài nêu đầy đủ: loại biểu đồ, chủ đề, địa điểm và mốc thời gian.'
+          'Today, I will talk about this line graph, which shows the percentage of home appliance ownership in Vietnam from 2018 to 2025, including refrigerators, air conditioners, and electric heaters.',
+        tipVi: 'Câu mở bài nêu đầy đủ: loại biểu đồ, chủ đề, địa điểm và mốc thời gian (2018–2025).'
       },
       {
         id: 'u6-mt-2',
         order: 2,
-        sectionLabel: 'Điều hoà (2006–2010)',
+        sectionLabel: 'Tủ lạnh (2018–2021)',
         vietnamesePrompt:
-          'Như các bạn thấy, tỷ lệ sở hữu máy điều hoà đã tăng nhẹ từ 5% năm 2006 lên 7% năm 2010.',
-        grammarTargets: ['As you can see,', 'increased slightly from ... to ...'],
+          'Như các bạn thấy, tỷ lệ sở hữu tủ lạnh khởi đầu ở mức 90% vào năm 2018 và giảm nhẹ xuống 89% vào năm 2021.',
+        grammarTargets: ['As you can see,', 'started at...', 'decreased slightly to...'],
         keywordSkeleton:
-          'As you can see / percentage / air conditioners / increased slightly / 5% in 2006 / 7% in 2010.',
+          'As you can see / percentage / refrigerators / started at 90% in 2018 / decreased slightly to 89% in 2021.',
         modelSentence:
-          'As you can see, the percentage of air conditioners increased slightly from 5% in 2006 to 7% in 2010.',
+          'As you can see, the percentage of refrigerators started at 90% in 2018 and decreased slightly to 89% in 2021.',
         tipVi: '"As you can see" là cấu trúc dẫn chiếu biểu đồ trọng tâm của Unit 6.'
       },
       {
         id: 'u6-mt-3',
         order: 3,
-        sectionLabel: 'Điều hoà (2010–2014)',
-        vietnamesePrompt:
-          'Sau đó, con số này tăng mạnh lên đến 40% vào năm 2014.',
-        grammarTargets: ['Then', 'rose sharply to...'],
-        keywordSkeleton: 'Then / rose sharply / 40% in 2014.',
-        modelSentence: 'Then, it rose sharply to 40% in 2014.',
-        tipVi: 'Đổi động từ từ "increased" sang "rose sharply" để tránh lặp từ.'
+        sectionLabel: 'Tủ lạnh (2021–2025)',
+        vietnamesePrompt: 'Sau đó, con số này tăng lên đạt mức 95% vào năm 2025.',
+        grammarTargets: ['Then', 'rose to...'],
+        keywordSkeleton: 'Then / rose to / 95% in 2025.',
+        modelSentence: 'Then, it rose to a peak of 95% in 2025.',
+        tipVi: '"rose to a peak of + %" diễn tả mức tăng đạt đỉnh cao nhất trên biểu đồ.'
       },
       {
         id: 'u6-mt-4',
         order: 4,
-        sectionLabel: 'Tủ lạnh (2006–2014)',
+        sectionLabel: 'Điều hoà (2018–2025)',
         vietnamesePrompt:
-          'Tỷ lệ sở hữu tủ lạnh cũng tăng đều đặn từ 30% năm 2006 lên 45% năm 2010 và đạt 55% năm 2014.',
-        grammarTargets: ['increased steadily from ... to ...'],
+          'Trong khi đó, tỷ lệ sở hữu máy điều hoà giảm đều từ 80% năm 2018 xuống 75% năm 2021 và giảm tiếp còn 69% năm 2025.',
+        grammarTargets: ['Meanwhile', 'decreased steadily from ... to ...'],
         keywordSkeleton:
-          'percentage / refrigerators / increased steadily / 30% in 2006 / 45% in 2010 / 55% in 2014.',
+          'Meanwhile / percentage / air conditioners / decreased steadily / 80% in 2018 / 75% in 2021 / 69% in 2025.',
         modelSentence:
-          'The percentage of refrigerators also increased steadily from 30% in 2006 to 45% in 2010 and 55% in 2014.',
-        tipVi: 'Trạng từ "steadily" diễn tả tốc độ tăng ổn định qua hai mốc.'
+          'Meanwhile, the percentage of air conditioners decreased steadily from 80% in 2018 to 75% in 2021 and dropped to 69% in 2025.',
+        tipVi: 'Trạng từ "steadily" diễn tả tốc độ giảm đều qua cả hai mốc.'
       },
       {
         id: 'u6-mt-5',
         order: 5,
-        sectionLabel: 'Quạt trần (2006–2010)',
+        sectionLabel: 'Máy sưởi điện (2018–2021)',
         vietnamesePrompt:
-          'Tuy nhiên, tỷ lệ sử dụng quạt trần giảm đáng kể từ 90% năm 2006 xuống còn 70% năm 2010.',
-        grammarTargets: ['However', 'decreased significantly from ... to ...'],
+          'Đối với máy sưởi điện, tỷ lệ này ở mức 46% vào năm 2018 và tăng dần lên 54% vào năm 2021.',
+        grammarTargets: ['stood at...', 'increased gradually to...'],
         keywordSkeleton:
-          'However / percentage / ceiling fans / decreased significantly / 90% in 2006 / 70% in 2010.',
+          'For electric heaters / figure / stood at 46% in 2018 / increased gradually / 54% in 2021.',
         modelSentence:
-          'However, the percentage of ceiling fans decreased significantly from 90% in 2006 to 70% in 2010.',
-        tipVi: 'Dùng từ nối "However" để chuyển sang xu hướng trái ngược.'
+          'For electric heaters, the figure stood at 46% in 2018 and increased gradually to 54% in 2021.',
+        tipVi: '"stood at + %" dùng rất tự nhiên khi nêu số liệu mốc xuất phát.'
       },
       {
         id: 'u6-mt-6',
         order: 6,
-        sectionLabel: 'Quạt trần (2010–2014)',
-        vietnamesePrompt: 'Sau đó, tỷ lệ này tiếp tục giảm xuống còn 50% vào năm 2014.',
-        grammarTargets: ['continued to fall to...'],
-        keywordSkeleton: 'Then / continued to fall / 50% in 2014.',
-        modelSentence: 'Then, it continued to fall to 50% in 2014.',
-        tipVi: '"continue to fall to + %" rất tự nhiên trong mô tả số liệu.'
+        sectionLabel: 'Máy sưởi điện (2021–2025)',
+        vietnamesePrompt:
+          'Sau đó, tỷ lệ này tăng mạnh lên 76% vào năm 2025, vượt qua cả tỷ lệ sở hữu điều hoà.',
+        grammarTargets: ['Then', 'rose sharply to...', 'overtaking...'],
+        keywordSkeleton:
+          'Then / rose sharply to 76% in 2025 / overtaking air conditioners.',
+        modelSentence:
+          'Then, it rose sharply to 76% in 2025, overtaking air conditioners.',
+        tipVi: '"overtaking ..." mô tả chính xác điểm đường màu xanh vượt lên trên đường điều hoà vào năm 2025.'
       },
       {
         id: 'u6-mt-7',
         order: 7,
         sectionLabel: 'Xu hướng tổng quát',
         vietnamesePrompt:
-          'Nhìn chung, máy điều hoà và tủ lạnh cho thấy xu hướng tăng, trong khi quạt trần cho thấy xu hướng giảm.',
+          'Nhìn chung, tủ lạnh và máy sưởi điện cho thấy xu hướng tăng, trong khi máy điều hoà cho thấy xu hướng giảm.',
         grammarTargets: ['Overall', 'upward trend', 'downward trend', 'while'],
         keywordSkeleton:
-          'Overall / air conditioners / refrigerators / showed / upward trend / while / ceiling fans / downward trend.',
+          'Overall / refrigerators / electric heaters / showed / upward trend / while / air conditioners / downward trend.',
         modelSentence:
-          'Overall, air conditioners and refrigerators showed an upward trend, while ceiling fans showed a downward trend.',
-        tipVi: 'Tổng kết rõ xu hướng chung để khép lại phần biểu đồ.'
+          'Overall, refrigerators and electric heaters showed an upward trend, while air conditioners showed a downward trend.',
+        tipVi: 'Tổng kết rõ xu hướng chung của 3 thiết bị để khép lại phần biểu đồ.'
       }
     ]
   },
