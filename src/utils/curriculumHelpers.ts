@@ -9,6 +9,7 @@ import type { CardTurnEvaluation, WritingSentenceEvaluation } from './aiClient';
 
 export const GRAMMAR_PROGRESS_STORAGE_KEY = 'eee5_grammar_progress_v1';
 export const WRITING_PROGRESS_STORAGE_KEY = 'eee5_writing_progress_v1';
+export const MONOTALK_PROGRESS_STORAGE_KEY = 'eee5_monotalk_progress_v1';
 export const LISTENING_PROGRESS_STORAGE_KEY = 'eee5_listening_progress_v1';
 export const READING_PROGRESS_STORAGE_KEY = 'eee5_reading_progress_v1';
 export const CARD_SHEET_DRAFT_STORAGE_KEY = 'eee5_card_sheet_drafts_v1';
@@ -142,10 +143,10 @@ export interface WritingUnitProgress {
 
 export type WritingProgressMap = Record<number, WritingUnitProgress>;
 
-export function loadWritingProgress(): WritingProgressMap {
+function loadEssayProgressMap(storageKey: string): WritingProgressMap {
   if (typeof window === 'undefined' || !window.localStorage) return {};
   try {
-    const raw = window.localStorage.getItem(WRITING_PROGRESS_STORAGE_KEY);
+    const raw = window.localStorage.getItem(storageKey);
     if (!raw) return {};
     const parsed: unknown = JSON.parse(raw);
     if (typeof parsed !== 'object' || parsed === null || Array.isArray(parsed)) {
@@ -177,18 +178,19 @@ export function loadWritingProgress(): WritingProgressMap {
   }
 }
 
-export function saveWritingUnitProgress(
+function saveEssayUnitProgressMap(
+  storageKey: string,
   unitNumber: number,
   unitProgress: WritingUnitProgress
 ): WritingProgressMap {
-  const current = loadWritingProgress();
+  const current = loadEssayProgressMap(storageKey);
   const nextMap: WritingProgressMap = {
     ...current,
     [unitNumber]: unitProgress
   };
   if (typeof window !== 'undefined' && window.localStorage) {
     try {
-      window.localStorage.setItem(WRITING_PROGRESS_STORAGE_KEY, JSON.stringify(nextMap));
+      window.localStorage.setItem(storageKey, JSON.stringify(nextMap));
     } catch {
       // Ignore quota / privacy mode errors
     }
@@ -196,18 +198,48 @@ export function saveWritingUnitProgress(
   return nextMap;
 }
 
-export function clearWritingUnitProgress(unitNumber: number): WritingProgressMap {
-  const current = loadWritingProgress();
+function clearEssayUnitProgressMap(storageKey: string, unitNumber: number): WritingProgressMap {
+  const current = loadEssayProgressMap(storageKey);
   const nextMap: WritingProgressMap = { ...current };
   delete nextMap[unitNumber];
   if (typeof window !== 'undefined' && window.localStorage) {
     try {
-      window.localStorage.setItem(WRITING_PROGRESS_STORAGE_KEY, JSON.stringify(nextMap));
+      window.localStorage.setItem(storageKey, JSON.stringify(nextMap));
     } catch {
       // Ignore quota / privacy mode errors
     }
   }
   return nextMap;
+}
+
+export function loadWritingProgress(): WritingProgressMap {
+  return loadEssayProgressMap(WRITING_PROGRESS_STORAGE_KEY);
+}
+
+export function saveWritingUnitProgress(
+  unitNumber: number,
+  unitProgress: WritingUnitProgress
+): WritingProgressMap {
+  return saveEssayUnitProgressMap(WRITING_PROGRESS_STORAGE_KEY, unitNumber, unitProgress);
+}
+
+export function clearWritingUnitProgress(unitNumber: number): WritingProgressMap {
+  return clearEssayUnitProgressMap(WRITING_PROGRESS_STORAGE_KEY, unitNumber);
+}
+
+export function loadMonoTalkProgress(): WritingProgressMap {
+  return loadEssayProgressMap(MONOTALK_PROGRESS_STORAGE_KEY);
+}
+
+export function saveMonoTalkUnitProgress(
+  unitNumber: number,
+  unitProgress: WritingUnitProgress
+): WritingProgressMap {
+  return saveEssayUnitProgressMap(MONOTALK_PROGRESS_STORAGE_KEY, unitNumber, unitProgress);
+}
+
+export function clearMonoTalkUnitProgress(unitNumber: number): WritingProgressMap {
+  return clearEssayUnitProgressMap(MONOTALK_PROGRESS_STORAGE_KEY, unitNumber);
 }
 
 /* ============================================================================

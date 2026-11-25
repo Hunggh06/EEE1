@@ -10,6 +10,7 @@ import {
   CreditCard,
   Headphones,
   Layers,
+  Mic,
   PenLine,
   Search,
   Sparkles,
@@ -18,6 +19,7 @@ import {
 import { CARDS_BY_UNIT } from '../../data/cards/speakingCards';
 import { getUnitGrammar } from '../../data/grammar';
 import { getUnitListening } from '../../data/listening';
+import { getUnitMonoTalk } from '../../data/monotalk';
 import { getUnitReading } from '../../data/reading';
 import { UNITS_META_BY_NUMBER } from '../../data/unitsMeta';
 import { getTopicsForUnit, getUnitVocab } from '../../data/vocab';
@@ -38,6 +40,7 @@ import { SrsBadge } from '../common/SrsBadge';
 import { UnitIcon } from '../common/UnitIcon';
 import { GrammarTab } from './GrammarTab';
 import { ListeningTab } from './ListeningTab';
+import { MonoTalkTab } from './MonoTalkTab';
 import { ReadingTab } from './ReadingTab';
 import { WritingTab } from './WritingTab';
 
@@ -64,6 +67,7 @@ export function UnitDetailView({
   const unitGrammar = useMemo(() => getUnitGrammar(unitNumber), [unitNumber]);
   const unitCards = useMemo(() => CARDS_BY_UNIT[unitNumber] ?? [], [unitNumber]);
   const unitWriting = useMemo(() => getUnitWriting(unitNumber), [unitNumber]);
+  const unitMonoTalk = useMemo(() => getUnitMonoTalk(unitNumber), [unitNumber]);
   const unitListening = useMemo(() => getUnitListening(unitNumber), [unitNumber]);
   const unitListeningCount = useMemo(
     () =>
@@ -150,6 +154,12 @@ export function UnitDetailView({
       label: 'Writing',
       badge: `${unitWriting?.sentences.length ?? 7} câu`,
       icon: <PenLine className="w-4 h-4" aria-hidden="true" />
+    },
+    {
+      key: 'monotalk',
+      label: 'Mono Talk',
+      badge: `${unitMonoTalk?.sentences.length ?? 7} câu`,
+      icon: <Mic className="w-4 h-4" aria-hidden="true" />
     },
     {
       key: 'listening',
@@ -289,6 +299,13 @@ export function UnitDetailView({
         />
       ) : activeSkill === 'writing' ? (
         <WritingTab
+          unitNumber={unitMeta.unit}
+          settings={state.settings}
+          onUpdateSettings={onUpdateSettings}
+          onNavigate={onNavigate}
+        />
+      ) : activeSkill === 'monotalk' ? (
+        <MonoTalkTab
           unitNumber={unitMeta.unit}
           settings={state.settings}
           onUpdateSettings={onUpdateSettings}

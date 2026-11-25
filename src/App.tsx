@@ -31,6 +31,7 @@ const VALID_UNIT_SKILLS = new Set<SkillKey>([
   'grammar',
   'cards',
   'writing',
+  'monotalk',
   'listening',
   'reading'
 ]);

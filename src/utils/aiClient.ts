@@ -3,6 +3,7 @@ import { ALL_VOCAB, VOCAB_BY_ID, VOCAB_BY_UNIT } from '../data/vocab';
 import type {
   CardDialogueTurn,
   SpeakingCard,
+  UnitMonoTalkTask,
   UnitWritingTask,
   WritingSentenceStep
 } from '../types/curriculum';
@@ -876,6 +877,7 @@ export interface EvaluateWritingSentenceParams {
   unitNumber: number;
   step: WritingSentenceStep;
   userSentence: string;
+  skillContext?: 'writing' | 'monotalk';
 }
 
 export async function evaluateWritingSentence({
@@ -885,7 +887,8 @@ export async function evaluateWritingSentence({
   signal,
   unitNumber,
   step,
-  userSentence
+  userSentence,
+  skillContext = 'writing'
 }: EvaluateWritingSentenceParams): Promise<WritingSentenceEvaluation> {
   const cleanSentence = userSentence.trim();
   if (!cleanSentence) {
@@ -895,10 +898,13 @@ export async function evaluateWritingSentence({
     });
   }
 
+  const isMonoTalk = skillContext === 'monotalk';
   const systemPrompt = [
     'Bạn là Gia sư AI Tiếng Anh chuyên ngành Điện – Điện tử (HaUI EEE5).',
-    'Nhiệm vụ: Chấm điểm 1 câu tiếng Anh của sinh viên dựa trên yêu cầu tiếng Việt, trọng tâm ngữ pháp và câu mẫu chuẩn giáo trình.',
-    'Chấp nhận các cách diễn đạt tự nhiên khác câu mẫu nếu đúng nghĩa, đúng văn phong kỹ thuật/trang trọng và đạt trọng tâm ngữ pháp.',
+    isMonoTalk
+      ? 'Nhiệm vụ: Chấm điểm 1 câu thuyết trình Mono Talk tiếng Anh của sinh viên dựa trên ý tiếng Việt, ngữ pháp và tính tự nhiên khi nói.'
+      : 'Nhiệm vụ: Chấm điểm 1 câu tiếng Anh của sinh viên dựa trên yêu cầu tiếng Việt, trọng tâm ngữ pháp và câu mẫu chuẩn giáo trình.',
+    'Chấp nhận các cách diễn đạt tự nhiên khác câu mẫu nếu đúng nghĩa, rõ ý và đúng trọng tâm ngữ pháp.',
     'CHỈ trả về một JSON Object hợp lệ (không thêm markdown thừa), đúng schema sau:',
     '{',
     '  "isCorrect": boolean, // true nếu đạt >= 7.5/10 và đúng nghĩa + cấu trúc cốt lõi',
@@ -906,7 +912,7 @@ export async function evaluateWritingSentence({
     '  "verdictVi": string, // nhận xét tổng quan ngắn gọn bằng tiếng Việt (1-2 câu)',
     '  "mistakesVi": string[], // danh sách lỗi ngữ pháp/từ vựng/chính tả cụ thể bằng tiếng Việt ([] nếu không có lỗi)',
     '  "correctedSentence": string, // phiên bản tiếng Anh đã sửa chuẩn xác (nếu đã chuẩn thì giữ hoặc tinh chỉnh tự nhiên nhất)',
-    '  "tipVi": string // mẹo ghi nhớ cấu trúc/từ vựng ngắn bằng tiếng Việt',
+    '  "tipVi": string // mẹo ghi nhớ cấu trúc/từ vựng hoặc phát âm ngắn bằng tiếng Việt',
     '}'
   ].join('\n');
 
@@ -975,6 +981,7 @@ export interface RequestWritingHintParams {
   unitNumber: number;
   step: WritingSentenceStep;
   userDraft?: string;
+  skillContext?: 'writing' | 'monotalk';
 }
 
 export async function requestWritingHint({
@@ -984,21 +991,25 @@ export async function requestWritingHint({
   signal,
   unitNumber,
   step,
-  userDraft
+  userDraft,
+  skillContext = 'writing'
 }: RequestWritingHintParams): Promise<string> {
   const cleanDraft = (userDraft ?? '').trim();
+  const isMonoTalk = skillContext === 'monotalk';
 
   const systemPrompt = [
     'Bạn là Gia sư AI Tiếng Anh chuyên ngành Điện – Điện tử (HaUI EEE5).',
-    'Nhiệm vụ: Gợi ý ngắn gọn bằng tiếng Việt kèm 2–4 từ khóa/cụm cấu trúc tiếng Anh để giúp sinh viên tự viết được câu mục tiêu.',
+    isMonoTalk
+      ? 'Nhiệm vụ: Gợi ý ngắn gọn bằng tiếng Việt kèm 2–4 cụm từ nối/từ khóa nói tự nhiên để giúp sinh viên tự nói/viết được câu thuyết trình Mono Talk.'
+      : 'Nhiệm vụ: Gợi ý ngắn gọn bằng tiếng Việt kèm 2–4 từ khóa/cụm cấu trúc tiếng Anh để giúp sinh viên tự viết được câu mục tiêu.',
     'QUY TẮC BẮT BUỘC: TUYỆT ĐỐI KHÔNG tiết lộ nguyên văn cả câu mẫu hoàn chỉnh.',
     'Nếu sinh viên đã có bản nháp, hãy chỉ ra nhanh phần nào ổn và chỗ nào cần sửa hoặc bổ sung (tối đa 3 gạch đầu dòng ngắn gọn).'
   ].join('\n');
 
   const userPrompt = [
     `Unit ${unitNumber} • Phần: ${step.sectionLabel}`,
-    `Nghĩa tiếng Việt cần viết: "${step.vietnamesePrompt}"`,
-    `Mục tiêu ngữ pháp: ${step.grammarTargets.join(', ')}`,
+    `Nghĩa tiếng Việt cần truyền đạt: "${step.vietnamesePrompt}"`,
+    `Mục tiêu ngữ pháp/nói: ${step.grammarTargets.join(', ')}`,
     `Gợi ý khung từ: ${step.keywordSkeleton}`,
     `Câu mẫu (CHỈ để bạn đối chiếu, KHÔNG chép nguyên văn cho người học): "${step.modelSentence}"`,
     cleanDraft
@@ -1027,8 +1038,9 @@ export interface ReviewFullWritingEssayParams {
   baseUrl?: string;
   model?: string;
   signal?: AbortSignal;
-  task: UnitWritingTask;
+  task: UnitWritingTask | UnitMonoTalkTask;
   assembledEssay: string;
+  skillContext?: 'writing' | 'monotalk';
   onDelta?: (deltaText: string, accumulatedText: string) => void;
 }
 
@@ -1039,25 +1051,42 @@ export async function reviewFullWritingEssay({
   signal,
   task,
   assembledEssay,
+  skillContext = 'writing',
   onDelta
 }: ReviewFullWritingEssayParams): Promise<{ content: string; model: string }> {
   const cleanEssay = assembledEssay.trim();
+  const isMonoTalk = skillContext === 'monotalk';
   if (!cleanEssay) {
-    throw new AiClientError('Bài viết đang trống. Hãy viết ít nhất một vài câu trước khi chấm tổng thể.', {
-      code: 'INVALID_CONFIG',
-      model: (model ?? '').trim() || DEFAULT_AI_MODEL
-    });
+    throw new AiClientError(
+      isMonoTalk
+        ? 'Bài nói đang trống. Hãy nhập hoặc nói ít nhất một vài câu trước khi chấm.'
+        : 'Bài viết đang trống. Hãy viết ít nhất một vài câu trước khi chấm tổng thể.',
+      {
+        code: 'INVALID_CONFIG',
+        model: (model ?? '').trim() || DEFAULT_AI_MODEL
+      }
+    );
   }
 
-  const systemPrompt = [
-    'Bạn là Gia sư AI Tiếng Anh chuyên ngành Điện – Điện tử (HaUI EEE5).',
-    'Nhiệm vụ: Chấm tổng thể toàn bộ bài viết (đoạn văn / email / biên bản họp) của sinh viên đối chiếu với Checklist của Unit.',
-    'Trình bày rõ ràng bằng tiếng Việt theo 4 mục ngắn gọn:',
-    '1. **Đánh giá tổng quan & Điểm ước lượng (/10)** (mức độ hoàn thành checklist và mạch lạc liên kết câu)',
-    '2. **Điểm mạnh đã đạt được**',
-    '3. **Lỗi cần sửa & Gợi ý nâng cấp từ vựng/ngữ pháp**',
-    '4. **Phiên bản hoàn chỉnh mượt mà hơn** (đặt các câu tiếng Anh rõ ràng để sinh viên đối chiếu)'
-  ].join('\n');
+  const systemPrompt = isMonoTalk
+    ? [
+        'Bạn là Giám khảo & Gia sư Speaking Tiếng Anh chuyên ngành Điện – Điện tử (HaUI EEE5).',
+        'Nhiệm vụ: Chấm tổng thể bài thuyết trình Mono Talk của sinh viên theo yêu cầu đề bài và các ý cần nói.',
+        'Trình bày rõ ràng bằng tiếng Việt theo 4 mục ngắn gọn:',
+        '1. **Đánh giá tổng quan & Điểm Speaking ước lượng (/10)** (mức độ đủ ý, mạch lạc, tự nhiên khi nói)',
+        '2. **Điểm tốt về từ vựng chuyên ngành & cấu trúc nối ý**',
+        '3. **Lỗi ngữ pháp / diễn đạt cần sửa để nói tự nhiên hơn**',
+        '4. **Kịch bản nói mẫu hoàn chỉnh (dễ đọc, dễ quay video thuyết trình)**'
+      ].join('\n')
+    : [
+        'Bạn là Gia sư AI Tiếng Anh chuyên ngành Điện – Điện tử (HaUI EEE5).',
+        'Nhiệm vụ: Chấm tổng thể toàn bộ bài viết (đoạn văn / email / biên bản họp) của sinh viên đối chiếu với Checklist của Unit.',
+        'Trình bày rõ ràng bằng tiếng Việt theo 4 mục ngắn gọn:',
+        '1. **Đánh giá tổng quan & Điểm ước lượng (/10)** (mức độ hoàn thành checklist và mạch lạc liên kết câu)',
+        '2. **Điểm mạnh đã đạt được**',
+        '3. **Lỗi cần sửa & Gợi ý nâng cấp từ vựng/ngữ pháp**',
+        '4. **Phiên bản hoàn chỉnh mượt mà hơn** (đặt các câu tiếng Anh rõ ràng để sinh viên đối chiếu)'
+      ].join('\n');
 
   const checklistBlock = task.targetChecklist.map((c, idx) => `${idx + 1}. ${c}`).join('\n');
   const expectedOutline = task.sentences

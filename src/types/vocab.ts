@@ -62,10 +62,11 @@ export type SkillKey =
   | 'grammar'
   | 'cards'
   | 'writing'
+  | 'monotalk'
   | 'listening'
   | 'reading';
 
-export type UnitSkillKey = Exclude<SkillKey, 'vocabulary' | 'cards'>;
+export type UnitSkillKey = Exclude<SkillKey, 'vocabulary' | 'cards' | 'monotalk'>;
 
 export type UnitIconKey =
   | 'building'

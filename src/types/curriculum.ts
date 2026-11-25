@@ -125,6 +125,34 @@ export interface UnitWritingTask {
 }
 
 /* ============================================================================
+ * Guided Mono Talk Speaking & Memorization (Units 1-8)
+ * ========================================================================== */
+
+export interface MonoTalkCueRow {
+  label: string;
+  value: string;
+  solution?: string;
+}
+
+export interface UnitMonoTalkTask {
+  unit: number;
+  title: string;
+  taskTypeVi: string; // e.g., "Thuyết trình ngắn (Mono Talk)", "Thuyết trình biểu đồ"
+  promptEn: string;
+  promptBulletsEn: string[];
+  objectiveVi: string;
+  targetChecklist: string[];
+  cueTable?: {
+    caption: string;
+    rows: MonoTalkCueRow[];
+    precautions?: string[];
+  };
+  chart?: CardMiniChart;
+  flowSteps?: CardFlowStep[];
+  sentences: WritingSentenceStep[];
+}
+
+/* ============================================================================
  * Listening Comprehension & Interactive Tasks (Units 1-8)
  * ========================================================================== */
 

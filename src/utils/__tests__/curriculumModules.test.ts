@@ -15,14 +15,22 @@ import {
   READING_BY_UNIT,
   getUnitReading
 } from '../../data/reading';
+import {
+  ALL_MONOTALK_TASKS,
+  MONOTALK_BY_UNIT,
+  getUnitMonoTalk
+} from '../../data/monotalk';
 import { ALL_WRITING_TASKS, WRITING_BY_UNIT, getUnitWriting } from '../../data/writing';
 import { parseAiJsonObject } from '../aiClient';
 import {
+  MONOTALK_PROGRESS_STORAGE_KEY,
+  WRITING_PROGRESS_STORAGE_KEY,
   findNextUserTurnIndex,
   getCardDraftKey,
   isGrammarAnswerCorrect,
   isListeningAnswerCorrect,
   isReadingAnswerCorrect,
+  loadMonoTalkProgress,
   normalizeGrammarAnswer,
   normalizeListeningAnswer
 } from '../curriculumHelpers';
@@ -254,5 +262,38 @@ describe('Reading Comprehension Module Integrity (Units 1–8)', () => {
 
     expect(totalTasks).toBeGreaterThanOrEqual(16);
     expect(totalQuestions).toBeGreaterThanOrEqual(80);
+  });
+});
+
+describe('Dedicated Mono Talk Module Integrity (Units 1–8)', () => {
+  it('provides 7-sentence Mono Talk tasks, official prompts, and visual cues across all 8 Units', () => {
+    expect(ALL_MONOTALK_TASKS).toHaveLength(8);
+    expect(MONOTALK_PROGRESS_STORAGE_KEY).not.toBe(WRITING_PROGRESS_STORAGE_KEY);
+    expect(loadMonoTalkProgress()).toEqual({});
+
+    for (let u = 1; u <= 8; u += 1) {
+      const task = getUnitMonoTalk(u);
+      expect(task).toBeDefined();
+      expect(MONOTALK_BY_UNIT[u]).toBe(task);
+      expect(task!.unit).toBe(u);
+      expect(task!.promptEn.trim().length).toBeGreaterThan(20);
+      expect(task!.promptBulletsEn.length).toBeGreaterThanOrEqual(3);
+      expect(task!.targetChecklist.length).toBeGreaterThanOrEqual(3);
+      expect(task!.sentences).toHaveLength(7);
+
+      task!.sentences.forEach((step, idx) => {
+        expect(step.order).toBe(idx + 1);
+        expect(step.vietnamesePrompt.trim().length).toBeGreaterThan(0);
+        expect(step.keywordSkeleton.trim().length).toBeGreaterThan(0);
+        expect(step.modelSentence.trim().length).toBeGreaterThan(0);
+        expect(step.grammarTargets.length).toBeGreaterThanOrEqual(1);
+      });
+    }
+
+    // Unit 4 cueTable (Daikin U0), Unit 6 multiSeries chart, Unit 8 flowchart
+    expect(getUnitMonoTalk(4)?.cueTable?.rows.length).toBeGreaterThanOrEqual(6);
+    expect(getUnitMonoTalk(4)?.cueTable?.precautions).toHaveLength(3);
+    expect(getUnitMonoTalk(6)?.chart?.multiSeries).toHaveLength(3);
+    expect(getUnitMonoTalk(8)?.flowSteps?.length).toBeGreaterThanOrEqual(8);
   });
 });
