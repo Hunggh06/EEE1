@@ -1,6 +1,8 @@
 import type { VocabItem } from '../../types/vocab';
-import { MNEMONICS_U1_TO_U4 } from './mnemonicsU1to4';
-import { MNEMONICS_U5_TO_U8 } from './mnemonicsU5to8';
+import { MNEMONICS_U1_TO_U2 } from './mnemonicsU1to2';
+import { MNEMONICS_U3_TO_U4 } from './mnemonicsU3to4';
+import { MNEMONICS_U5_TO_U6 } from './mnemonicsU5to6';
+import { MNEMONICS_U7_TO_U8 } from './mnemonicsU7to8';
 import unit1Data from './unit1.json';
 import unit2Data from './unit2.json';
 import unit3Data from './unit3.json';
@@ -11,8 +13,10 @@ import unit7Data from './unit7.json';
 import unit8Data from './unit8.json';
 
 export const VOCAB_MNEMONICS_VI: Record<string, string> = {
-  ...MNEMONICS_U1_TO_U4,
-  ...MNEMONICS_U5_TO_U8
+  ...MNEMONICS_U1_TO_U2,
+  ...MNEMONICS_U3_TO_U4,
+  ...MNEMONICS_U5_TO_U6,
+  ...MNEMONICS_U7_TO_U8
 };
 
 function attachMnemonics(rawItems: unknown): VocabItem[] {

@@ -30,6 +30,8 @@ describe('Dataset Integrity & Storage Utilities', () => {
       expect(item.meaning.trim().length).toBeGreaterThan(0);
       expect(item.clozeSentence).toContain('_');
       expect(item.mnemonicVi?.trim().length).toBeGreaterThan(15);
+      expect(item.mnemonicVi).toContain('—');
+      expect(item.mnemonicVi).toMatch(/đọc lái là|đọc gần như|nghe như/i);
     }
   });
 
