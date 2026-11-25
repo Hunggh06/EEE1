@@ -1,5 +1,9 @@
 import { describe, expect, it } from 'vitest';
-import { CARDS_BY_UNIT, SPEAKING_CARDS } from '../../data/cards/speakingCards';
+import {
+  CARDS_BY_UNIT,
+  MONO_TALKS_BY_UNIT,
+  SPEAKING_CARDS
+} from '../../data/cards/speakingCards';
 import { ALL_GRAMMAR_MODULES, GRAMMAR_BY_UNIT, getUnitGrammar } from '../../data/grammar';
 import {
   ALL_LISTENING_MODULES,
@@ -70,8 +74,8 @@ describe('Phase 2 Curriculum Data Integrity (Units 1–8)', () => {
     }
   });
 
-  it('provides all 14 Speaking Cards distributed across all 8 Units', () => {
-    expect(SPEAKING_CARDS).toHaveLength(14);
+  it('provides all 9 Speaking Cards matching ÔN TẬP THI KTHP SPEAKING across all 8 Units plus 7 Mono Talks', () => {
+    expect(SPEAKING_CARDS).toHaveLength(9);
 
     for (let u = 1; u <= 8; u += 1) {
       const cards = CARDS_BY_UNIT[u];
@@ -88,7 +92,12 @@ describe('Phase 2 Curriculum Data Integrity (Units 1–8)', () => {
       }
     }
 
-    // Unit 6 cards should carry chart definitions for MiniChartSvg
+    for (let u = 1; u <= 7; u += 1) {
+      expect(MONO_TALKS_BY_UNIT[u]).toBeDefined();
+      expect(MONO_TALKS_BY_UNIT[u].script.trim().length).toBeGreaterThan(40);
+    }
+
+    // Unit 6 card should carry chart definitions for MiniChartSvg
     expect(CARDS_BY_UNIT[6].every((c) => (c.charts?.length ?? 0) > 0)).toBe(true);
   });
 });

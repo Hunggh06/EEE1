@@ -11,12 +11,13 @@ import {
   HelpCircle,
   Loader2,
   MessagesSquare,
+  Mic,
   RotateCcw,
   Sparkles,
   UserCheck,
   XCircle
 } from 'lucide-react';
-import { CARDS_BY_UNIT } from '../../data/cards/speakingCards';
+import { CARDS_BY_UNIT, MONO_TALKS_BY_UNIT } from '../../data/cards/speakingCards';
 import type { SpeakingCard } from '../../types/curriculum';
 import type { AppSettings } from '../../types/vocab';
 import {
@@ -53,13 +54,13 @@ function getSourceBadge(source: SpeakingCard['source']) {
   if (source === 'card_docx') {
     return (
       <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 text-[11px] font-semibold text-emerald-700">
-        Chuẩn Card.docx
+        ÔN TẬP THI KTHP
       </span>
     );
   }
   return (
     <span className="inline-flex items-center gap-1 rounded-full bg-indigo-50 border border-indigo-200 px-2.5 py-0.5 text-[11px] font-semibold text-indigo-700">
-      Bổ sung giáo trình
+      Bổ sung Card.md
     </span>
   );
 }
@@ -71,6 +72,7 @@ export function SpeakingCardsWorkspace({
   onNavigate
 }: SpeakingCardsWorkspaceProps) {
   const unitCards = useMemo(() => CARDS_BY_UNIT[unitNumber] ?? [], [unitNumber]);
+  const unitMonoTalk = useMemo(() => MONO_TALKS_BY_UNIT[unitNumber], [unitNumber]);
 
   const [selectedCardId, setSelectedCardId] = useState<string>(() => unitCards[0]?.id ?? '');
   const [userRole, setUserRole] = useState<'A' | 'B'>('A');
@@ -87,6 +89,7 @@ export function SpeakingCardsWorkspace({
   const [fullReviewError, setFullReviewError] = useState<string | null>(null);
   const [showKeyExpressions, setShowKeyExpressions] = useState(false);
   const [showSampleDialogue, setShowSampleDialogue] = useState(false);
+  const [showMonoTalk, setShowMonoTalk] = useState(false);
 
   const abortRef = useRef<AbortController | null>(null);
 
@@ -113,6 +116,7 @@ export function SpeakingCardsWorkspace({
     setIsReviewingSheet(false);
     setShowKeyExpressions(false);
     setShowSampleDialogue(false);
+    setShowMonoTalk(false);
 
     if (!activeCard) {
       setInputs({});
@@ -1065,6 +1069,48 @@ export function SpeakingCardsWorkspace({
           </div>
         )}
       </section>
+
+      {unitMonoTalk && (
+        <section className="rounded-2xl border border-slate-200 bg-white p-5 shadow-xs space-y-3">
+          <button
+            type="button"
+            data-sound="custom"
+            onClick={() => {
+              if (!showMonoTalk) playHintSound();
+              setShowMonoTalk((v) => !v);
+            }}
+            className="w-full flex items-center justify-between gap-2 text-left focus-ring rounded-xl"
+          >
+            <span className="inline-flex items-center gap-2 text-sm font-bold text-slate-800">
+              <Mic className="w-4 h-4 text-emerald-600" aria-hidden="true" />
+              <span>Bài nói độc thoại mẫu (III. MONO TALK — Ôn tập KTHP)</span>
+              <span className="text-[11px] font-medium text-slate-500">
+                (Ẩn mặc định)
+              </span>
+            </span>
+            {showMonoTalk ? (
+              <ChevronUp className="w-4 h-4 text-slate-500" />
+            ) : (
+              <ChevronDown className="w-4 h-4 text-slate-500" />
+            )}
+          </button>
+
+          {showMonoTalk && (
+            <div className="space-y-2.5 pt-3 border-t border-slate-100">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <div>
+                  <h4 className="text-sm font-bold text-slate-900">{unitMonoTalk.title}</h4>
+                  <p className="text-xs text-slate-600">{unitMonoTalk.topicVi}</p>
+                </div>
+                <SpeakButton text={unitMonoTalk.script} settings={settings} size="sm" />
+              </div>
+              <p className="rounded-xl border border-emerald-100 bg-emerald-50/40 p-4 text-sm text-slate-800 leading-relaxed">
+                {unitMonoTalk.script}
+              </p>
+            </div>
+          )}
+        </section>
+      )}
     </div>
   );
 }

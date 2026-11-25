@@ -45,7 +45,7 @@ export function CardsPageView({
                 Speaking Cards Studio • {SPEAKING_CARDS.length} Cards (8 Units)
               </div>
               <h1 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
-                Luyện Nói Theo Phiếu Role-play (Card.docx &amp; Giáo Trình)
+                Luyện Nói Theo Bộ Ôn Tập Thi KTHP Speaking (8 Units)
               </h1>
               <p className="text-sm text-slate-600 max-w-3xl">
                 Chọn 1 vai (Student A hoặc Student B) để xem đúng 1 phiếu Cue Card cá nhân. Tự điền câu hỏi hoặc câu trả lời vào từng mục — đáp án luôn ẩn cho đến khi bạn nhờ AI chấm hoặc chủ động bấm xem.

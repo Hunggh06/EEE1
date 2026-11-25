@@ -129,9 +129,14 @@ export interface WritingSentenceState {
   hint?: string;
 }
 
+export type WritingPracticeMode = 'guided' | 'free';
+
 export interface WritingUnitProgress {
+  mode?: WritingPracticeMode;
   sentences: Record<string, WritingSentenceState>;
   fullReview?: string;
+  freeDraft?: string;
+  freeReview?: string;
   updatedAt: number;
 }
 
@@ -153,6 +158,7 @@ export function loadWritingProgress(): WritingProgressMap {
       if (typeof val !== 'object' || val === null || Array.isArray(val)) continue;
       const entry = val as Partial<WritingUnitProgress>;
       clean[unitNum] = {
+        ...(entry.mode === 'guided' || entry.mode === 'free' ? { mode: entry.mode } : {}),
         sentences:
           typeof entry.sentences === 'object' &&
           entry.sentences !== null &&
@@ -160,6 +166,8 @@ export function loadWritingProgress(): WritingProgressMap {
             ? (entry.sentences as Record<string, WritingSentenceState>)
             : {},
         ...(typeof entry.fullReview === 'string' ? { fullReview: entry.fullReview } : {}),
+        ...(typeof entry.freeDraft === 'string' ? { freeDraft: entry.freeDraft } : {}),
+        ...(typeof entry.freeReview === 'string' ? { freeReview: entry.freeReview } : {}),
         updatedAt: typeof entry.updatedAt === 'number' ? entry.updatedAt : Date.now()
       };
     }

@@ -79,7 +79,7 @@ export interface CardMiniChart {
 export interface SpeakingCard {
   id: string;
   unit: number;
-  cardCode: string; // e.g., "Card 1A", "Unit 6 - Chart 1"
+  cardCode: string; // e.g., "Card 1 • Unit 1"
   title: string;
   subtitleVi: string;
   source: 'card_docx' | 'textbook_supplement';
@@ -91,6 +91,13 @@ export interface SpeakingCard {
   charts?: CardMiniChart[];
   keyExpressions?: string[];
   sampleDialogue: CardDialogueTurn[];
+}
+
+export interface MonoTalkSample {
+  unit: number;
+  title: string;
+  topicVi: string;
+  script: string;
 }
 
 /* ============================================================================
